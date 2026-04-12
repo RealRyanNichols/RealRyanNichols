@@ -1,0 +1,42 @@
+[
+  {
+    "id": "water-rights",
+    "name": "Water Rights",
+    "description": "Votes on water district authority, reservoir projects, groundwater conservation, and Sabine River Authority issues",
+    "icon": "droplet",
+    "weight": 20,
+    "color": "#3B82F6"
+  },
+  {
+    "id": "land-and-property-rights",
+    "name": "Land & Property Rights",
+    "description": "Eminent domain protections, property tax appraisal reform, mineral rights, and land use regulations",
+    "icon": "landmark",
+    "weight": 20,
+    "color": "#10B981"
+  },
+  {
+    "id": "taxes",
+    "name": "Taxes",
+    "description": "Property tax rates, sales tax, school district tax rates, and unfunded mandates",
+    "icon": "receipt",
+    "weight": 20,
+    "color": "#F59E0B"
+  },
+  {
+    "id": "government-transparency",
+    "name": "Government Transparency",
+    "description": "Open meetings compliance, public records access, ethics reform, and campaign finance disclosure",
+    "icon": "eye",
+    "weight": 20,
+    "color": "#8B5CF6"
+  },
+  {
+    "id": "voting-record",
+    "name": "Voting Record",
+    "description": "Overall alignment with campaign promises, constitutional principles, and limited government",
+    "icon": "check-square",
+    "weight": 20,
+    "color": "#EF4444"
+  }
+]

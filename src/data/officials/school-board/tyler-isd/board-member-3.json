@@ -1,0 +1,20 @@
+{
+  "id": "tyler-isd-member-3",
+  "name": "Patricia Collins",
+  "firstName": "Patricia",
+  "lastName": "Collins",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Tyler ISD",
+  "county": ["Smith"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1319 Earl Campbell Pkwy., Tyler, TX 75701",
+    "phone": "(903) 262-1000",
+    "website": "https://www.tylerisd.org/board"
+  },
+  "bio": "Patricia Collins serves as Secretary of the Tyler ISD Board of Trustees. She participates in setting district policy, approving the budget, and overseeing the education and welfare of Tyler ISD students."
+}

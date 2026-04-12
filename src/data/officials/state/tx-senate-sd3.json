@@ -1,0 +1,32 @@
+{
+  "id": "robert-nichols",
+  "name": "Robert Nichols",
+  "firstName": "Robert",
+  "lastName": "Nichols",
+  "party": "R",
+  "level": "state",
+  "position": "State Senator",
+  "district": "SD-3",
+  "jurisdiction": "Texas Senate",
+  "county": ["Angelina", "Houston", "Jasper", "Jefferson", "Nacogdoches", "Newton", "Orange", "Polk", "Sabine", "San Augustine", "San Jacinto", "Shelby", "Trinity", "Tyler"],
+  "termStart": "2023-01-10",
+  "termEnd": "2027-01-10",
+  "contactInfo": {
+    "office": "Texas Capitol Extension, Room E1.708, Austin, TX 78701",
+    "phone": "(512) 463-0103",
+    "email": "robert.nichols@senate.texas.gov",
+    "website": "https://senate.texas.gov/member.php?d=3",
+    "socialMedia": {
+      "twitter": "https://twitter.com/SenRobertNichols",
+      "facebook": "https://facebook.com/SenatorRobertNichols"
+    }
+  },
+  "bio": "Robert Nichols represents Senate District 3 in the Texas Senate, covering deep East Texas. A former member of the Texas Transportation Commission, Nichols has served in the Texas Senate since 2007. He is the chair of the Senate Transportation Committee and focuses on infrastructure, rural issues, and conservative fiscal policy.",
+  "campaignPromises": [
+    "Improve East Texas roads and infrastructure",
+    "Protect rural water rights and groundwater conservation",
+    "Lower property taxes and reduce government spending",
+    "Support timber and agriculture industries in East Texas",
+    "Defend private property rights against government overreach"
+  ]
+}

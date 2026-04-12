@@ -1,0 +1,175 @@
+{
+  "officialId": "robert-nichols",
+  "overall": 75,
+  "letterGrade": "B",
+  "categories": {
+    "waterRights": {
+      "score": 85,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "sb-312",
+          "billTitle": "Groundwater Conservation District Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to protect East Texas landowners' groundwater rights and reform GCD governance.",
+          "category": "water-rights",
+          "weight": 10
+        },
+        {
+          "billId": "sb-780",
+          "billTitle": "Lake and Reservoir Maintenance Funding Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported funding for lake and reservoir maintenance critical to deep East Texas water supply.",
+          "category": "water-rights",
+          "weight": 8
+        },
+        {
+          "billId": "sb-1900",
+          "billTitle": "Sabine River Authority Accountability Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-12",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted for greater accountability and transparency requirements for the Sabine River Authority.",
+          "category": "water-rights",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "landAndPropertyRights": {
+      "score": 80,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported property tax reforms benefiting rural East Texas landowners and homeowners.",
+          "category": "land-and-property-rights",
+          "weight": 10
+        },
+        {
+          "billId": "sb-1350",
+          "billTitle": "Timber and Agricultural Land Appraisal Protection Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-28",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Protected special appraisal status for timber and agricultural land, critical for deep East Texas landowners.",
+          "category": "land-and-property-rights",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    },
+    "taxes": {
+      "score": 75,
+      "letterGrade": "B",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted for property tax relief for East Texas taxpayers.",
+          "category": "taxes",
+          "weight": 10
+        },
+        {
+          "billId": "sb-2500",
+          "billTitle": "Transportation Funding and Fee Authorization Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-15",
+          "officialVote": "yea",
+          "proEastTexasPosition": "nay",
+          "aligned": false,
+          "explanation": "Voted for transportation fees that effectively function as a new tax on East Texas drivers and businesses.",
+          "category": "taxes",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "governmentTransparency": {
+      "score": 60,
+      "letterGrade": "C",
+      "votes": [
+        {
+          "billId": "sb-1045",
+          "billTitle": "Government Transparency and Open Meetings Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-30",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against strengthening open meetings and public records access, undermining government transparency goals.",
+          "category": "government-transparency",
+          "weight": 9
+        },
+        {
+          "billId": "sb-1600",
+          "billTitle": "Ethics Commission Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-05",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Opposed expanding the Ethics Commission's investigative authority, a transparency concern.",
+          "category": "government-transparency",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "votingRecord": {
+      "score": 75,
+      "letterGrade": "B",
+      "votes": [
+        {
+          "billId": "sb-312",
+          "billTitle": "Groundwater Conservation District Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Delivered on promise to protect rural water rights for East Texas constituents.",
+          "category": "voting-record",
+          "weight": 10
+        },
+        {
+          "billId": "sb-4100",
+          "billTitle": "TxDOT Infrastructure and Expansion Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-24",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Consistent with longstanding commitment to improving East Texas transportation infrastructure.",
+          "category": "voting-record",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    }
+  },
+  "lastUpdated": "2026-03-15"
+}

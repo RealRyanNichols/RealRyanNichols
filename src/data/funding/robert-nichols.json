@@ -1,0 +1,86 @@
+{
+  "officialId": "robert-nichols",
+  "cycle": "2024",
+  "totalRaised": 892000,
+  "totalSpent": 685000,
+  "cashOnHand": 412000,
+  "topDonors": [
+    {
+      "name": "Texas Good Roads/Transportation Association PAC",
+      "type": "pac",
+      "totalAmount": 25000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "Texans for Lawsuit Reform PAC",
+      "type": "pac",
+      "totalAmount": 20000,
+      "city": "Houston",
+      "state": "TX"
+    },
+    {
+      "name": "Associated General Contractors of Texas PAC",
+      "type": "pac",
+      "totalAmount": 15000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Forestry Association PAC",
+      "type": "pac",
+      "totalAmount": 10000,
+      "city": "Lufkin",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Farm Bureau AGFUND",
+      "type": "pac",
+      "totalAmount": 10000,
+      "city": "Waco",
+      "state": "TX"
+    },
+    {
+      "name": "Richard D. Collins",
+      "type": "individual",
+      "totalAmount": 10000,
+      "occupation": "Timber Company Owner",
+      "employer": "Collins Pine Co.",
+      "city": "Lufkin",
+      "state": "TX"
+    }
+  ],
+  "donorBreakdown": {
+    "individual": 38,
+    "pac": 55,
+    "selfFunded": 2,
+    "smallDollar": 12,
+    "largeDollar": 88
+  },
+  "geographicBreakdown": {
+    "inDistrict": 30,
+    "inState": 60,
+    "outOfState": 10
+  },
+  "industrySectors": [
+    { "sector": "Transportation & Construction", "amount": 169480, "percentage": 19 },
+    { "sector": "Oil & Gas", "amount": 107040, "percentage": 12 },
+    { "sector": "Timber & Forestry", "amount": 89200, "percentage": 10 },
+    { "sector": "Agriculture", "amount": 71360, "percentage": 8 },
+    { "sector": "Lawyers & Lobbyists", "amount": 62440, "percentage": 7 },
+    { "sector": "Real Estate", "amount": 53520, "percentage": 6 }
+  ],
+  "lastUpdated": "2026-01-15",
+  "sources": [
+    {
+      "name": "Texas Ethics Commission",
+      "url": "https://www.ethics.state.tx.us/search/cf/",
+      "retrievedDate": "2026-01-15"
+    },
+    {
+      "name": "Transparency USA",
+      "url": "https://www.transparencyusa.org/tx/candidate/robert-nichols",
+      "retrievedDate": "2026-01-15"
+    }
+  ]
+}

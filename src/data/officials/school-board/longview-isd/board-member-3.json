@@ -1,0 +1,20 @@
+{
+  "id": "longview-isd-member-3",
+  "name": "Shan Bauer",
+  "firstName": "Shan",
+  "lastName": "Bauer",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Trustee",
+  "district": "Place 3",
+  "jurisdiction": "Longview ISD",
+  "county": ["Gregg"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1301 E. Young St., Longview, TX 75602",
+    "phone": "(903) 381-2200",
+    "website": "https://www.lisd.org/board"
+  },
+  "bio": "Shan Bauer serves as a Trustee on the Longview ISD Board of Trustees. She is dedicated to supporting student achievement and responsible use of district resources."
+}

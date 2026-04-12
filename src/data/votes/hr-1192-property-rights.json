@@ -1,0 +1,19 @@
+{
+  "id": "hr-1192",
+  "title": "Private Property Rights Protection Act of 2025",
+  "summary": "Strengthens federal protections against eminent domain abuse by prohibiting the use of federal funds for projects where eminent domain is used for private economic development purposes.",
+  "session": "119th Congress",
+  "level": "federal",
+  "chamber": "house",
+  "status": "Passed House",
+  "categories": ["land-and-property-rights"],
+  "eastTexasImpact": "Protects East Texas landowners and ranchers from having their property seized for private development projects, particularly relevant given pipeline and energy infrastructure expansion in the region.",
+  "proEastTexasPosition": "yea",
+  "votes": [
+    { "officialId": "nathaniel-moran", "vote": "yea" },
+    { "officialId": "ted-cruz", "vote": "yea" },
+    { "officialId": "john-cornyn", "vote": "yea" }
+  ],
+  "dateVoted": "2025-03-22",
+  "sourceUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1192"
+}

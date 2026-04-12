@@ -1,0 +1,91 @@
+{
+  "officialId": "john-cornyn",
+  "cycle": "2020",
+  "totalRaised": 38420000,
+  "totalSpent": 35680000,
+  "cashOnHand": 2890000,
+  "topDonors": [
+    {
+      "name": "National Republican Senatorial Committee",
+      "type": "pac",
+      "totalAmount": 175000,
+      "city": "Washington",
+      "state": "DC"
+    },
+    {
+      "name": "Texas Association of Realtors PAC",
+      "type": "pac",
+      "totalAmount": 100000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "AT&T Inc. PAC",
+      "type": "pac",
+      "totalAmount": 85000,
+      "city": "Dallas",
+      "state": "TX"
+    },
+    {
+      "name": "American Bankers Association PAC",
+      "type": "pac",
+      "totalAmount": 75000,
+      "city": "Washington",
+      "state": "DC"
+    },
+    {
+      "name": "ExxonMobil PAC",
+      "type": "pac",
+      "totalAmount": 70000,
+      "city": "Irving",
+      "state": "TX"
+    },
+    {
+      "name": "Lockheed Martin Employees PAC",
+      "type": "pac",
+      "totalAmount": 65000,
+      "city": "Bethesda",
+      "state": "MD"
+    },
+    {
+      "name": "Texas Medical Association PAC",
+      "type": "pac",
+      "totalAmount": 50000,
+      "city": "Austin",
+      "state": "TX"
+    }
+  ],
+  "donorBreakdown": {
+    "individual": 48,
+    "pac": 42,
+    "selfFunded": 0,
+    "smallDollar": 28,
+    "largeDollar": 72
+  },
+  "geographicBreakdown": {
+    "inDistrict": 0,
+    "inState": 52,
+    "outOfState": 48
+  },
+  "industrySectors": [
+    { "sector": "Oil & Gas", "amount": 4610400, "percentage": 12 },
+    { "sector": "Real Estate", "amount": 3842000, "percentage": 10 },
+    { "sector": "Defense & Aerospace", "amount": 3073600, "percentage": 8 },
+    { "sector": "Securities & Investment", "amount": 2689400, "percentage": 7 },
+    { "sector": "Lawyers & Lobbyists", "amount": 2689400, "percentage": 7 },
+    { "sector": "Telecom", "amount": 2305200, "percentage": 6 }
+  ],
+  "lastUpdated": "2026-01-15",
+  "sources": [
+    {
+      "name": "Federal Election Commission",
+      "url": "https://www.fec.gov/data/candidate/S2TX00106/",
+      "retrievedDate": "2026-01-15"
+    },
+    {
+      "name": "OpenSecrets",
+      "url": "https://www.opensecrets.org/members-of-congress/john-cornyn/summary",
+      "retrievedDate": "2026-01-15"
+    }
+  ]
+}

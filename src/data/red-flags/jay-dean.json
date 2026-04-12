@@ -1,0 +1,24 @@
+[
+  {
+    "id": "jd-rf-1",
+    "officialId": "jay-dean",
+    "title": "Received donations from eminent domain beneficiaries",
+    "description": "Received campaign contributions from companies that have used or sought to use eminent domain authority to acquire land in Gregg and Upshur counties for pipeline construction.",
+    "severity": "warning",
+    "category": "conflict-of-interest",
+    "date": "2025-04-01",
+    "sourceUrl": "https://www.ethics.state.tx.us",
+    "whyItMatters": "An official who receives funding from companies seeking eminent domain authority may face a conflict of interest when voting on property rights legislation."
+  },
+  {
+    "id": "jd-rf-2",
+    "officialId": "jay-dean",
+    "title": "Voted for property tax increase despite campaign promise",
+    "description": "Campaigned on a platform of no new taxes but voted for a bill that expanded the authority of special taxing districts in East Texas, effectively enabling property tax increases.",
+    "severity": "critical",
+    "category": "broken-promise",
+    "date": "2025-05-20",
+    "sourceUrl": "https://capitol.texas.gov",
+    "whyItMatters": "Voters elected this official in part based on a no-new-taxes pledge. Voting to expand taxing authority contradicts that promise and increases the tax burden on East Texas property owners."
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": "s-890",
+  "title": "State and Local Tax Fairness Act of 2025",
+  "summary": "Addresses federal tax policies affecting state and local taxation, including provisions related to the SALT deduction cap. Contains mandates that could increase costs passed to local property taxpayers.",
+  "session": "119th Congress",
+  "level": "federal",
+  "chamber": "senate",
+  "status": "Passed Senate",
+  "categories": ["taxes"],
+  "eastTexasImpact": "Could shift tax burdens to East Texas property owners by reducing federal deductibility of state and local taxes, making the effective property tax burden higher for homeowners in Smith and Gregg counties.",
+  "proEastTexasPosition": "nay",
+  "votes": [
+    { "officialId": "ted-cruz", "vote": "nay" },
+    { "officialId": "john-cornyn", "vote": "yea" },
+    { "officialId": "nathaniel-moran", "vote": "not-applicable" }
+  ],
+  "dateVoted": "2025-09-10",
+  "sourceUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/890"
+}

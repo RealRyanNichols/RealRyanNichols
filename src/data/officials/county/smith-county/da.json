@@ -1,0 +1,27 @@
+{
+  "id": "jacob-putman",
+  "name": "Jacob Putman",
+  "firstName": "Jacob",
+  "lastName": "Putman",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Smith County",
+  "county": ["Smith"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 N. Broadway Ave., Suite 400, Tyler, TX 75702",
+    "phone": "(903) 590-1720",
+    "email": "da@smith-county.com",
+    "website": "https://www.smith-county.com/government/elected-officials/district-attorney"
+  },
+  "bio": "Jacob Putman serves as the Smith County District Attorney, responsible for prosecuting felony criminal cases in Smith County. He leads the DA's office and works closely with law enforcement agencies in the county.",
+  "campaignPromises": [
+    "Aggressively prosecute violent crime",
+    "Crack down on drug trafficking in East Texas",
+    "Support victims' rights throughout the legal process",
+    "Run an efficient and transparent DA's office",
+    "Collaborate with law enforcement to improve public safety"
+  ]
+}

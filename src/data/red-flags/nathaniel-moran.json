@@ -1,0 +1,24 @@
+[
+  {
+    "id": "nm-rf-1",
+    "officialId": "nathaniel-moran",
+    "title": "Voted against FEMA funding after East Texas flooding",
+    "description": "Voted against emergency supplemental appropriations that included FEMA disaster relief funding following significant flooding events in East Texas counties within TX-1.",
+    "severity": "critical",
+    "category": "voting-record",
+    "date": "2025-03-15",
+    "sourceUrl": "https://www.congress.gov",
+    "whyItMatters": "East Texas residents affected by flooding were counting on federal disaster relief. Voting against this funding directly harmed constituents in the district."
+  },
+  {
+    "id": "nm-rf-2",
+    "officialId": "nathaniel-moran",
+    "title": "Top donor is out-of-state PAC with oil interests",
+    "description": "Largest campaign contributor is a Houston-based PAC representing oil pipeline companies seeking eminent domain authority in East Texas counties.",
+    "severity": "warning",
+    "category": "funding",
+    "date": "2025-01-20",
+    "sourceUrl": "https://www.fec.gov",
+    "whyItMatters": "There is a potential conflict of interest when an official's top donor directly benefits from land use decisions affecting their constituents' property rights."
+  }
+]

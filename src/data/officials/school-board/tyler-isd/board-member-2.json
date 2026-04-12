@@ -1,0 +1,20 @@
+{
+  "id": "tyler-isd-member-2",
+  "name": "Aaron Martinez",
+  "firstName": "Aaron",
+  "lastName": "Martinez",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Tyler ISD",
+  "county": ["Smith"],
+  "termStart": "2022-05-01",
+  "termEnd": "2026-05-01",
+  "contactInfo": {
+    "office": "1319 Earl Campbell Pkwy., Tyler, TX 75701",
+    "phone": "(903) 262-1000",
+    "website": "https://www.tylerisd.org/board"
+  },
+  "bio": "Aaron Martinez serves as Vice President of the Tyler ISD Board of Trustees. Board members are elected in nonpartisan elections and serve three-year terms overseeing the education of Tyler's students."
+}

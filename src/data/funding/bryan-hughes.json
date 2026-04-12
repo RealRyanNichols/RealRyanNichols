@@ -1,0 +1,93 @@
+{
+  "officialId": "bryan-hughes",
+  "cycle": "2024",
+  "totalRaised": 1285000,
+  "totalSpent": 1042000,
+  "cashOnHand": 345000,
+  "topDonors": [
+    {
+      "name": "Texans for Lawsuit Reform PAC",
+      "type": "pac",
+      "totalAmount": 50000,
+      "city": "Houston",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Association of Realtors PAC",
+      "type": "pac",
+      "totalAmount": 25000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "Empower Texans PAC",
+      "type": "pac",
+      "totalAmount": 20000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "Charles E. Foster",
+      "type": "individual",
+      "totalAmount": 15000,
+      "occupation": "Rancher",
+      "employer": "Self-employed",
+      "city": "Mineola",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Farm Bureau AGFUND",
+      "type": "pac",
+      "totalAmount": 15000,
+      "city": "Waco",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Oil & Gas Association PAC",
+      "type": "pac",
+      "totalAmount": 15000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "East Texas Medical Center PAC",
+      "type": "pac",
+      "totalAmount": 10000,
+      "city": "Tyler",
+      "state": "TX"
+    }
+  ],
+  "donorBreakdown": {
+    "individual": 42,
+    "pac": 50,
+    "selfFunded": 3,
+    "smallDollar": 15,
+    "largeDollar": 85
+  },
+  "geographicBreakdown": {
+    "inDistrict": 35,
+    "inState": 55,
+    "outOfState": 10
+  },
+  "industrySectors": [
+    { "sector": "Lawyers & Lobbyists", "amount": 192750, "percentage": 15 },
+    { "sector": "Oil & Gas", "amount": 167050, "percentage": 13 },
+    { "sector": "Real Estate", "amount": 141350, "percentage": 11 },
+    { "sector": "Agriculture", "amount": 102800, "percentage": 8 },
+    { "sector": "Health Professionals", "amount": 90000, "percentage": 7 },
+    { "sector": "Insurance", "amount": 77100, "percentage": 6 }
+  ],
+  "lastUpdated": "2026-01-15",
+  "sources": [
+    {
+      "name": "Texas Ethics Commission",
+      "url": "https://www.ethics.state.tx.us/search/cf/",
+      "retrievedDate": "2026-01-15"
+    },
+    {
+      "name": "Transparency USA",
+      "url": "https://www.transparencyusa.org/tx/candidate/bryan-hughes",
+      "retrievedDate": "2026-01-15"
+    }
+  ]
+}

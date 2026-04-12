@@ -1,0 +1,176 @@
+// ============================================================
+// East Texas Official Tracker - Type Definitions
+// ============================================================
+
+export type Party = "R" | "D" | "I" | "NP";
+export type GovernmentLevel = "federal" | "state" | "county" | "city" | "school-board";
+export type VoteChoice = "yea" | "nay" | "absent" | "abstain" | "not-applicable";
+export type RedFlagSeverity = "warning" | "critical";
+export type RedFlagCategory = "broken-promise" | "conflict-of-interest" | "ethics" | "funding" | "voting-record" | "other";
+
+export interface ContactInfo {
+  office?: string;
+  phone?: string;
+  email?: string;
+  website?: string;
+  socialMedia?: {
+    twitter?: string;
+    facebook?: string;
+  };
+}
+
+export interface Official {
+  id: string;
+  name: string;
+  firstName: string;
+  lastName: string;
+  photo?: string;
+  party: Party;
+  level: GovernmentLevel;
+  position: string;
+  district?: string;
+  jurisdiction: string;
+  county: string[];
+  termStart: string;
+  termEnd: string;
+  contactInfo: ContactInfo;
+  bio?: string;
+  campaignPromises?: string[];
+}
+
+export interface ScoredVote {
+  billId: string;
+  billTitle: string;
+  session: string;
+  date: string;
+  officialVote: VoteChoice;
+  proEastTexasPosition: "yea" | "nay";
+  aligned: boolean;
+  explanation: string;
+  category: string;
+  weight: number;
+}
+
+export interface CategoryScore {
+  score: number;
+  letterGrade: string;
+  votes: ScoredVote[];
+  weight: number;
+}
+
+export interface ScoreCard {
+  officialId: string;
+  overall: number;
+  letterGrade: string;
+  categories: {
+    waterRights: CategoryScore;
+    landAndPropertyRights: CategoryScore;
+    taxes: CategoryScore;
+    governmentTransparency: CategoryScore;
+    votingRecord: CategoryScore;
+  };
+  lastUpdated: string;
+}
+
+export interface Donor {
+  name: string;
+  type: "individual" | "pac" | "corporation" | "party";
+  totalAmount: number;
+  occupation?: string;
+  employer?: string;
+  city?: string;
+  state?: string;
+}
+
+export interface IndustrySector {
+  sector: string;
+  amount: number;
+  percentage: number;
+}
+
+export interface DataSource {
+  name: string;
+  url: string;
+  retrievedDate: string;
+}
+
+export interface FundingSummary {
+  officialId: string;
+  cycle: string;
+  totalRaised: number;
+  totalSpent: number;
+  cashOnHand: number;
+  topDonors: Donor[];
+  donorBreakdown: {
+    individual: number;
+    pac: number;
+    selfFunded: number;
+    smallDollar: number;
+    largeDollar: number;
+  };
+  geographicBreakdown: {
+    inDistrict: number;
+    inState: number;
+    outOfState: number;
+  };
+  industrySectors: IndustrySector[];
+  lastUpdated: string;
+  sources: DataSource[];
+}
+
+export interface BillVote {
+  officialId: string;
+  vote: VoteChoice;
+}
+
+export interface Bill {
+  id: string;
+  title: string;
+  summary: string;
+  session: string;
+  level: "federal" | "state";
+  chamber: "house" | "senate";
+  status: string;
+  categories: string[];
+  eastTexasImpact: string;
+  proEastTexasPosition: "yea" | "nay";
+  votes: BillVote[];
+  dateVoted: string;
+  sourceUrl: string;
+}
+
+export interface IssueCategory {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  weight: number;
+  color: string;
+}
+
+export interface RedFlag {
+  id: string;
+  officialId: string;
+  title: string;
+  description: string;
+  severity: RedFlagSeverity;
+  category: RedFlagCategory;
+  date: string;
+  sourceUrl: string;
+  whyItMatters: string;
+}
+
+// Computed types used by the UI
+export interface OfficialWithScores extends Official {
+  scoreCard?: ScoreCard;
+  fundingSummary?: FundingSummary;
+  redFlags?: RedFlag[];
+}
+
+export interface ScoreCategory {
+  key: string;
+  name: string;
+  score: number;
+  letterGrade: string;
+  color: string;
+}

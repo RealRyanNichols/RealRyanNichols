@@ -1,0 +1,19 @@
+{
+  "id": "sb-1045",
+  "title": "Government Transparency and Open Meetings Reform Act",
+  "summary": "Strengthens the Texas Open Meetings Act and Public Information Act by closing loopholes, increasing penalties for violations, requiring online posting of government spending data, and expanding public access to records.",
+  "session": "89th Texas Legislature",
+  "level": "state",
+  "chamber": "senate",
+  "status": "In Committee",
+  "categories": ["government-transparency"],
+  "eastTexasImpact": "Would make it easier for East Texas residents to access county and city spending records, monitor local government meetings, and hold officials accountable. Addresses complaints about closed-door decision making in several East Texas jurisdictions.",
+  "proEastTexasPosition": "yea",
+  "votes": [
+    { "officialId": "bryan-hughes", "vote": "yea" },
+    { "officialId": "robert-nichols", "vote": "nay" },
+    { "officialId": "jay-dean", "vote": "absent" }
+  ],
+  "dateVoted": "2025-04-30",
+  "sourceUrl": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1045"
+}

@@ -1,0 +1,163 @@
+{
+  "officialId": "bryan-hughes",
+  "overall": 80,
+  "letterGrade": "A-",
+  "categories": {
+    "waterRights": {
+      "score": 85,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "sb-312",
+          "billTitle": "Groundwater Conservation District Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Authored and passed legislation strengthening East Texas landowner groundwater rights.",
+          "category": "water-rights",
+          "weight": 10
+        },
+        {
+          "billId": "sb-780",
+          "billTitle": "Lake and Reservoir Maintenance Funding Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to fund maintenance and improvement of East Texas lakes and reservoirs critical to regional water supply.",
+          "category": "water-rights",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "landAndPropertyRights": {
+      "score": 90,
+      "letterGrade": "A",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted for comprehensive property tax relief protecting East Texas homeowners and agricultural land.",
+          "category": "land-and-property-rights",
+          "weight": 10
+        },
+        {
+          "billId": "sb-455",
+          "billTitle": "Mineral Rights Protection and Landowner Notification Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-03-15",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Authored legislation requiring better notification to landowners about mineral rights activities on their property.",
+          "category": "land-and-property-rights",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    },
+    "taxes": {
+      "score": 85,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported property tax cuts delivering real relief to East Texas taxpayers.",
+          "category": "taxes",
+          "weight": 10
+        },
+        {
+          "billId": "sb-2100",
+          "billTitle": "Unfunded Mandate Prevention Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-10",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to prevent the state from imposing unfunded mandates on counties and cities that drive up local property taxes.",
+          "category": "taxes",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "governmentTransparency": {
+      "score": 75,
+      "letterGrade": "B",
+      "votes": [
+        {
+          "billId": "sb-1045",
+          "billTitle": "Government Transparency and Open Meetings Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-30",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to strengthen open meetings requirements and public access to government records.",
+          "category": "government-transparency",
+          "weight": 9
+        },
+        {
+          "billId": "sb-1600",
+          "billTitle": "Ethics Commission Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-05",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against expanding the Texas Ethics Commission's authority to investigate complaints, raising concerns about accountability.",
+          "category": "government-transparency",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "votingRecord": {
+      "score": 65,
+      "letterGrade": "C+",
+      "votes": [
+        {
+          "billId": "sb-312",
+          "billTitle": "Groundwater Conservation District Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Delivered on campaign promise to protect East Texas water rights through legislative action.",
+          "category": "voting-record",
+          "weight": 10
+        },
+        {
+          "billId": "sb-3300",
+          "billTitle": "School Voucher and Education Savings Account Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-26",
+          "officialVote": "yea",
+          "proEastTexasPosition": "nay",
+          "aligned": false,
+          "explanation": "Supported school voucher legislation that could divert funding from rural East Texas public school districts with no private school alternatives.",
+          "category": "voting-record",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    }
+  },
+  "lastUpdated": "2026-03-15"
+}

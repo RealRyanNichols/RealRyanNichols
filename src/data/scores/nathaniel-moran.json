@@ -1,0 +1,175 @@
+{
+  "officialId": "nathaniel-moran",
+  "overall": 72,
+  "letterGrade": "B-",
+  "categories": {
+    "waterRights": {
+      "score": 80,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hr-2847",
+          "billTitle": "Water Resources Development Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-06-15",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to authorize critical Sabine River Basin and Lake Palestine infrastructure projects benefiting East Texas water supply.",
+          "category": "water-rights",
+          "weight": 10
+        },
+        {
+          "billId": "hr-3401",
+          "billTitle": "Federal Water Infrastructure Modernization Act",
+          "session": "119th Congress",
+          "date": "2025-08-12",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported federal investment in aging rural water systems, including grants for East Texas water districts.",
+          "category": "water-rights",
+          "weight": 8
+        },
+        {
+          "billId": "hr-4102",
+          "billTitle": "EPA Regulatory Overreach Prevention Act",
+          "session": "119th Congress",
+          "date": "2025-10-05",
+          "officialVote": "absent",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Was absent for a key vote to limit EPA authority over Texas waters, a missed opportunity to protect East Texas interests.",
+          "category": "water-rights",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "landAndPropertyRights": {
+      "score": 85,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hr-1192",
+          "billTitle": "Private Property Rights Protection Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-03-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to strengthen federal protections against eminent domain abuse, protecting East Texas landowners from property seizure for private development.",
+          "category": "land-and-property-rights",
+          "weight": 10
+        },
+        {
+          "billId": "hr-2205",
+          "billTitle": "Rural Landowner Protection Act",
+          "session": "119th Congress",
+          "date": "2025-05-08",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported legislation protecting rural landowners from federal overreach on land use and environmental regulations.",
+          "category": "land-and-property-rights",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "taxes": {
+      "score": 65,
+      "letterGrade": "C+",
+      "votes": [
+        {
+          "billId": "hr-5510",
+          "billTitle": "Tax Cuts Extension and Simplification Act",
+          "session": "119th Congress",
+          "date": "2025-07-20",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to extend individual tax cuts and increase the standard deduction, benefiting East Texas families and small businesses.",
+          "category": "taxes",
+          "weight": 10
+        },
+        {
+          "billId": "hr-6230",
+          "billTitle": "Omnibus Appropriations Act of 2026",
+          "session": "119th Congress",
+          "date": "2025-12-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "nay",
+          "aligned": false,
+          "explanation": "Voted for a massive spending bill that increases the federal deficit, contradicting promises of fiscal restraint.",
+          "category": "taxes",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    },
+    "governmentTransparency": {
+      "score": 60,
+      "letterGrade": "C",
+      "votes": [
+        {
+          "billId": "hr-980",
+          "billTitle": "Congressional Transparency and Accountability Act",
+          "session": "119th Congress",
+          "date": "2025-02-14",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported requiring more detailed disclosure of Congressional spending and lobbying contacts.",
+          "category": "government-transparency",
+          "weight": 8
+        },
+        {
+          "billId": "hr-3680",
+          "billTitle": "FOIA Modernization Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-09-25",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against expanding public access to federal records, undermining government transparency.",
+          "category": "government-transparency",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "votingRecord": {
+      "score": 70,
+      "letterGrade": "B-",
+      "votes": [
+        {
+          "billId": "hr-100",
+          "billTitle": "Secure the Border Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-01-28",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Followed through on campaign promise to support border security legislation.",
+          "category": "voting-record",
+          "weight": 9
+        },
+        {
+          "billId": "hr-6230",
+          "billTitle": "Omnibus Appropriations Act of 2026",
+          "session": "119th Congress",
+          "date": "2025-12-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "nay",
+          "aligned": false,
+          "explanation": "Voted for omnibus spending despite campaign promises to reduce federal spending, breaking a core commitment to constituents.",
+          "category": "voting-record",
+          "weight": 10
+        }
+      ],
+      "weight": 20
+    }
+  },
+  "lastUpdated": "2026-03-15"
+}

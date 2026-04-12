@@ -1,0 +1,95 @@
+{
+  "officialId": "nathaniel-moran",
+  "cycle": "2024",
+  "totalRaised": 1842500,
+  "totalSpent": 1654300,
+  "cashOnHand": 312800,
+  "topDonors": [
+    {
+      "name": "East Texas Energy PAC",
+      "type": "pac",
+      "totalAmount": 15000,
+      "city": "Tyler",
+      "state": "TX"
+    },
+    {
+      "name": "National Republican Congressional Committee",
+      "type": "pac",
+      "totalAmount": 12500,
+      "city": "Washington",
+      "state": "DC"
+    },
+    {
+      "name": "Texas Farm Bureau AGFUND",
+      "type": "pac",
+      "totalAmount": 10000,
+      "city": "Waco",
+      "state": "TX"
+    },
+    {
+      "name": "James R. Henderson",
+      "type": "individual",
+      "totalAmount": 6600,
+      "occupation": "Attorney",
+      "employer": "Henderson Law Firm",
+      "city": "Tyler",
+      "state": "TX"
+    },
+    {
+      "name": "Brookshire Grocery Company PAC",
+      "type": "pac",
+      "totalAmount": 5000,
+      "city": "Tyler",
+      "state": "TX"
+    },
+    {
+      "name": "Robert L. Parker",
+      "type": "individual",
+      "totalAmount": 6600,
+      "occupation": "Oil and Gas Executive",
+      "employer": "Parker Petroleum",
+      "city": "Longview",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Association of Realtors PAC",
+      "type": "pac",
+      "totalAmount": 5000,
+      "city": "Austin",
+      "state": "TX"
+    }
+  ],
+  "donorBreakdown": {
+    "individual": 58,
+    "pac": 35,
+    "selfFunded": 2,
+    "smallDollar": 22,
+    "largeDollar": 78
+  },
+  "geographicBreakdown": {
+    "inDistrict": 42,
+    "inState": 31,
+    "outOfState": 27
+  },
+  "industrySectors": [
+    { "sector": "Oil & Gas", "amount": 285000, "percentage": 15 },
+    { "sector": "Real Estate", "amount": 221100, "percentage": 12 },
+    { "sector": "Health Professionals", "amount": 184250, "percentage": 10 },
+    { "sector": "Lawyers & Lobbyists", "amount": 166425, "percentage": 9 },
+    { "sector": "Agriculture", "amount": 147400, "percentage": 8 },
+    { "sector": "Retired", "amount": 129375, "percentage": 7 }
+  ],
+  "lastUpdated": "2026-01-15",
+  "sources": [
+    {
+      "name": "Federal Election Commission",
+      "url": "https://www.fec.gov/data/candidate/H2TX01184/",
+      "retrievedDate": "2026-01-15"
+    },
+    {
+      "name": "OpenSecrets",
+      "url": "https://www.opensecrets.org/members-of-congress/nathaniel-moran/summary",
+      "retrievedDate": "2026-01-15"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "tc-rf-1",
+    "officialId": "ted-cruz",
+    "title": "Missed key water infrastructure vote",
+    "description": "Was absent for a critical Senate vote on the Water Resources Development Act that included funding for East Texas water infrastructure projects and Sabine River Authority improvements.",
+    "severity": "warning",
+    "category": "voting-record",
+    "date": "2025-06-10",
+    "sourceUrl": "https://www.senate.gov",
+    "whyItMatters": "East Texas water infrastructure needs are urgent. Being absent for this vote meant the region lost a voice on a bill that directly affects local water quality and access."
+  }
+]

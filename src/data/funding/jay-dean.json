@@ -1,0 +1,85 @@
+{
+  "officialId": "jay-dean",
+  "cycle": "2024",
+  "totalRaised": 385000,
+  "totalSpent": 312000,
+  "cashOnHand": 98500,
+  "topDonors": [
+    {
+      "name": "Texans for Lawsuit Reform PAC",
+      "type": "pac",
+      "totalAmount": 15000,
+      "city": "Houston",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Realtors PAC",
+      "type": "pac",
+      "totalAmount": 10000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "Associated General Contractors of Texas PAC",
+      "type": "pac",
+      "totalAmount": 7500,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "William T. Marshall",
+      "type": "individual",
+      "totalAmount": 5000,
+      "occupation": "Business Owner",
+      "employer": "Marshall Industries",
+      "city": "Longview",
+      "state": "TX"
+    },
+    {
+      "name": "East Texas Builders Association PAC",
+      "type": "pac",
+      "totalAmount": 5000,
+      "city": "Longview",
+      "state": "TX"
+    },
+    {
+      "name": "Texas Farm Bureau AGFUND",
+      "type": "pac",
+      "totalAmount": 5000,
+      "city": "Waco",
+      "state": "TX"
+    }
+  ],
+  "donorBreakdown": {
+    "individual": 45,
+    "pac": 48,
+    "selfFunded": 5,
+    "smallDollar": 18,
+    "largeDollar": 82
+  },
+  "geographicBreakdown": {
+    "inDistrict": 38,
+    "inState": 52,
+    "outOfState": 10
+  },
+  "industrySectors": [
+    { "sector": "Real Estate & Construction", "amount": 65450, "percentage": 17 },
+    { "sector": "Oil & Gas", "amount": 50050, "percentage": 13 },
+    { "sector": "Agriculture", "amount": 34650, "percentage": 9 },
+    { "sector": "Lawyers & Lobbyists", "amount": 30800, "percentage": 8 },
+    { "sector": "Health Professionals", "amount": 26950, "percentage": 7 }
+  ],
+  "lastUpdated": "2026-01-15",
+  "sources": [
+    {
+      "name": "Texas Ethics Commission",
+      "url": "https://www.ethics.state.tx.us/search/cf/",
+      "retrievedDate": "2026-01-15"
+    },
+    {
+      "name": "Transparency USA",
+      "url": "https://www.transparencyusa.org/tx/candidate/jay-dean",
+      "retrievedDate": "2026-01-15"
+    }
+  ]
+}

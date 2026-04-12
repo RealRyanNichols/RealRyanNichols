@@ -1,0 +1,24 @@
+[
+  {
+    "id": "rf-cornyn-001",
+    "officialId": "john-cornyn",
+    "title": "Voted for SALT Bill Harmful to East Texas Property Owners",
+    "description": "Senator Cornyn voted for the State and Local Tax Fairness Act of 2025, which restructured SALT deductions in a way that could increase the effective tax burden on East Texas homeowners. This vote contradicted his stated commitment to lowering taxes for Texans.",
+    "severity": "warning",
+    "category": "broken-promise",
+    "date": "2025-09-10",
+    "sourceUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/890",
+    "whyItMatters": "East Texas property owners already face rising appraisal values. A vote that could increase their effective tax burden breaks the core promise of tax relief and shows misalignment with constituents who do not benefit from the SALT provisions designed for high-tax states."
+  },
+  {
+    "id": "rf-cornyn-002",
+    "officialId": "john-cornyn",
+    "title": "Missed Key Votes on Veterans Healthcare and Water Policy",
+    "description": "Senator Cornyn was absent for votes on the Veterans Healthcare Expansion Act and the Clean Water Act Jurisdictional Clarity Act in 2025, both of which had significant implications for East Texas. His absence rate on East Texas priority issues exceeded 15% for the session.",
+    "severity": "warning",
+    "category": "voting-record",
+    "date": "2026-02-10",
+    "sourceUrl": "https://www.govtrack.us/congress/members/john_cornyn/300027",
+    "whyItMatters": "East Texas has a large veteran population and significant water policy concerns. Absent votes on these issues mean East Texas had no voice in critical decisions. Constituents deserve a senator who shows up for the issues that matter to them."
+  }
+]

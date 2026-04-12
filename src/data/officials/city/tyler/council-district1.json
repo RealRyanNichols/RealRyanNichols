@@ -1,0 +1,20 @@
+{
+  "id": "tyler-council-d1",
+  "name": "Council Member, District 1",
+  "firstName": "Council",
+  "lastName": "Member",
+  "party": "NP",
+  "level": "city",
+  "position": "City Council Member, District 1",
+  "district": "District 1",
+  "jurisdiction": "City of Tyler",
+  "county": ["Smith"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "212 N. Bonner Ave., Tyler, TX 75702",
+    "phone": "(903) 531-1100",
+    "website": "https://www.tylertexas.com/government/mayor-city-council"
+  },
+  "bio": "Placeholder entry for the Tyler City Council Member representing District 1. Tyler operates under a council-manager form of government where council members set policy and the city manager handles day-to-day operations."
+}

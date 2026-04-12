@@ -1,0 +1,175 @@
+{
+  "officialId": "jay-dean",
+  "overall": 78,
+  "letterGrade": "B+",
+  "categories": {
+    "waterRights": {
+      "score": 80,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "sb-312",
+          "billTitle": "Groundwater Conservation District Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to strengthen East Texas landowner groundwater rights and limit excessive GCD regulations.",
+          "category": "water-rights",
+          "weight": 10
+        },
+        {
+          "billId": "hb-2890",
+          "billTitle": "Sabine River Authority Oversight Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-15",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported increased legislative oversight of the Sabine River Authority to protect East Texas water interests.",
+          "category": "water-rights",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "landAndPropertyRights": {
+      "score": 85,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted for comprehensive property tax relief including increased homestead exemptions benefiting East Texas homeowners.",
+          "category": "land-and-property-rights",
+          "weight": 10
+        },
+        {
+          "billId": "hb-3200",
+          "billTitle": "Eminent Domain Reform and Landowner Protection Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-25",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported strengthened eminent domain protections for Texas landowners facing pipeline and utility easements.",
+          "category": "land-and-property-rights",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    },
+    "taxes": {
+      "score": 82,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted for significant property tax reductions including compressed school district rates.",
+          "category": "taxes",
+          "weight": 10
+        },
+        {
+          "billId": "hb-4510",
+          "billTitle": "Small Business Tax Exemption Expansion Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-20",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported expanding franchise tax exemptions for small businesses, helping East Texas entrepreneurs.",
+          "category": "taxes",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "governmentTransparency": {
+      "score": 60,
+      "letterGrade": "C",
+      "votes": [
+        {
+          "billId": "sb-1045",
+          "billTitle": "Government Transparency and Open Meetings Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-30",
+          "officialVote": "absent",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Was absent for an important vote on strengthening open meetings and public records access in Texas.",
+          "category": "government-transparency",
+          "weight": 9
+        },
+        {
+          "billId": "hb-1200",
+          "billTitle": "Campaign Finance Disclosure Modernization Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-03-28",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to require electronic filing and real-time disclosure of campaign contributions.",
+          "category": "government-transparency",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "votingRecord": {
+      "score": 82,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hb-1750",
+          "billTitle": "Texas Property Tax Relief and Reform Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-18",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Delivered on campaign promise to lower property taxes for East Texas homeowners.",
+          "category": "voting-record",
+          "weight": 10
+        },
+        {
+          "billId": "hb-550",
+          "billTitle": "Rural Broadband Expansion Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-04-05",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Followed through on campaign promise to improve rural broadband access for East Texas communities.",
+          "category": "voting-record",
+          "weight": 8
+        },
+        {
+          "billId": "hb-6700",
+          "billTitle": "State Budget and Appropriations Act",
+          "session": "89th Texas Legislature",
+          "date": "2025-05-28",
+          "officialVote": "yea",
+          "proEastTexasPosition": "nay",
+          "aligned": false,
+          "explanation": "Voted for a state budget with significant spending increases despite pledging fiscal restraint.",
+          "category": "voting-record",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    }
+  },
+  "lastUpdated": "2026-03-15"
+}

@@ -1,0 +1,175 @@
+{
+  "officialId": "ted-cruz",
+  "overall": 65,
+  "letterGrade": "D+",
+  "categories": {
+    "waterRights": {
+      "score": 50,
+      "letterGrade": "D",
+      "votes": [
+        {
+          "billId": "hr-2847",
+          "billTitle": "Water Resources Development Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-06-15",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against the Water Resources Development Act which included critical East Texas water infrastructure projects for the Sabine River Basin.",
+          "category": "water-rights",
+          "weight": 10
+        },
+        {
+          "billId": "s-1580",
+          "billTitle": "Rural Water System Resilience Act",
+          "session": "119th Congress",
+          "date": "2025-07-22",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Opposed funding for rural water system improvements that would have benefited East Texas communities still recovering from infrastructure strain.",
+          "category": "water-rights",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "landAndPropertyRights": {
+      "score": 80,
+      "letterGrade": "A-",
+      "votes": [
+        {
+          "billId": "hr-1192",
+          "billTitle": "Private Property Rights Protection Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-03-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported strong federal protections against eminent domain abuse, consistent with property rights stance.",
+          "category": "land-and-property-rights",
+          "weight": 10
+        },
+        {
+          "billId": "s-2240",
+          "billTitle": "Federal Land Regulatory Reform Act",
+          "session": "119th Congress",
+          "date": "2025-08-15",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to reduce federal regulatory burden on private landowners, supporting East Texas ranchers and timber operators.",
+          "category": "land-and-property-rights",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "taxes": {
+      "score": 70,
+      "letterGrade": "B-",
+      "votes": [
+        {
+          "billId": "s-890",
+          "billTitle": "State and Local Tax Fairness Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-09-10",
+          "officialVote": "nay",
+          "proEastTexasPosition": "nay",
+          "aligned": true,
+          "explanation": "Correctly opposed legislation that would have shifted tax burdens to East Texas property owners.",
+          "category": "taxes",
+          "weight": 10
+        },
+        {
+          "billId": "s-3105",
+          "billTitle": "Balanced Budget and Spending Control Act",
+          "session": "119th Congress",
+          "date": "2025-11-05",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported spending controls and deficit reduction measures that protect future taxpayers.",
+          "category": "taxes",
+          "weight": 8
+        },
+        {
+          "billId": "s-4200",
+          "billTitle": "Small Business Tax Relief Act",
+          "session": "119th Congress",
+          "date": "2026-01-15",
+          "officialVote": "absent",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Missed a vote on tax relief for small businesses, which are the backbone of the East Texas economy.",
+          "category": "taxes",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "governmentTransparency": {
+      "score": 55,
+      "letterGrade": "D+",
+      "votes": [
+        {
+          "billId": "s-650",
+          "billTitle": "Senate Ethics and Disclosure Reform Act",
+          "session": "119th Congress",
+          "date": "2025-04-10",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Opposed enhanced financial disclosure requirements for senators, undermining public trust in government accountability.",
+          "category": "government-transparency",
+          "weight": 9
+        },
+        {
+          "billId": "s-1820",
+          "billTitle": "Congressional Stock Trading Ban Act",
+          "session": "119th Congress",
+          "date": "2025-06-28",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against banning stock trading by members of Congress, a significant transparency issue for constituents.",
+          "category": "government-transparency",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "votingRecord": {
+      "score": 70,
+      "letterGrade": "B-",
+      "votes": [
+        {
+          "billId": "s-115",
+          "billTitle": "Secure the Border Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-02-05",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Followed through on signature campaign promise of strong border security legislation.",
+          "category": "voting-record",
+          "weight": 10
+        },
+        {
+          "billId": "s-3700",
+          "billTitle": "Energy Independence and Production Act",
+          "session": "119th Congress",
+          "date": "2025-10-20",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported energy production legislation aligning with campaign commitment to Texas energy independence.",
+          "category": "voting-record",
+          "weight": 9
+        }
+      ],
+      "weight": 20
+    }
+  },
+  "lastUpdated": "2026-03-15"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "bill-stoudt",
+  "name": "Bill Stoudt",
+  "firstName": "Bill",
+  "lastName": "Stoudt",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Gregg County",
+  "county": ["Gregg"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "101 E. Methvin St., Suite 200, Longview, TX 75601",
+    "phone": "(903) 236-8430",
+    "email": "county.judge@co.gregg.tx.us",
+    "website": "https://www.co.gregg.tx.us/page/gregg.CountyJudge"
+  },
+  "bio": "Bill Stoudt serves as the Gregg County Judge, the presiding officer of the Commissioners Court and chief executive of Gregg County. He oversees county operations including the budget, emergency management, and county infrastructure serving the greater Longview area.",
+  "campaignPromises": [
+    "Keep Gregg County taxes competitive",
+    "Improve county infrastructure and services",
+    "Support economic development in the Longview area",
+    "Maintain strong public safety programs",
+    "Run an open and transparent county government"
+  ]
+}

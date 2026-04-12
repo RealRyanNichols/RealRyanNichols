@@ -1,0 +1,19 @@
+{
+  "id": "hr-2847",
+  "title": "Water Resources Development Act of 2025",
+  "summary": "Authorizes Army Corps of Engineers water infrastructure projects, including reservoir maintenance, flood control, and navigation improvements. Contains provisions affecting Sabine River Authority projects and East Texas water supply planning.",
+  "session": "119th Congress",
+  "level": "federal",
+  "chamber": "house",
+  "status": "Passed House",
+  "categories": ["water-rights"],
+  "eastTexasImpact": "Includes authorization for Sabine River Basin flood mitigation and Lake Palestine water supply infrastructure improvements critical to East Texas communities.",
+  "proEastTexasPosition": "yea",
+  "votes": [
+    { "officialId": "nathaniel-moran", "vote": "yea" },
+    { "officialId": "ted-cruz", "vote": "nay" },
+    { "officialId": "john-cornyn", "vote": "yea" }
+  ],
+  "dateVoted": "2025-06-15",
+  "sourceUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2847"
+}

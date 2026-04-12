@@ -1,0 +1,98 @@
+{
+  "officialId": "ted-cruz",
+  "cycle": "2024",
+  "totalRaised": 42560000,
+  "totalSpent": 39870000,
+  "cashOnHand": 3215000,
+  "topDonors": [
+    {
+      "name": "Senate Conservatives Fund",
+      "type": "pac",
+      "totalAmount": 250000,
+      "city": "Washington",
+      "state": "DC"
+    },
+    {
+      "name": "Club for Growth",
+      "type": "pac",
+      "totalAmount": 200000,
+      "city": "Washington",
+      "state": "DC"
+    },
+    {
+      "name": "Texas Oil & Gas Association PAC",
+      "type": "pac",
+      "totalAmount": 150000,
+      "city": "Austin",
+      "state": "TX"
+    },
+    {
+      "name": "National Rifle Association PAC",
+      "type": "pac",
+      "totalAmount": 100000,
+      "city": "Fairfax",
+      "state": "VA"
+    },
+    {
+      "name": "Goldman Sachs Group",
+      "type": "corporation",
+      "totalAmount": 85000,
+      "city": "New York",
+      "state": "NY"
+    },
+    {
+      "name": "Koch Industries",
+      "type": "corporation",
+      "totalAmount": 75000,
+      "city": "Wichita",
+      "state": "KS"
+    },
+    {
+      "name": "National Republican Senatorial Committee",
+      "type": "pac",
+      "totalAmount": 125000,
+      "city": "Washington",
+      "state": "DC"
+    },
+    {
+      "name": "Hillcrest Capital Management",
+      "type": "corporation",
+      "totalAmount": 65000,
+      "city": "Dallas",
+      "state": "TX"
+    }
+  ],
+  "donorBreakdown": {
+    "individual": 52,
+    "pac": 38,
+    "selfFunded": 0,
+    "smallDollar": 35,
+    "largeDollar": 65
+  },
+  "geographicBreakdown": {
+    "inDistrict": 0,
+    "inState": 45,
+    "outOfState": 55
+  },
+  "industrySectors": [
+    { "sector": "Oil & Gas", "amount": 5532800, "percentage": 13 },
+    { "sector": "Securities & Investment", "amount": 4256000, "percentage": 10 },
+    { "sector": "Lawyers & Lobbyists", "amount": 3830400, "percentage": 9 },
+    { "sector": "Real Estate", "amount": 3404800, "percentage": 8 },
+    { "sector": "Retired", "amount": 2979200, "percentage": 7 },
+    { "sector": "Health Professionals", "amount": 2553600, "percentage": 6 }
+  ],
+  "lastUpdated": "2026-01-15",
+  "sources": [
+    {
+      "name": "Federal Election Commission",
+      "url": "https://www.fec.gov/data/candidate/S2TX00312/",
+      "retrievedDate": "2026-01-15"
+    },
+    {
+      "name": "OpenSecrets",
+      "url": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary",
+      "retrievedDate": "2026-01-15"
+    }
+  ]
+}

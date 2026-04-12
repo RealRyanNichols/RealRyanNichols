@@ -1,0 +1,27 @@
+{
+  "id": "neal-franklin",
+  "name": "Neal Franklin",
+  "firstName": "Neal",
+  "lastName": "Franklin",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Smith County",
+  "county": ["Smith"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 N. Broadway Ave., Suite 300, Tyler, TX 75702",
+    "phone": "(903) 590-4600",
+    "email": "county.judge@smith-county.com",
+    "website": "https://www.smith-county.com/government/elected-officials/county-judge"
+  },
+  "bio": "Neal Franklin serves as the Smith County Judge, the chief executive and administrative officer of Smith County. The county judge presides over the Commissioners Court and oversees county government operations including budgeting, emergency management, and infrastructure.",
+  "campaignPromises": [
+    "Keep Smith County taxes low while maintaining services",
+    "Improve county roads and infrastructure",
+    "Support law enforcement and public safety",
+    "Maintain transparent county government operations",
+    "Plan responsibly for county growth"
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "officialId": "john-cornyn",
+  "overall": 68,
+  "letterGrade": "C+",
+  "categories": {
+    "waterRights": {
+      "score": 75,
+      "letterGrade": "B",
+      "votes": [
+        {
+          "billId": "hr-2847",
+          "billTitle": "Water Resources Development Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-06-15",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted for water infrastructure projects including East Texas Sabine River Basin improvements.",
+          "category": "water-rights",
+          "weight": 10
+        },
+        {
+          "billId": "s-1580",
+          "billTitle": "Rural Water System Resilience Act",
+          "session": "119th Congress",
+          "date": "2025-07-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported federal funding for rural water system improvements across Texas, including East Texas communities.",
+          "category": "water-rights",
+          "weight": 8
+        },
+        {
+          "billId": "s-2960",
+          "billTitle": "Clean Water Act Jurisdictional Clarity Act",
+          "session": "119th Congress",
+          "date": "2025-09-18",
+          "officialVote": "absent",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Missed vote to limit federal jurisdiction over Texas waterways, a key issue for East Texas landowners near streams and wetlands.",
+          "category": "water-rights",
+          "weight": 7
+        }
+      ],
+      "weight": 20
+    },
+    "landAndPropertyRights": {
+      "score": 75,
+      "letterGrade": "B",
+      "votes": [
+        {
+          "billId": "hr-1192",
+          "billTitle": "Private Property Rights Protection Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-03-22",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported eminent domain protections for property owners.",
+          "category": "land-and-property-rights",
+          "weight": 10
+        },
+        {
+          "billId": "s-2240",
+          "billTitle": "Federal Land Regulatory Reform Act",
+          "session": "119th Congress",
+          "date": "2025-08-15",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against reducing federal regulatory burden on private landowners, disappointing East Texas ranchers.",
+          "category": "land-and-property-rights",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "taxes": {
+      "score": 55,
+      "letterGrade": "D+",
+      "votes": [
+        {
+          "billId": "s-890",
+          "billTitle": "State and Local Tax Fairness Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-09-10",
+          "officialVote": "yea",
+          "proEastTexasPosition": "nay",
+          "aligned": false,
+          "explanation": "Voted for legislation that could shift tax burdens to East Texas property owners, against local taxpayer interests.",
+          "category": "taxes",
+          "weight": 10
+        },
+        {
+          "billId": "s-3105",
+          "billTitle": "Balanced Budget and Spending Control Act",
+          "session": "119th Congress",
+          "date": "2025-11-05",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against spending controls, inconsistent with fiscal conservative promises made to Texas voters.",
+          "category": "taxes",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "governmentTransparency": {
+      "score": 65,
+      "letterGrade": "C+",
+      "votes": [
+        {
+          "billId": "s-650",
+          "billTitle": "Senate Ethics and Disclosure Reform Act",
+          "session": "119th Congress",
+          "date": "2025-04-10",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported enhanced financial disclosure requirements for senators, promoting government accountability.",
+          "category": "government-transparency",
+          "weight": 9
+        },
+        {
+          "billId": "s-1820",
+          "billTitle": "Congressional Stock Trading Ban Act",
+          "session": "119th Congress",
+          "date": "2025-06-28",
+          "officialVote": "nay",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Voted against banning Congressional stock trading despite public support for the measure.",
+          "category": "government-transparency",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    },
+    "votingRecord": {
+      "score": 70,
+      "letterGrade": "B-",
+      "votes": [
+        {
+          "billId": "s-115",
+          "billTitle": "Secure the Border Act of 2025",
+          "session": "119th Congress",
+          "date": "2025-02-05",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Supported border security legislation consistent with campaign promises.",
+          "category": "voting-record",
+          "weight": 10
+        },
+        {
+          "billId": "s-3700",
+          "billTitle": "Energy Independence and Production Act",
+          "session": "119th Congress",
+          "date": "2025-10-20",
+          "officialVote": "yea",
+          "proEastTexasPosition": "yea",
+          "aligned": true,
+          "explanation": "Voted to support American energy production, aligning with Texas energy interests.",
+          "category": "voting-record",
+          "weight": 9
+        },
+        {
+          "billId": "s-4500",
+          "billTitle": "Veterans Healthcare Expansion Act",
+          "session": "119th Congress",
+          "date": "2026-02-10",
+          "officialVote": "absent",
+          "proEastTexasPosition": "yea",
+          "aligned": false,
+          "explanation": "Missed vote on veterans healthcare despite campaigning on supporting veterans, affecting East Texas VA facilities.",
+          "category": "voting-record",
+          "weight": 8
+        }
+      ],
+      "weight": 20
+    }
+  },
+  "lastUpdated": "2026-03-15"
+}

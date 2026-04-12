@@ -1,0 +1,27 @@
+{
+  "id": "floyd-wingo",
+  "name": "Floyd Wingo",
+  "firstName": "Floyd",
+  "lastName": "Wingo",
+  "party": "R",
+  "level": "county",
+  "position": "Commissioner, Precinct 1",
+  "district": "Precinct 1",
+  "jurisdiction": "Gregg County",
+  "county": ["Gregg"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "101 E. Methvin St., Longview, TX 75601",
+    "phone": "(903) 236-8441",
+    "email": "pct1@co.gregg.tx.us",
+    "website": "https://www.co.gregg.tx.us/page/gregg.Commissioners"
+  },
+  "bio": "Floyd Wingo serves as the Gregg County Commissioner for Precinct 1. He oversees road maintenance and infrastructure in his precinct and participates in Commissioners Court decisions on the county budget and tax rate.",
+  "campaignPromises": [
+    "Maintain and improve Precinct 1 roads",
+    "Keep the county tax rate low",
+    "Support county first responders",
+    "Promote responsible county growth"
+  ]
+}

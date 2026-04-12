@@ -1,0 +1,20 @@
+{
+  "id": "longview-isd-member-2",
+  "name": "Ted Beard",
+  "firstName": "Ted",
+  "lastName": "Beard",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Longview ISD",
+  "county": ["Gregg"],
+  "termStart": "2022-05-01",
+  "termEnd": "2026-05-01",
+  "contactInfo": {
+    "office": "1301 E. Young St., Longview, TX 75602",
+    "phone": "(903) 381-2200",
+    "website": "https://www.lisd.org/board"
+  },
+  "bio": "Ted Beard serves as Vice President of the Longview ISD Board of Trustees. He works with fellow board members to set policy and ensure quality education for Longview students."
+}
