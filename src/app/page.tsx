@@ -36,16 +36,23 @@ const levelCards = [
   },
 ];
 
-const stats = [
-  { label: "Officials Tracked", value: "29" },
-  { label: "Issue Categories", value: "5" },
-  { label: "Counties Covered", value: "2" },
-  { label: "School Districts", value: "2" },
-];
-
 export default function HomePage() {
   const officials = getAllOfficials();
   const issueCategories = getIssueCategories();
+
+  // Compute real stats from data
+  const counties = new Set(officials.flatMap((o) => o.county));
+  const schoolBoards = officials.filter((o) => o.level === "school-board");
+  const schoolDistricts = new Set(
+    schoolBoards.map((o) => o.jurisdiction)
+  );
+
+  const stats = [
+    { label: "Officials Tracked", value: String(officials.length) },
+    { label: "Issue Categories", value: String(issueCategories.length) },
+    { label: "Counties Covered", value: String(counties.size) },
+    { label: "School Districts", value: String(schoolDistricts.size) },
+  ];
 
   const featuredOfficials = officials
     .filter((o) => o.level === "federal" || o.level === "state")
