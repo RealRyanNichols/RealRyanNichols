@@ -1,0 +1,27 @@
+{
+  "id": "rusk-county-sheriff",
+  "name": "Johnnie Allen",
+  "firstName": "Johnnie",
+  "lastName": "Allen",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Rusk County",
+  "county": ["Rusk"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "115 N. Main St., Suite 201, Henderson, TX 75652",
+    "phone": "(903) 657-3581",
+    "email": "sheriff@ruskcountytx.org",
+    "website": "https://www.ruskcountytx.org/sheriff"
+  },
+  "bio": "Johnnie Allen serves as the Rusk County Sheriff, overseeing law enforcement for Rusk County from the county seat of Henderson. Sheriff Allen leads a department committed to protecting lives and property across this East Texas oil country community.",
+  "campaignPromises": [
+    "Protect oil field equipment and infrastructure from theft",
+    "Enhance criminal investigation capabilities with modern forensics",
+    "Maintain a safe and secure county detention facility",
+    "Improve communication systems for better dispatch coverage",
+    "Strengthen community partnerships for crime prevention"
+  ]
+}

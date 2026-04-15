@@ -1,0 +1,27 @@
+{
+  "id": "polk-county-da",
+  "name": "Lee Hon",
+  "firstName": "Lee",
+  "lastName": "Hon",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Polk County",
+  "county": ["Polk"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "101 W. Church St., Suite 300, Livingston, TX 77351",
+    "phone": "(936) 327-6868",
+    "email": "da@polkcountytx.org",
+    "website": "https://www.polkcountytx.org/district-attorney"
+  },
+  "bio": "Lee Hon serves as the District Attorney for Polk County, prosecuting felony criminal cases in the Livingston area. He is committed to seeking justice and protecting the residents of Polk County.",
+  "campaignPromises": [
+    "Prosecute violent offenders to the fullest extent of the law",
+    "Address drug crime in Polk County communities",
+    "Support victims throughout the criminal justice process",
+    "Run an efficient and transparent DA's office",
+    "Collaborate with law enforcement to improve public safety"
+  ]
+}

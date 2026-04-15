@@ -1,0 +1,27 @@
+{
+  "id": "tyler-county-sheriff",
+  "name": "Bryan Weatherford",
+  "firstName": "Bryan",
+  "lastName": "Weatherford",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Tyler County",
+  "county": ["Tyler"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "100 W. Bluff St., Woodville, TX 75979",
+    "phone": "(409) 283-2172",
+    "email": "sheriff@tylercountytx.gov",
+    "website": "https://www.tylercountytx.gov/sheriff"
+  },
+  "bio": "Bryan Weatherford serves as the Tyler County Sheriff, leading law enforcement operations from the county seat of Woodville. Sheriff Weatherford is dedicated to protecting this deep East Texas community and the Big Thicket National Preserve areas within Tyler County.",
+  "campaignPromises": [
+    "Protect Big Thicket area communities and natural resources",
+    "Enhance flood and disaster response preparedness",
+    "Combat drug trafficking on Highway 69 and rural roads",
+    "Maintain professional and courteous law enforcement services",
+    "Support local volunteer emergency services with coordination"
+  ]
+}

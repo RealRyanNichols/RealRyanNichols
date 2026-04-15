@@ -1,0 +1,27 @@
+{
+  "id": "trinity-county-sheriff",
+  "name": "Woody Wallace",
+  "firstName": "Woody",
+  "lastName": "Wallace",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Trinity County",
+  "county": ["Trinity"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "201 N. Robb St., Groveton, TX 75845",
+    "phone": "(936) 642-1424",
+    "email": "sheriff@trinitycountytx.gov",
+    "website": "https://www.trinitycountytx.gov/sheriff"
+  },
+  "bio": "Woody Wallace serves as the Trinity County Sheriff, overseeing law enforcement for Trinity County from the county seat of Groveton. Sheriff Wallace protects this rural East Texas community and the Lake Livingston shoreline areas within the county.",
+  "campaignPromises": [
+    "Ensure public safety around Lake Livingston communities",
+    "Provide effective patrol coverage across the rural county",
+    "Combat property crime targeting vacant and seasonal properties",
+    "Maintain cooperation with Trinity River Authority law enforcement",
+    "Keep the county jail operating safely and within budget"
+  ]
+}

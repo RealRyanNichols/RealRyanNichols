@@ -1,0 +1,27 @@
+{
+  "id": "tyler-county-da",
+  "name": "Lucas Nichols",
+  "firstName": "Lucas",
+  "lastName": "Nichols",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Tyler County",
+  "county": ["Tyler"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 Courthouse Dr., Suite 200, Woodville, TX 75979",
+    "phone": "(409) 283-2162",
+    "email": "da@tylercountytx.org",
+    "website": "https://www.tylercountytx.org/district-attorney"
+  },
+  "bio": "Lucas Nichols serves as the District Attorney for Tyler County, prosecuting felony criminal cases in the Woodville area. He is committed to ensuring justice and public safety for Tyler County residents.",
+  "campaignPromises": [
+    "Aggressively prosecute violent crime in Tyler County",
+    "Combat illegal drug activity in the Big Thicket region",
+    "Advocate for the rights of crime victims",
+    "Maintain transparency and accountability in the DA's office",
+    "Work with law enforcement to improve community safety"
+  ]
+}

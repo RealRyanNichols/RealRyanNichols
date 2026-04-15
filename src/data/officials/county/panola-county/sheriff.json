@@ -1,0 +1,27 @@
+{
+  "id": "panola-county-sheriff",
+  "name": "Kevin Lake",
+  "firstName": "Kevin",
+  "lastName": "Lake",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Panola County",
+  "county": ["Panola"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "187 County Road 179, Carthage, TX 75633",
+    "phone": "(903) 693-0333",
+    "email": "sheriff@panolacountytx.com",
+    "website": "https://www.panolacountytx.com/sheriff"
+  },
+  "bio": "Kevin Lake serves as the Panola County Sheriff, leading law enforcement operations from the county seat of Carthage. Sheriff Lake oversees patrol, criminal investigations, and detention services, ensuring the safety of Panola County residents and the energy industry workers in the area.",
+  "campaignPromises": [
+    "Protect oil and gas industry infrastructure from theft and vandalism",
+    "Enhance drug interdiction on Highway 59 and other major routes",
+    "Ensure the county jail operates safely and within budget",
+    "Recruit and train top-quality law enforcement professionals",
+    "Strengthen neighborhood watch programs across Panola County"
+  ]
+}

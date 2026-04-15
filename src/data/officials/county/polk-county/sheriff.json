@@ -1,0 +1,27 @@
+{
+  "id": "polk-county-sheriff",
+  "name": "Byron Lyons",
+  "firstName": "Byron",
+  "lastName": "Lyons",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Polk County",
+  "county": ["Polk"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "602 E. Church St., Suite 105, Livingston, TX 77351",
+    "phone": "(936) 327-6810",
+    "email": "sheriff@polkcountytx.gov",
+    "website": "https://www.polkcountytx.gov/sheriff"
+  },
+  "bio": "Byron Lyons serves as the Polk County Sheriff, overseeing law enforcement and public safety for Polk County from the county seat of Livingston. Sheriff Lyons manages patrol operations, investigations, and the county jail while serving the Lake Livingston area community.",
+  "campaignPromises": [
+    "Expand lake patrol on Lake Livingston for public safety",
+    "Improve emergency response times across the large county",
+    "Combat property crimes targeting seasonal and vacation homes",
+    "Enhance cooperation with the Alabama-Coushatta Tribal Police",
+    "Invest in deputy training and professional development"
+  ]
+}

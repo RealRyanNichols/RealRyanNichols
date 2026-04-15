@@ -1,0 +1,27 @@
+{
+  "id": "trinity-county-da",
+  "name": "Joe Bell",
+  "firstName": "Joe",
+  "lastName": "Bell",
+  "party": "R",
+  "level": "county",
+  "position": "County Attorney",
+  "jurisdiction": "Trinity County",
+  "county": ["Trinity"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "143 W. Main St., Suite 101, Groveton, TX 75845",
+    "phone": "(936) 642-1200",
+    "email": "ca@trinitycountytx.org",
+    "website": "https://www.trinitycountytx.org/county-attorney"
+  },
+  "bio": "Joe Bell serves as the County Attorney for Trinity County, handling criminal prosecutions and providing legal counsel to the county. He is dedicated to serving the residents of Groveton and the surrounding Trinity County community.",
+  "campaignPromises": [
+    "Provide effective prosecution of criminal cases",
+    "Protect the legal interests of Trinity County",
+    "Support victims of crime and their families",
+    "Maintain fiscal responsibility in the county attorney's office",
+    "Collaborate with law enforcement on public safety"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "panola-county-da",
+  "name": "Danny Buck Davidson",
+  "firstName": "Danny",
+  "lastName": "Davidson",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Panola County",
+  "county": ["Panola"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "110 S. Sycamore St., Suite 200, Carthage, TX 75633",
+    "phone": "(903) 693-0340",
+    "email": "da@panolacounty.org",
+    "website": "https://www.panolacounty.org/district-attorney"
+  },
+  "bio": "Danny Buck Davidson serves as the District Attorney for Panola County, overseeing felony prosecutions in the Carthage area. He is dedicated to upholding justice and ensuring public safety for all Panola County residents.",
+  "campaignPromises": [
+    "Aggressively prosecute violent crime in Panola County",
+    "Combat drug trafficking along the Louisiana border",
+    "Advocate for the rights of crime victims",
+    "Maintain transparency and accountability in the DA's office",
+    "Strengthen relationships with local law enforcement"
+  ]
+}

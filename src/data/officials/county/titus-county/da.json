@@ -1,0 +1,27 @@
+{
+  "id": "titus-county-da",
+  "name": "Lucas Baxter",
+  "firstName": "Lucas",
+  "lastName": "Baxter",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Titus County",
+  "county": ["Titus"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 W. 1st St., Suite 301, Mount Pleasant, TX 75455",
+    "phone": "(903) 577-6726",
+    "email": "da@tituscountytx.org",
+    "website": "https://www.tituscountytx.org/district-attorney"
+  },
+  "bio": "Lucas Baxter serves as the District Attorney for Titus County, overseeing felony prosecutions in the Mount Pleasant area. He is committed to delivering justice and protecting public safety in Titus County.",
+  "campaignPromises": [
+    "Prosecute violent crimes to the fullest extent of the law",
+    "Target drug trafficking and distribution in Titus County",
+    "Advocate for the rights of crime victims",
+    "Run an efficient and transparent DA's office",
+    "Partner with law enforcement to reduce crime rates"
+  ]
+}

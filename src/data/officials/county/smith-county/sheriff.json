@@ -1,0 +1,27 @@
+{
+  "id": "smith-county-sheriff",
+  "name": "Larry Smith",
+  "firstName": "Larry",
+  "lastName": "Smith",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Smith County",
+  "county": ["Smith"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "227 N. Spring Ave., Tyler, TX 75702",
+    "phone": "(903) 566-6600",
+    "email": "sheriff@smith-county.com",
+    "website": "https://www.smith-county.com/government/elected-officials/sheriff"
+  },
+  "bio": "Larry Smith serves as the Smith County Sheriff, leading the largest sheriff's office in the East Texas region from Tyler. Sheriff Smith oversees a full-service department including patrol, criminal investigations, civil process, and the Smith County Jail.",
+  "campaignPromises": [
+    "Maintain Smith County as one of the safest large counties in Texas",
+    "Expand the use of body cameras and transparency measures",
+    "Combat drug trafficking and organized crime in the Tyler metro area",
+    "Invest in mental health crisis intervention training for deputies",
+    "Modernize the county jail and improve inmate services"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "rains-county-sheriff",
+  "name": "David Traylor",
+  "firstName": "David",
+  "lastName": "Traylor",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Rains County",
+  "county": ["Rains"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "220 W. Quitman St., Emory, TX 75440",
+    "phone": "(903) 473-3181",
+    "email": "sheriff@rainscountytx.com",
+    "website": "https://www.rainscountytx.com/sheriff"
+  },
+  "bio": "David Traylor serves as the Rains County Sheriff, protecting the residents of one of the smaller counties in East Texas from the county seat of Emory. Sheriff Traylor provides full-service law enforcement including patrol and detention for the Lake Fork and Lake Tawakoni communities.",
+  "campaignPromises": [
+    "Ensure public safety around Lake Fork and Lake Tawakoni",
+    "Maintain rapid response times despite the small department size",
+    "Protect fishing tournament visitors and seasonal residents",
+    "Keep Rains County drug free through proactive enforcement",
+    "Run an efficient and fiscally responsible sheriff's office"
+  ]
+}

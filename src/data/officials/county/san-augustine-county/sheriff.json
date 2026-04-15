@@ -1,0 +1,27 @@
+{
+  "id": "san-augustine-county-sheriff",
+  "name": "Robert Cartwright",
+  "firstName": "Robert",
+  "lastName": "Cartwright",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "San Augustine County",
+  "county": ["San Augustine"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "122 N. Harrison St., San Augustine, TX 75972",
+    "phone": "(936) 275-2424",
+    "email": "sheriff@sanaugustinecountytx.org",
+    "website": "https://www.sanaugustinecountytx.org/sheriff"
+  },
+  "bio": "Robert Cartwright serves as the San Augustine County Sheriff, overseeing law enforcement in one of the oldest counties in Texas from the county seat of San Augustine. Sheriff Cartwright is devoted to serving and protecting this historic deep East Texas community.",
+  "campaignPromises": [
+    "Provide consistent patrol coverage across San Augustine County",
+    "Protect Sam Rayburn Reservoir communities from property crime",
+    "Maintain professional standards in all department operations",
+    "Enhance emergency preparedness for severe weather events",
+    "Support local volunteer fire departments with coordination resources"
+  ]
+}

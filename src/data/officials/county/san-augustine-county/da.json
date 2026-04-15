@@ -1,0 +1,27 @@
+{
+  "id": "san-augustine-county-da",
+  "name": "Todd Warnken",
+  "firstName": "Todd",
+  "lastName": "Warnken",
+  "party": "R",
+  "level": "county",
+  "position": "County Attorney",
+  "jurisdiction": "San Augustine County",
+  "county": ["San Augustine"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "106 Courthouse, 100 W. Columbia St., San Augustine, TX 75972",
+    "phone": "(936) 275-2421",
+    "email": "ca@sanaugustinecounty.org",
+    "website": "https://www.sanaugustinecounty.org/county-attorney"
+  },
+  "bio": "Todd Warnken serves as the County Attorney for San Augustine County, handling criminal prosecutions and providing legal guidance to the county. He is dedicated to serving the residents of one of the oldest counties in Texas.",
+  "campaignPromises": [
+    "Effectively prosecute criminal cases in San Augustine County",
+    "Protect the legal interests of the county",
+    "Advocate for crime victims and their families",
+    "Operate a responsible and transparent county attorney's office",
+    "Coordinate with law enforcement on public safety initiatives"
+  ]
+}

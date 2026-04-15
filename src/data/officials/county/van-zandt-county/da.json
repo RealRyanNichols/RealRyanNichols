@@ -1,0 +1,27 @@
+{
+  "id": "van-zandt-county-da",
+  "name": "Tonda Curry",
+  "firstName": "Tonda",
+  "lastName": "Curry",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Van Zandt County",
+  "county": ["Van Zandt"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "121 E. Dallas St., Suite 300, Canton, TX 75103",
+    "phone": "(903) 567-4104",
+    "email": "da@vanzandtcounty.org",
+    "website": "https://www.vanzandtcounty.org/district-attorney"
+  },
+  "bio": "Tonda Curry serves as the District Attorney for Van Zandt County, leading felony prosecutions in the Canton area. She is committed to ensuring justice and public safety for Van Zandt County communities.",
+  "campaignPromises": [
+    "Aggressively prosecute violent and property crimes",
+    "Combat the drug epidemic in Van Zandt County",
+    "Advocate for victims' rights in the criminal justice system",
+    "Maintain transparency and efficiency in the DA's office",
+    "Partner with local law enforcement to protect the community"
+  ]
+}

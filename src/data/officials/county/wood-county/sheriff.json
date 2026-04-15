@@ -1,0 +1,27 @@
+{
+  "id": "wood-county-sheriff",
+  "name": "Kelly Cole",
+  "firstName": "Kelly",
+  "lastName": "Cole",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Wood County",
+  "county": ["Wood"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "301 E. Goode St., Quitman, TX 75783",
+    "phone": "(903) 763-2201",
+    "email": "sheriff@mywoodcounty.com",
+    "website": "https://www.mywoodcounty.com/sheriff"
+  },
+  "bio": "Kelly Cole serves as the Wood County Sheriff, leading law enforcement operations from the county seat of Quitman. Sheriff Cole oversees patrol, investigations, and detention services protecting Wood County's communities and popular Lake Fork fishing destination.",
+  "campaignPromises": [
+    "Enhance lake patrol on Lake Fork and Lake Quitman",
+    "Protect seasonal visitors and tourism-based businesses",
+    "Maintain aggressive drug enforcement on county highways",
+    "Keep the Wood County Jail safe, secure, and within budget",
+    "Expand use of technology for crime prevention and solving"
+  ]
+}

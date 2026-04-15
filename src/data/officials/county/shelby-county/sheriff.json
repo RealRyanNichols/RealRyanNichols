@@ -1,0 +1,27 @@
+{
+  "id": "shelby-county-sheriff",
+  "name": "Willis Blackwell",
+  "firstName": "Willis",
+  "lastName": "Blackwell",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Shelby County",
+  "county": ["Shelby"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "200 San Augustine St., Center, TX 75935",
+    "phone": "(936) 598-5601",
+    "email": "sheriff@shelbycountytx.gov",
+    "website": "https://www.shelbycountytx.gov/sheriff"
+  },
+  "bio": "Willis Blackwell serves as the Shelby County Sheriff, leading law enforcement operations from the county seat of Center. Sheriff Blackwell oversees a department dedicated to protecting Shelby County through proactive policing and strong community partnerships.",
+  "campaignPromises": [
+    "Combat drug trafficking through Shelby County",
+    "Enhance patrol operations along the Louisiana border",
+    "Improve detention facility programs for inmate rehabilitation",
+    "Recruit and retain quality deputies with competitive pay",
+    "Strengthen relationships with all communities in Shelby County"
+  ]
+}

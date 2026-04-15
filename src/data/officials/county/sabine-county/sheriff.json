@@ -1,0 +1,27 @@
+{
+  "id": "sabine-county-sheriff",
+  "name": "Tom Maddox",
+  "firstName": "Tom",
+  "lastName": "Maddox",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Sabine County",
+  "county": ["Sabine"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "100 Main St., Hemphill, TX 75948",
+    "phone": "(409) 787-2266",
+    "email": "sheriff@sabinecountytx.gov",
+    "website": "https://www.sabinecountytx.gov/sheriff"
+  },
+  "bio": "Tom Maddox serves as the Sabine County Sheriff, providing law enforcement services across Sabine County from the county seat of Hemphill. Sheriff Maddox protects this border county community along Toledo Bend Reservoir and the Sabine National Forest.",
+  "campaignPromises": [
+    "Patrol Toledo Bend Reservoir for public safety and crime prevention",
+    "Protect Sabine National Forest from illegal activities",
+    "Maintain cooperation with Louisiana law enforcement agencies",
+    "Ensure rapid emergency response across the rural county",
+    "Combat illegal dumping and environmental crimes in forest areas"
+  ]
+}

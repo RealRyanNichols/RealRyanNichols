@@ -1,0 +1,27 @@
+{
+  "id": "upshur-county-da",
+  "name": "Billy Byrd",
+  "firstName": "Billy",
+  "lastName": "Byrd",
+  "party": "R",
+  "level": "county",
+  "position": "District Attorney",
+  "jurisdiction": "Upshur County",
+  "county": ["Upshur"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "405 N. Titus St., Suite 300, Gilmer, TX 75644",
+    "phone": "(903) 843-5031",
+    "email": "da@upshurcounty.org",
+    "website": "https://www.upshurcounty.org/district-attorney"
+  },
+  "bio": "Billy Byrd serves as the District Attorney for Upshur County, overseeing felony prosecutions in the Gilmer area. He is dedicated to upholding justice and ensuring public safety throughout Upshur County.",
+  "campaignPromises": [
+    "Prosecute violent offenders to the fullest extent of the law",
+    "Target drug trafficking in Upshur County",
+    "Support victims throughout the criminal justice process",
+    "Run an efficient and transparent DA's office",
+    "Strengthen partnerships with law enforcement agencies"
+  ]
+}

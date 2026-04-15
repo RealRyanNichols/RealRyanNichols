@@ -1,0 +1,27 @@
+{
+  "id": "upshur-county-sheriff",
+  "name": "Larry Webb",
+  "firstName": "Larry",
+  "lastName": "Webb",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Upshur County",
+  "county": ["Upshur"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "405 N. Titus St., Gilmer, TX 75644",
+    "phone": "(903) 843-2541",
+    "email": "sheriff@upshurcountytx.org",
+    "website": "https://www.upshurcountytx.org/sheriff"
+  },
+  "bio": "Larry Webb serves as the Upshur County Sheriff, providing law enforcement services to Upshur County from the county seat of Gilmer. Sheriff Webb oversees patrol, criminal investigations, and detention operations while keeping the East Texas Yamboree community safe.",
+  "campaignPromises": [
+    "Maintain strong law enforcement presence across Upshur County",
+    "Support school safety programs in all county school districts",
+    "Enhance property crime investigation capabilities",
+    "Ensure efficient and humane county jail operations",
+    "Foster positive community relations through outreach events"
+  ]
+}

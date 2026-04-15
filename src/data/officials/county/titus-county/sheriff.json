@@ -1,0 +1,27 @@
+{
+  "id": "titus-county-sheriff",
+  "name": "Tim Ingram",
+  "firstName": "Tim",
+  "lastName": "Ingram",
+  "party": "R",
+  "level": "county",
+  "position": "County Sheriff",
+  "jurisdiction": "Titus County",
+  "county": ["Titus"],
+  "termStart": "2025-01-01",
+  "termEnd": "2029-01-01",
+  "contactInfo": {
+    "office": "105 W. 1st St., Mount Pleasant, TX 75455",
+    "phone": "(903) 577-6012",
+    "email": "sheriff@tituscountytx.com",
+    "website": "https://www.tituscountytx.com/sheriff"
+  },
+  "bio": "Tim Ingram serves as the Titus County Sheriff, providing law enforcement services to Titus County from the county seat of Mount Pleasant. Sheriff Ingram leads a dedicated department focused on keeping the diverse and growing Titus County community safe.",
+  "campaignPromises": [
+    "Provide bilingual services to serve all Titus County residents",
+    "Enhance patrol presence around industrial areas and poultry plants",
+    "Modernize the county jail to meet growing detention needs",
+    "Strengthen drug enforcement operations on county highways",
+    "Build community trust through outreach and transparency"
+  ]
+}
