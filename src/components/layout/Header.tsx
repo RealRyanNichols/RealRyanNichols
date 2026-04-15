@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import UserMenu from "@/components/auth/UserMenu";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -27,7 +28,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -37,57 +38,57 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/methodology"
-            className="ml-2 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-800"
-          >
-            Methodology
-          </Link>
         </nav>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 md:hidden dark:text-gray-300 dark:hover:bg-gray-800"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-expanded={menuOpen}
-          aria-label="Toggle navigation menu"
-        >
-          {menuOpen ? (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          )}
-        </button>
+        {/* Auth + Mobile Menu */}
+        <div className="flex items-center gap-2">
+          <div className="hidden md:block">
+            <UserMenu />
+          </div>
+          {/* Mobile Hamburger Button */}
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 lg:hidden dark:text-gray-300 dark:hover:bg-gray-800"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? (
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="border-t border-gray-200 bg-white px-4 pb-4 pt-2 md:hidden dark:border-gray-700 dark:bg-gray-900">
+        <nav className="border-t border-gray-200 bg-white px-4 pb-4 pt-2 lg:hidden dark:border-gray-700 dark:bg-gray-900">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
@@ -106,6 +107,9 @@ export default function Header() {
             >
               Methodology
             </Link>
+            <div className="mt-2 border-t border-gray-200 pt-2 md:hidden">
+              <UserMenu />
+            </div>
           </div>
         </nav>
       )}

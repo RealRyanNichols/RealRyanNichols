@@ -18,6 +18,7 @@ import GeographicBreakdown from "@/components/funding/GeographicBreakdown";
 import VoteTimeline from "@/components/votes/VoteTimeline";
 import RedFlagCard from "@/components/shared/RedFlagCard";
 import PartyBadge from "@/components/officials/PartyBadge";
+import OfficialVotingSection from "@/components/voting/OfficialVotingSection";
 
 export async function generateStaticParams() {
   const officials = getAllOfficials();
@@ -209,8 +210,14 @@ export default async function OfficialProfilePage({
               )}
           </div>
 
-          {/* Right Column: Funding */}
+          {/* Right Column: Citizen Vote + Funding */}
           <div className="space-y-6">
+            {/* Citizen Approval Rating & Vote Button */}
+            <OfficialVotingSection
+              officialId={official.id}
+              officialCounties={official.county}
+            />
+
             {funding && (
               <>
                 <h2 className="text-xl font-bold text-gray-900">

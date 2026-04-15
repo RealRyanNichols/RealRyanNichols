@@ -160,6 +160,51 @@ export interface RedFlag {
   whyItMatters: string;
 }
 
+// ============================================================
+// Citizen Voting System Types
+// ============================================================
+
+export type CitizenVote = "approve" | "disapprove";
+
+export interface UserProfile {
+  id: string;
+  userId: string;
+  county: string;
+  district?: string;
+  verified: boolean;
+  createdAt: string;
+}
+
+export interface CastVote {
+  id: string;
+  userId: string;
+  officialId: string;
+  vote: CitizenVote;
+  county: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ApprovalRating {
+  officialId: string;
+  totalVotes: number;
+  approveCount: number;
+  disapproveCount: number;
+  approvalPercentage: number;
+  inDistrict: {
+    totalVotes: number;
+    approveCount: number;
+    disapproveCount: number;
+    approvalPercentage: number;
+  };
+  allTexas: {
+    totalVotes: number;
+    approveCount: number;
+    disapproveCount: number;
+    approvalPercentage: number;
+  };
+}
+
 // Computed types used by the UI
 export interface OfficialWithScores extends Official {
   scoreCard?: ScoreCard;
