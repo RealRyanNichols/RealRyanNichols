@@ -1,0 +1,20 @@
+{
+  "id": "rains-isd-board-1",
+  "name": "Jeff Scoggins",
+  "firstName": "Jeff",
+  "lastName": "Scoggins",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Rains ISD",
+  "county": ["Rains"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1895 W. US Hwy 69, Emory, TX 75440",
+    "phone": "(903) 473-2222",
+    "website": "https://www.rainsisd.org/board"
+  },
+  "bio": "Jeff Scoggins serves as President of the Rains ISD Board of Trustees. A Rains County rancher and Lake Fork-area business owner, he is focused on managing enrollment growth and expanding career-and-technology education programs."
+}

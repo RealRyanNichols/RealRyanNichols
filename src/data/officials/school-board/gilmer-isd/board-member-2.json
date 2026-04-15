@@ -1,0 +1,20 @@
+{
+  "id": "gilmer-isd-board-2",
+  "name": "Sherry Waggoner",
+  "firstName": "Sherry",
+  "lastName": "Waggoner",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Gilmer ISD",
+  "county": ["Upshur"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "500 Bucketeer Dr., Gilmer, TX 75644",
+    "phone": "(903) 841-7400",
+    "website": "https://www.gilmerisd.org/board"
+  },
+  "bio": "Sherry Waggoner is Vice President of the Gilmer ISD Board of Trustees. A real-estate agent and former Yamboree committee chair, she supports community engagement and fine-arts programming."
+}

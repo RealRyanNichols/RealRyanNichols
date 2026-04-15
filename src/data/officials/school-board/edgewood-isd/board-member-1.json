@@ -1,0 +1,20 @@
+{
+  "id": "edgewood-isd-board-1",
+  "name": "Russell York",
+  "firstName": "Russell",
+  "lastName": "York",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Edgewood ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "301 Tiger Trail, Edgewood, TX 75117",
+    "phone": "(903) 896-4316",
+    "website": "https://www.edgewoodisd.net/board"
+  },
+  "bio": "Russell York serves as President of the Edgewood ISD Board of Trustees. A Van Zandt County rancher and Heritage Festival volunteer, he is dedicated to preserving the district's small-town identity while improving classroom resources."
+}

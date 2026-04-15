@@ -1,0 +1,20 @@
+{
+  "id": "north-hopkins-isd-board-3",
+  "name": "Wilma Thornton",
+  "firstName": "Wilma",
+  "lastName": "Thornton",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "North Hopkins ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "289 FM 71 W., Sulphur Springs, TX 75482",
+    "phone": "(903) 945-2193",
+    "website": "https://www.nhisd.net/board"
+  },
+  "bio": "Wilma Thornton serves as the Secretary of the North Hopkins ISD Board of Trustees. She works to maintain accurate records and promote accountability in all facets of district operations."
+}

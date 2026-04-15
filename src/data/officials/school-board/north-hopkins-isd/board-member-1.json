@@ -1,0 +1,20 @@
+{
+  "id": "north-hopkins-isd-board-1",
+  "name": "Roger Pennington",
+  "firstName": "Roger",
+  "lastName": "Pennington",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "North Hopkins ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "289 FM 71 W., Sulphur Springs, TX 75482",
+    "phone": "(903) 945-2193",
+    "website": "https://www.nhisd.net/board"
+  },
+  "bio": "Roger Pennington serves as the President of the North Hopkins ISD Board of Trustees. He is dedicated to ensuring this rural district provides a well-rounded education with strong academic and vocational offerings."
+}

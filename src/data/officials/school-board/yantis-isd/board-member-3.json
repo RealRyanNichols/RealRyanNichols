@@ -1,0 +1,20 @@
+{
+  "id": "yantis-isd-board-3",
+  "name": "Dean Woolley",
+  "firstName": "Dean",
+  "lastName": "Woolley",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Yantis ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "100 Owl Dr., Yantis, TX 75497",
+    "phone": "(903) 383-2462",
+    "website": "https://www.yantisisd.net/board"
+  },
+  "bio": "Dean Woolley serves as Secretary of the Yantis ISD Board of Trustees. A plumber and volunteer firefighter, he focuses on facility maintenance and keeping the district's budget balanced for taxpayers."
+}

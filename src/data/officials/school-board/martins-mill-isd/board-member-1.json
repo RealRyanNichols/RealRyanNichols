@@ -1,0 +1,20 @@
+{
+  "id": "martins-mill-isd-board-1",
+  "name": "Wade Kincaid",
+  "firstName": "Wade",
+  "lastName": "Kincaid",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Martins Mill ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1500 Hwy 198, Martins Mill, TX 75754",
+    "phone": "(903) 479-3800",
+    "website": "https://www.martinsmillisd.org/board"
+  },
+  "bio": "Wade Kincaid serves as President of the Martins Mill ISD Board of Trustees. A Van Zandt County hay farmer and volunteer firefighter, he is committed to keeping the small district fiscally sound while expanding academic options."
+}

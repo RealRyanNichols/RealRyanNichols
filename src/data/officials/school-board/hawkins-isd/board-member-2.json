@@ -1,0 +1,20 @@
+{
+  "id": "hawkins-isd-board-2",
+  "name": "Vickie Lomax",
+  "firstName": "Vickie",
+  "lastName": "Lomax",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Hawkins ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "415 N. Beaulah Ave., Hawkins, TX 75765",
+    "phone": "(903) 769-2181",
+    "website": "https://www.hawkinsisd.org/board"
+  },
+  "bio": "Vickie Lomax is Vice President of the Hawkins ISD Board of Trustees. A salon owner and longtime booster-club member, she advocates for arts education, band programs, and community spirit events."
+}

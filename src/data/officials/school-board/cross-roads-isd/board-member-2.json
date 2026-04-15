@@ -1,0 +1,20 @@
+{
+  "id": "cross-roads-isd-board-2",
+  "name": "Tina Hargrove",
+  "firstName": "Tina",
+  "lastName": "Hargrove",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Cross Roads ISD",
+  "county": ["Henderson"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "5735 FM 59, Malakoff, TX 75148",
+    "phone": "(903) 489-1637",
+    "website": "https://www.crossroadsisd.org/board"
+  },
+  "bio": "Tina Hargrove serves as the Vice President of the Cross Roads ISD Board of Trustees. She works to maintain strong community support for the district and advocates for investments in classroom technology."
+}

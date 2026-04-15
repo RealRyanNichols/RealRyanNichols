@@ -1,0 +1,20 @@
+{
+  "id": "rains-isd-board-2",
+  "name": "Melanie Bright",
+  "firstName": "Melanie",
+  "lastName": "Bright",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Rains ISD",
+  "county": ["Rains"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "1895 W. US Hwy 69, Emory, TX 75440",
+    "phone": "(903) 473-2222",
+    "website": "https://www.rainsisd.org/board"
+  },
+  "bio": "Melanie Bright is Vice President of the Rains ISD Board of Trustees. A local pharmacist and Wildcat booster, she advocates for student health programs and competitive academic standards across Rains County schools."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "grand-saline-isd-board-2",
+  "name": "Peggy Chandler",
+  "firstName": "Peggy",
+  "lastName": "Chandler",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Grand Saline ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "301 Stadium Dr., Grand Saline, TX 75140",
+    "phone": "(903) 962-4484",
+    "website": "https://www.grandsalineisd.net/board"
+  },
+  "bio": "Peggy Chandler is Vice President of the Grand Saline ISD Board of Trustees. A retired elementary principal, she brings decades of educational leadership and advocates for reading-intervention programs."
+}

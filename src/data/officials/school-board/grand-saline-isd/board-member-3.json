@@ -1,0 +1,20 @@
+{
+  "id": "grand-saline-isd-board-3",
+  "name": "Levi Cross",
+  "firstName": "Levi",
+  "lastName": "Cross",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Grand Saline ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "301 Stadium Dr., Grand Saline, TX 75140",
+    "phone": "(903) 962-4484",
+    "website": "https://www.grandsalineisd.net/board"
+  },
+  "bio": "Levi Cross serves as Secretary of the Grand Saline ISD Board of Trustees. A welder and youth-baseball coach, he supports vocational training, athletic facilities, and prudent district spending."
+}

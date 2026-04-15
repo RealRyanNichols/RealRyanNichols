@@ -1,0 +1,20 @@
+{
+  "id": "quitman-isd-board-3",
+  "name": "Victor Canales",
+  "firstName": "Victor",
+  "lastName": "Canales",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Quitman ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "700 E. Goode St., Quitman, TX 75783",
+    "phone": "(903) 763-5000",
+    "website": "https://www.quitmanisd.net/board"
+  },
+  "bio": "Victor Canales serves as Secretary of the Quitman ISD Board of Trustees. A local restaurant owner and civic volunteer, he champions bilingual-education support and community outreach programs."
+}

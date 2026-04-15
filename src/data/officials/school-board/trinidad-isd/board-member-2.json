@@ -1,0 +1,20 @@
+{
+  "id": "trinidad-isd-board-2",
+  "name": "Faye Pickering",
+  "firstName": "Faye",
+  "lastName": "Pickering",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Trinidad ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "207 N. Kaufman St., Trinidad, TX 75163",
+    "phone": "(903) 778-2291",
+    "website": "https://www.trinidadisd.org/board"
+  },
+  "bio": "Faye Pickering serves as the Vice President of the Trinidad ISD Board of Trustees. She champions programs that support student well-being and works to strengthen the bond between the school and Trinidad families."
+}

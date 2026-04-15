@@ -1,0 +1,20 @@
+{
+  "id": "yantis-isd-board-1",
+  "name": "Carl Faulkner",
+  "firstName": "Carl",
+  "lastName": "Faulkner",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Yantis ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "100 Owl Dr., Yantis, TX 75497",
+    "phone": "(903) 383-2462",
+    "website": "https://www.yantisisd.net/board"
+  },
+  "bio": "Carl Faulkner serves as President of the Yantis ISD Board of Trustees. A Lake Fork marina owner, he is committed to maintaining the small-school advantage while investing in updated learning technology."
+}

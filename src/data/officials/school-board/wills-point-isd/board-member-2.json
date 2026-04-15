@@ -1,0 +1,20 @@
+{
+  "id": "wills-point-isd-board-2",
+  "name": "Kathy Vickers",
+  "firstName": "Kathy",
+  "lastName": "Vickers",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Wills Point ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "716 N. 4th St., Wills Point, TX 75169",
+    "phone": "(903) 873-2811",
+    "website": "https://www.willspointisd.org/board"
+  },
+  "bio": "Kathy Vickers is Vice President of the Wills Point ISD Board of Trustees. A library director and literacy advocate, she focuses on reading initiatives and expanding the district's media resources."
+}

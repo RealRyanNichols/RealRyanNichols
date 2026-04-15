@@ -1,0 +1,20 @@
+{
+  "id": "mount-vernon-isd-board-2",
+  "name": "Teresa Coker",
+  "firstName": "Teresa",
+  "lastName": "Coker",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Mount Vernon ISD",
+  "county": ["Franklin"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "500 Tiger Ln., Mount Vernon, TX 75457",
+    "phone": "(903) 537-2518",
+    "website": "https://www.mvisd.net/board"
+  },
+  "bio": "Teresa Coker is Vice President of the Mount Vernon ISD Board of Trustees. A local florist and PTA leader, she advocates for fine-arts programs and building stronger connections between families and schools."
+}

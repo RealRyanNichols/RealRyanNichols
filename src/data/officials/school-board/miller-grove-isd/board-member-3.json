@@ -1,0 +1,20 @@
+{
+  "id": "miller-grove-isd-board-3",
+  "name": "Margie Clifton",
+  "firstName": "Margie",
+  "lastName": "Clifton",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Miller Grove ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "8371 FM 275 S., Miller Grove, TX 75442",
+    "phone": "(903) 459-3288",
+    "website": "https://www.millergroveisd.org/board"
+  },
+  "bio": "Margie Clifton serves as the Secretary of the Miller Grove ISD Board of Trustees. She ensures board activities are thoroughly documented and works to keep the community connected to school district decisions."
+}

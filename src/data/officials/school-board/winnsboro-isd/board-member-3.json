@@ -1,0 +1,20 @@
+{
+  "id": "winnsboro-isd-board-3",
+  "name": "Preston Roach",
+  "firstName": "Preston",
+  "lastName": "Roach",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Winnsboro ISD",
+  "county": ["Wood"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "207 Myrick St., Winnsboro, TX 75494",
+    "phone": "(903) 342-3715",
+    "website": "https://www.winnsboroisd.org/board"
+  },
+  "bio": "Preston Roach serves as Secretary of the Winnsboro ISD Board of Trustees. A local auto-dealership manager, he supports competitive teacher pay and strong extracurricular activities for Red Raider students."
+}

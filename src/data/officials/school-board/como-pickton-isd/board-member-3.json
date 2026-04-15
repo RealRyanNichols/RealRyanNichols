@@ -1,0 +1,20 @@
+{
+  "id": "como-pickton-isd-board-3",
+  "name": "Sue Ellen Harper",
+  "firstName": "Sue Ellen",
+  "lastName": "Harper",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Como-Pickton ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "5765 US Hwy 67 W., Como, TX 75431",
+    "phone": "(903) 488-3671",
+    "website": "https://www.cpcisd.net/board"
+  },
+  "bio": "Sue Ellen Harper serves as the Secretary of the Como-Pickton ISD Board of Trustees. She is dedicated to thorough record-keeping and ensuring the board operates transparently for the benefit of all district families."
+}

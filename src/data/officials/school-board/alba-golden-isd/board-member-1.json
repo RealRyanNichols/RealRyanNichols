@@ -1,0 +1,20 @@
+{
+  "id": "alba-golden-isd-board-1",
+  "name": "Curtis Harmon",
+  "firstName": "Curtis",
+  "lastName": "Harmon",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Alba-Golden ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1373 CR 2377, Alba, TX 75410",
+    "phone": "(903) 768-2472",
+    "website": "https://www.alba-goldenisd.net/board"
+  },
+  "bio": "Curtis Harmon serves as President of the Alba-Golden ISD Board of Trustees. A Lake Fork fishing-guide operator and Wood County native, he focuses on maintaining the district's tight-knit culture while expanding academic offerings."
+}

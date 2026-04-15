@@ -1,0 +1,20 @@
+{
+  "id": "como-pickton-isd-board-2",
+  "name": "Rhonda Corley",
+  "firstName": "Rhonda",
+  "lastName": "Corley",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Como-Pickton ISD",
+  "county": ["Hopkins"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "5765 US Hwy 67 W., Como, TX 75431",
+    "phone": "(903) 488-3671",
+    "website": "https://www.cpcisd.net/board"
+  },
+  "bio": "Rhonda Corley serves as the Vice President of the Como-Pickton ISD Board of Trustees. She advocates for agricultural education and vocational training programs that reflect the community's rural heritage."
+}

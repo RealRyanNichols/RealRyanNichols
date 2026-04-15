@@ -1,0 +1,20 @@
+{
+  "id": "alba-golden-isd-board-2",
+  "name": "Diane Sparks",
+  "firstName": "Diane",
+  "lastName": "Sparks",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Alba-Golden ISD",
+  "county": ["Wood"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "1373 CR 2377, Alba, TX 75410",
+    "phone": "(903) 768-2472",
+    "website": "https://www.alba-goldenisd.net/board"
+  },
+  "bio": "Diane Sparks is Vice President of the Alba-Golden ISD Board of Trustees. A retired bookkeeper and church volunteer, she emphasizes fiscal oversight and strong parent-teacher communication across the district."
+}

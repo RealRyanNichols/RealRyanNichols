@@ -1,0 +1,20 @@
+{
+  "id": "ore-city-isd-board-2",
+  "name": "Lisa Pruitt",
+  "firstName": "Lisa",
+  "lastName": "Pruitt",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Ore City ISD",
+  "county": ["Upshur"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "301 N. Brandon St., Ore City, TX 75683",
+    "phone": "(903) 968-2525",
+    "website": "https://www.orecityisd.org/board"
+  },
+  "bio": "Lisa Pruitt is Vice President of the Ore City ISD Board of Trustees. A dental hygienist and mother of three Rebel students, she focuses on student health awareness and academic-enrichment opportunities."
+}

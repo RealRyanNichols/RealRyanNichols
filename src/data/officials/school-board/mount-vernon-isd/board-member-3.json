@@ -1,0 +1,20 @@
+{
+  "id": "mount-vernon-isd-board-3",
+  "name": "Grant Haskell",
+  "firstName": "Grant",
+  "lastName": "Haskell",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Mount Vernon ISD",
+  "county": ["Franklin"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "500 Tiger Ln., Mount Vernon, TX 75457",
+    "phone": "(903) 537-2518",
+    "website": "https://www.mvisd.net/board"
+  },
+  "bio": "Grant Haskell serves as Secretary of the Mount Vernon ISD Board of Trustees. A dairy farmer and Franklin County native, he supports agricultural-science education and responsible tax-rate management for the district."
+}

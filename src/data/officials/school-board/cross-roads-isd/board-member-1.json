@@ -1,0 +1,20 @@
+{
+  "id": "cross-roads-isd-board-1",
+  "name": "Russell Millsap",
+  "firstName": "Russell",
+  "lastName": "Millsap",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Cross Roads ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "5735 FM 59, Malakoff, TX 75148",
+    "phone": "(903) 489-1637",
+    "website": "https://www.crossroadsisd.org/board"
+  },
+  "bio": "Russell Millsap serves as the President of the Cross Roads ISD Board of Trustees. He is dedicated to supporting this small Henderson County district and ensuring students receive a quality education in a caring environment."
+}

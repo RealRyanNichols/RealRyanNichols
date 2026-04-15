@@ -1,0 +1,20 @@
+{
+  "id": "edgewood-isd-board-2",
+  "name": "Faye Ingram",
+  "firstName": "Faye",
+  "lastName": "Ingram",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Edgewood ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "301 Tiger Trail, Edgewood, TX 75117",
+    "phone": "(903) 896-4316",
+    "website": "https://www.edgewoodisd.net/board"
+  },
+  "bio": "Faye Ingram is Vice President of the Edgewood ISD Board of Trustees. A retired math teacher with over 28 years in the classroom, she focuses on curriculum quality and teacher retention strategies."
+}

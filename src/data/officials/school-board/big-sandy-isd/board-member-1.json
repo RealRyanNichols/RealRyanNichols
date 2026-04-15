@@ -1,0 +1,20 @@
+{
+  "id": "big-sandy-isd-board-1",
+  "name": "Ricky Tate",
+  "firstName": "Ricky",
+  "lastName": "Tate",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Big Sandy ISD",
+  "county": ["Upshur"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "200 Wildcat Dr., Big Sandy, TX 75755",
+    "phone": "(903) 636-4416",
+    "website": "https://www.bigsandyisd.net/board"
+  },
+  "bio": "Ricky Tate serves as President of the Big Sandy ISD Board of Trustees. A timber-company supervisor and Big Sandy native, he works to maintain competitive academics and strong community support for the district."
+}

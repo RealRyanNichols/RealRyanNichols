@@ -1,0 +1,20 @@
+{
+  "id": "martins-mill-isd-board-3",
+  "name": "Colton Peebles",
+  "firstName": "Colton",
+  "lastName": "Peebles",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Martins Mill ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1500 Hwy 198, Martins Mill, TX 75754",
+    "phone": "(903) 479-3800",
+    "website": "https://www.martinsmillisd.org/board"
+  },
+  "bio": "Colton Peebles serves as Secretary of the Martins Mill ISD Board of Trustees. A heavy-equipment operator and Mustang alumnus, he advocates for agricultural education and transportation safety improvements."
+}

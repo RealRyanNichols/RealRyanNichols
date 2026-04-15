@@ -1,0 +1,20 @@
+{
+  "id": "union-hill-isd-board-3",
+  "name": "Brent Owens",
+  "firstName": "Brent",
+  "lastName": "Owens",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Union Hill ISD",
+  "county": ["Upshur"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "7625 FM 2088, Gilmer, TX 75644",
+    "phone": "(903) 797-4360",
+    "website": "https://www.unionhillisd.net/board"
+  },
+  "bio": "Brent Owens serves as Secretary of the Union Hill ISD Board of Trustees. A truck driver and volunteer coach, he prioritizes transportation safety and competitive athletics for the district."
+}

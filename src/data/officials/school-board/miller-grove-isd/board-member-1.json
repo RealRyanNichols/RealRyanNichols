@@ -1,0 +1,20 @@
+{
+  "id": "miller-grove-isd-board-1",
+  "name": "Bobby Gene Ashcraft",
+  "firstName": "Bobby Gene",
+  "lastName": "Ashcraft",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Miller Grove ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "8371 FM 275 S., Miller Grove, TX 75442",
+    "phone": "(903) 459-3288",
+    "website": "https://www.millergroveisd.org/board"
+  },
+  "bio": "Bobby Gene Ashcraft serves as the President of the Miller Grove ISD Board of Trustees. He is devoted to maintaining the strong family atmosphere that defines this small Hopkins County district."
+}

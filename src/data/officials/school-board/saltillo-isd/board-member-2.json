@@ -1,0 +1,20 @@
+{
+  "id": "saltillo-isd-board-2",
+  "name": "Judy Hollingsworth",
+  "firstName": "Judy",
+  "lastName": "Hollingsworth",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Saltillo ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1390 FM 900, Saltillo, TX 75478",
+    "phone": "(903) 537-2296",
+    "website": "https://www.saltilloisd.org/board"
+  },
+  "bio": "Judy Hollingsworth serves as the Vice President of the Saltillo ISD Board of Trustees. She advocates for strong support services for students and works to ensure the district's curriculum meets state standards."
+}

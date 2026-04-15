@@ -1,0 +1,20 @@
+{
+  "id": "big-sandy-isd-board-2",
+  "name": "Tammy Blankenship",
+  "firstName": "Tammy",
+  "lastName": "Blankenship",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Big Sandy ISD",
+  "county": ["Upshur"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "200 Wildcat Dr., Big Sandy, TX 75755",
+    "phone": "(903) 636-4416",
+    "website": "https://www.bigsandyisd.net/board"
+  },
+  "bio": "Tammy Blankenship is Vice President of the Big Sandy ISD Board of Trustees. A school cafeteria manager and dedicated community volunteer, she advocates for child nutrition programs and after-school care."
+}

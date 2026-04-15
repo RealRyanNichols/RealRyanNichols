@@ -1,0 +1,20 @@
+{
+  "id": "union-hill-isd-board-1",
+  "name": "Wendell Sharp",
+  "firstName": "Wendell",
+  "lastName": "Sharp",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Union Hill ISD",
+  "county": ["Upshur"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "7625 FM 2088, Gilmer, TX 75644",
+    "phone": "(903) 797-4360",
+    "website": "https://www.unionhillisd.net/board"
+  },
+  "bio": "Wendell Sharp serves as President of the Union Hill ISD Board of Trustees. A dairy farmer and Upshur County native, he is focused on keeping the small rural district financially stable while improving academic outcomes."
+}

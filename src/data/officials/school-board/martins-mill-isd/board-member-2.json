@@ -1,0 +1,20 @@
+{
+  "id": "martins-mill-isd-board-2",
+  "name": "Glenda Satterfield",
+  "firstName": "Glenda",
+  "lastName": "Satterfield",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Martins Mill ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "1500 Hwy 198, Martins Mill, TX 75754",
+    "phone": "(903) 479-3800",
+    "website": "https://www.martinsmillisd.org/board"
+  },
+  "bio": "Glenda Satterfield is Vice President of the Martins Mill ISD Board of Trustees. A retired school secretary with 30 years of service, she focuses on student attendance, parent engagement, and campus cleanliness."
+}

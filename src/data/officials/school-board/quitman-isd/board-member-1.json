@@ -1,0 +1,20 @@
+{
+  "id": "quitman-isd-board-1",
+  "name": "Ray Barnett",
+  "firstName": "Ray",
+  "lastName": "Barnett",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Quitman ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "700 E. Goode St., Quitman, TX 75783",
+    "phone": "(903) 763-5000",
+    "website": "https://www.quitmanisd.net/board"
+  },
+  "bio": "Ray Barnett serves as President of the Quitman ISD Board of Trustees. A Wood County real-estate developer and Lake Fork-area business owner, he supports growth planning and technology upgrades across district campuses."
+}

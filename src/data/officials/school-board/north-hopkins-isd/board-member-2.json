@@ -1,0 +1,20 @@
+{
+  "id": "north-hopkins-isd-board-2",
+  "name": "Charlotte Briley",
+  "firstName": "Charlotte",
+  "lastName": "Briley",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "North Hopkins ISD",
+  "county": ["Hopkins"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "289 FM 71 W., Sulphur Springs, TX 75482",
+    "phone": "(903) 945-2193",
+    "website": "https://www.nhisd.net/board"
+  },
+  "bio": "Charlotte Briley serves as the Vice President of the North Hopkins ISD Board of Trustees. She is passionate about keeping class sizes small and supporting the individualized instruction that defines the district."
+}

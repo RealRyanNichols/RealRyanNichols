@@ -1,0 +1,20 @@
+{
+  "id": "alba-golden-isd-board-3",
+  "name": "Nathan Bridges",
+  "firstName": "Nathan",
+  "lastName": "Bridges",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Alba-Golden ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1373 CR 2377, Alba, TX 75410",
+    "phone": "(903) 768-2472",
+    "website": "https://www.alba-goldenisd.net/board"
+  },
+  "bio": "Nathan Bridges serves as Secretary of the Alba-Golden ISD Board of Trustees. An electrician and volunteer firefighter, he supports campus-safety improvements and keeping the tax rate affordable for local families."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "winnsboro-isd-board-2",
+  "name": "Carolyn Dukes",
+  "firstName": "Carolyn",
+  "lastName": "Dukes",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Winnsboro ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "207 Myrick St., Winnsboro, TX 75494",
+    "phone": "(903) 342-3715",
+    "website": "https://www.winnsboroisd.org/board"
+  },
+  "bio": "Carolyn Dukes is Vice President of the Winnsboro ISD Board of Trustees. A registered nurse and longtime school volunteer, she advocates for student health services and early-intervention programs."
+}

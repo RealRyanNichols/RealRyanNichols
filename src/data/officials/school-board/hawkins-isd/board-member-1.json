@@ -1,0 +1,20 @@
+{
+  "id": "hawkins-isd-board-1",
+  "name": "Rodney McBride",
+  "firstName": "Rodney",
+  "lastName": "McBride",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Hawkins ISD",
+  "county": ["Wood"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "415 N. Beaulah Ave., Hawkins, TX 75765",
+    "phone": "(903) 769-2181",
+    "website": "https://www.hawkinsisd.org/board"
+  },
+  "bio": "Rodney McBride serves as President of the Hawkins ISD Board of Trustees. A Wood County oil-and-gas consultant, he supports technology investment and strong academic standards for Hawkins students."
+}

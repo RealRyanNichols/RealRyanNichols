@@ -1,0 +1,20 @@
+{
+  "id": "van-isd-board-2",
+  "name": "Susan Dorsey",
+  "firstName": "Susan",
+  "lastName": "Dorsey",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Van ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "690 W. Alabama St., Van, TX 75790",
+    "phone": "(903) 963-8602",
+    "website": "https://www.vanisd.org/board"
+  },
+  "bio": "Susan Dorsey is Vice President of the Van ISD Board of Trustees. A dental-office manager and mother of Van graduates, she champions student dental health and campus beautification projects."
+}

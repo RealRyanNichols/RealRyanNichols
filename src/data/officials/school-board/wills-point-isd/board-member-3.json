@@ -1,0 +1,20 @@
+{
+  "id": "wills-point-isd-board-3",
+  "name": "Oscar Fuentes",
+  "firstName": "Oscar",
+  "lastName": "Fuentes",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Wills Point ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "716 N. 4th St., Wills Point, TX 75169",
+    "phone": "(903) 873-2811",
+    "website": "https://www.willspointisd.org/board"
+  },
+  "bio": "Oscar Fuentes serves as Secretary of the Wills Point ISD Board of Trustees. A small-business owner and bilingual community leader, he advocates for inclusive family outreach and equitable student services."
+}

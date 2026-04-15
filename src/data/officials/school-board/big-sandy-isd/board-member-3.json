@@ -1,0 +1,20 @@
+{
+  "id": "big-sandy-isd-board-3",
+  "name": "Allen Doss",
+  "firstName": "Allen",
+  "lastName": "Doss",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Big Sandy ISD",
+  "county": ["Upshur"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "200 Wildcat Dr., Big Sandy, TX 75755",
+    "phone": "(903) 636-4416",
+    "website": "https://www.bigsandyisd.net/board"
+  },
+  "bio": "Allen Doss serves as Secretary of the Big Sandy ISD Board of Trustees. A mechanic and FFA supporter, he emphasizes agricultural education and keeping district taxes manageable for local families."
+}

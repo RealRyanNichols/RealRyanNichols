@@ -1,0 +1,20 @@
+{
+  "id": "sulphur-springs-isd-board-3",
+  "name": "Roberta Nix",
+  "firstName": "Roberta",
+  "lastName": "Nix",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Sulphur Springs ISD",
+  "county": ["Hopkins"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "631 Connally St., Sulphur Springs, TX 75482",
+    "phone": "(903) 885-2153",
+    "website": "https://www.ssisd.net/board"
+  },
+  "bio": "Roberta Nix serves as the Secretary of the Sulphur Springs ISD Board of Trustees. She ensures all board activities are documented thoroughly and works to make district governance accessible to the public."
+}

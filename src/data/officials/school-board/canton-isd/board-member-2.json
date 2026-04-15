@@ -1,0 +1,20 @@
+{
+  "id": "canton-isd-board-2",
+  "name": "Rebecca Harrell",
+  "firstName": "Rebecca",
+  "lastName": "Harrell",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Canton ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "301 E. Foster St., Canton, TX 75103",
+    "phone": "(903) 567-4179",
+    "website": "https://www.cantonisd.net/board"
+  },
+  "bio": "Rebecca Harrell is Vice President of the Canton ISD Board of Trustees. A pediatrician and Canton resident, she champions student wellness initiatives and evidence-based academic programs."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "mineola-isd-board-2",
+  "name": "Holly Vandergriff",
+  "firstName": "Holly",
+  "lastName": "Vandergriff",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Mineola ISD",
+  "county": ["Wood"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "1695 W. Loop 564, Mineola, TX 75773",
+    "phone": "(903) 569-2448",
+    "website": "https://www.mineolaisd.net/board"
+  },
+  "bio": "Holly Vandergriff is Vice President of the Mineola ISD Board of Trustees. A bank officer and Mineola Foundation volunteer, she advocates for scholarship programs and strengthening ties between schools and local businesses."
+}

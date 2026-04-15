@@ -1,0 +1,20 @@
+{
+  "id": "sulphur-springs-isd-board-2",
+  "name": "Diane Schaefer",
+  "firstName": "Diane",
+  "lastName": "Schaefer",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Sulphur Springs ISD",
+  "county": ["Hopkins"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "631 Connally St., Sulphur Springs, TX 75482",
+    "phone": "(903) 885-2153",
+    "website": "https://www.ssisd.net/board"
+  },
+  "bio": "Diane Schaefer serves as the Vice President of the Sulphur Springs ISD Board of Trustees. She works to strengthen community partnerships and support innovative teaching methods across the district."
+}

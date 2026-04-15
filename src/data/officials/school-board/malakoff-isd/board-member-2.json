@@ -1,0 +1,20 @@
+{
+  "id": "malakoff-isd-board-2",
+  "name": "Cynthia Poole",
+  "firstName": "Cynthia",
+  "lastName": "Poole",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Malakoff ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "401 E. Royall Blvd., Malakoff, TX 75148",
+    "phone": "(903) 489-1818",
+    "website": "https://www.malakoffisd.org/board"
+  },
+  "bio": "Cynthia Poole serves as the Vice President of the Malakoff ISD Board of Trustees. She advocates for enrichment programs in arts and athletics and works to ensure every Tiger student has opportunities to excel."
+}

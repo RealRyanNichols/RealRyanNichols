@@ -1,0 +1,20 @@
+{
+  "id": "edgewood-isd-board-3",
+  "name": "Adrian Polk",
+  "firstName": "Adrian",
+  "lastName": "Polk",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Edgewood ISD",
+  "county": ["Van Zandt"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "301 Tiger Trail, Edgewood, TX 75117",
+    "phone": "(903) 896-4316",
+    "website": "https://www.edgewoodisd.net/board"
+  },
+  "bio": "Adrian Polk serves as Secretary of the Edgewood ISD Board of Trustees. A local electrician and Little League coach, he supports safe campus facilities and accessible after-school programs."
+}

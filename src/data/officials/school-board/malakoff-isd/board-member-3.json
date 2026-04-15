@@ -1,0 +1,20 @@
+{
+  "id": "malakoff-isd-board-3",
+  "name": "Betty Faye Monroe",
+  "firstName": "Betty Faye",
+  "lastName": "Monroe",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Malakoff ISD",
+  "county": ["Henderson"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "401 E. Royall Blvd., Malakoff, TX 75148",
+    "phone": "(903) 489-1818",
+    "website": "https://www.malakoffisd.org/board"
+  },
+  "bio": "Betty Faye Monroe serves as the Secretary of the Malakoff ISD Board of Trustees. She brings careful attention to record-keeping and is a strong voice for family involvement in school governance."
+}
