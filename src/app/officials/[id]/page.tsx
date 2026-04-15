@@ -19,6 +19,8 @@ import VoteTimeline from "@/components/votes/VoteTimeline";
 import RedFlagCard from "@/components/shared/RedFlagCard";
 import PartyBadge from "@/components/officials/PartyBadge";
 import OfficialVotingSection from "@/components/voting/OfficialVotingSection";
+import CommentSection from "@/components/comments/CommentSection";
+import ShareButtons from "@/components/shared/ShareButtons";
 
 export async function generateStaticParams() {
   const officials = getAllOfficials();
@@ -98,6 +100,13 @@ export default async function OfficialProfilePage({
                 {official.district && <span>District: {official.district}</span>}
                 <span>{official.jurisdiction}</span>
                 <span>{formatLevelName(official.level)}</span>
+              </div>
+              <div className="mt-3">
+                <ShareButtons
+                  title={`${official.name} - ${official.position} | East Texas Official Tracker`}
+                  description={`See the scorecard, voting record, and funding data for ${official.name}.`}
+                  path={`/officials/${official.id}`}
+                />
               </div>
               {official.bio && (
                 <p className="mt-3 text-gray-700 max-w-2xl">{official.bio}</p>
@@ -265,6 +274,12 @@ export default async function OfficialProfilePage({
             )}
           </div>
         </div>
+
+        {/* Public Discussion */}
+        <CommentSection
+          officialId={official.id}
+          officialName={official.name}
+        />
       </div>
     </div>
   );
