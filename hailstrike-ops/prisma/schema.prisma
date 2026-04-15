@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model HailEvent {
+  id            String   @id @default(cuid())
+  nwsAlertId    String?  @unique
+  latitude      Float
+  longitude     Float
+  city          String
+  county        String
+  state         String
+  hailSize      Float
+  source        String
+  sourceDetail  String?
+  damage        String
+  windSpeed     Float?
+  verified      Boolean  @default(false)
+  reportCount   Int      @default(0)
+  neighborhoods String   @default("")
+  swathGeoJSON  String?
+  avgHomeValue  Float?
+  medianIncome  Float?
+  population    Int?
+  structures    Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  businesses    Business[]
+  intelLogs     IntelLog[]
+  outreachLogs  OutreachLog[]
+  adCampaigns   AdCampaign[]
+}
+
+model Business {
+  id             String   @id @default(cuid())
+  eventId        String
+  event          HailEvent @relation(fields: [eventId], references: [id])
+  name           String
+  type           String
+  ownerName      String?
+  phone          String?
+  email          String?
+  address        String
+  website        String?
+  carsPerMonth   Int?
+  hailExperience String?
+  status         String   @default("prospect")
+  notes          String?
+  outreachMethod String?
+  outreachSentAt DateTime?
+  industryMode   String   @default("auto")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model IntelLog {
+  id          String    @id @default(cuid())
+  eventId     String
+  event       HailEvent @relation(fields: [eventId], references: [id])
+  sourceName  String
+  sourcePhone String?
+  callerName  String
+  notes       String
+  createdAt   DateTime  @default(now())
+}
+
+model OutreachLog {
+  id             String     @id @default(cuid())
+  eventId        String?
+  event          HailEvent? @relation(fields: [eventId], references: [id])
+  method         String
+  recipientCount Int
+  area           String
+  sentAt         DateTime   @default(now())
+}
+
+model AdCampaign {
+  id             String    @id @default(cuid())
+  eventId        String
+  event          HailEvent @relation(fields: [eventId], references: [id])
+  metaCampaignId String?
+  city           String
+  headline       String
+  body           String
+  targeting      String
+  radiusMiles    Float
+  dailyBudget    Float
+  status         String    @default("pending")
+  autoApproved   Boolean   @default(false)
+  leadsGenerated Int       @default(0)
+  industryMode   String    @default("auto")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
