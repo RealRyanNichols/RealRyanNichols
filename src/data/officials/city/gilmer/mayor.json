@@ -1,0 +1,30 @@
+{
+  "id": "gilmer-mayor",
+  "name": "Tim Marshall",
+  "firstName": "Tim",
+  "lastName": "Marshall",
+  "party": "NP",
+  "level": "city",
+  "position": "Mayor",
+  "jurisdiction": "City of Gilmer",
+  "county": ["Upshur"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "205 N. Titus St., Gilmer, TX 75644",
+    "phone": "(903) 843-2553",
+    "email": "mayor@gilmertx.com",
+    "website": "https://www.gilmertx.com",
+    "socialMedia": {
+      "facebook": "https://facebook.com/CityOfGilmer"
+    }
+  },
+  "bio": "Tim Marshall serves as the Mayor of Gilmer, the county seat of Upshur County and known as the 'Sweet Potato Capital of the World.' Gilmer hosts the annual East Texas Yamboree, one of the oldest festivals in Texas. The mayor works with the city council to promote community events and economic development.",
+  "campaignPromises": [
+    "Promote the Yamboree and Gilmer's sweet potato heritage",
+    "Support local businesses and attract new investment",
+    "Improve city roads and infrastructure",
+    "Maintain strong public safety services",
+    "Enhance parks and community facilities"
+  ]
+}

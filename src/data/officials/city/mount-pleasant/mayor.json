@@ -1,0 +1,30 @@
+{
+  "id": "mount-pleasant-mayor",
+  "name": "Tracy Craig",
+  "firstName": "Tracy",
+  "lastName": "Craig",
+  "party": "NP",
+  "level": "city",
+  "position": "Mayor",
+  "jurisdiction": "City of Mount Pleasant",
+  "county": ["Titus"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "501 N. Madison Ave., Mount Pleasant, TX 75455",
+    "phone": "(903) 575-4000",
+    "email": "mayor@mpcity.net",
+    "website": "https://www.mpcity.net",
+    "socialMedia": {
+      "facebook": "https://facebook.com/CityOfMountPleasant"
+    }
+  },
+  "bio": "Tracy Craig serves as the Mayor of Mount Pleasant, the county seat of Titus County. Mount Pleasant is a regional hub for northeast Texas and is home to Northeast Texas Community College. The mayor works with the city council to attract business investment and improve the community.",
+  "campaignPromises": [
+    "Attract new industry and jobs to Mount Pleasant",
+    "Improve city infrastructure and drainage",
+    "Support Northeast Texas Community College partnerships",
+    "Enhance public safety and emergency services",
+    "Promote community development and quality of life"
+  ]
+}

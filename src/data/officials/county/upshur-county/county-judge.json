@@ -1,0 +1,27 @@
+{
+  "id": "upshur-county-judge",
+  "name": "Todd Tefteller",
+  "firstName": "Todd",
+  "lastName": "Tefteller",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Upshur County",
+  "county": ["Upshur"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "405 N. Titus St., Gilmer, TX 75644",
+    "phone": "(903) 843-4003",
+    "email": "county.judge@upshur-county.com",
+    "website": "https://www.countyofupshur.com/county-judge"
+  },
+  "bio": "Todd Tefteller serves as the Upshur County Judge, the chief executive and administrative officer of Upshur County. The county judge presides over the Commissioners Court and oversees county government operations including budgeting, emergency management, and infrastructure in the Gilmer area.",
+  "campaignPromises": [
+    "Keep Upshur County taxes low while maintaining services",
+    "Improve county roads and infrastructure",
+    "Support law enforcement and public safety",
+    "Maintain transparent county government operations",
+    "Plan responsibly for county growth"
+  ]
+}

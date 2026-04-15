@@ -1,0 +1,30 @@
+{
+  "id": "pittsburg-mayor",
+  "name": "Shawn Kennington",
+  "firstName": "Shawn",
+  "lastName": "Kennington",
+  "party": "NP",
+  "level": "city",
+  "position": "Mayor",
+  "jurisdiction": "City of Pittsburg",
+  "county": ["Camp"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "200 Rusk St., Pittsburg, TX 75686",
+    "phone": "(903) 856-3621",
+    "email": "mayor@pittsburgtx.gov",
+    "website": "https://www.pittsburgtx.gov",
+    "socialMedia": {
+      "facebook": "https://facebook.com/CityOfPittsburgTX"
+    }
+  },
+  "bio": "Shawn Kennington serves as the Mayor of Pittsburg, the county seat of Camp County and the 'Hot Link Capital of Texas.' Pittsburg is famous for its spicy sausage links and hosts an annual Hot Link Festival. The mayor leads the city council in promoting community development and local traditions.",
+  "campaignPromises": [
+    "Promote Pittsburg's hot link heritage and tourism",
+    "Support local businesses and economic growth",
+    "Improve city streets and infrastructure",
+    "Enhance community programs and events",
+    "Maintain quality public safety services"
+  ]
+}

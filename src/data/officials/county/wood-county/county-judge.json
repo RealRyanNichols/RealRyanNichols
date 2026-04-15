@@ -1,0 +1,27 @@
+{
+  "id": "wood-county-judge",
+  "name": "Kevin White",
+  "firstName": "Kevin",
+  "lastName": "White",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Wood County",
+  "county": ["Wood"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 S. Main St., Quitman, TX 75783",
+    "phone": "(903) 763-2716",
+    "email": "county.judge@wood-county.com",
+    "website": "https://www.mywoodcounty.com/county-judge"
+  },
+  "bio": "Kevin White serves as the Wood County Judge, the chief executive and administrative officer of Wood County. The county judge presides over the Commissioners Court and oversees county government operations including budgeting, emergency management, and infrastructure in the Quitman area.",
+  "campaignPromises": [
+    "Keep Wood County taxes low while maintaining services",
+    "Improve county roads and infrastructure",
+    "Support law enforcement and public safety",
+    "Maintain transparent county government operations",
+    "Plan responsibly for county growth"
+  ]
+}

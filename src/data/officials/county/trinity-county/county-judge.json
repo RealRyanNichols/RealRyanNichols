@@ -1,0 +1,27 @@
+{
+  "id": "trinity-county-judge",
+  "name": "Glen Whitley",
+  "firstName": "Glen",
+  "lastName": "Whitley",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Trinity County",
+  "county": ["Trinity"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "101 W. Main St., Groveton, TX 75845",
+    "phone": "(936) 642-1208",
+    "email": "county.judge@trinity-county.com",
+    "website": "https://www.co.trinity.tx.us/county-judge"
+  },
+  "bio": "Glen Whitley serves as the Trinity County Judge, the chief executive and administrative officer of Trinity County. The county judge presides over the Commissioners Court and oversees county government operations including budgeting, emergency management, and infrastructure in the Groveton area.",
+  "campaignPromises": [
+    "Keep Trinity County taxes low while maintaining services",
+    "Improve county roads and infrastructure",
+    "Support law enforcement and public safety",
+    "Maintain transparent county government operations",
+    "Plan responsibly for county growth"
+  ]
+}

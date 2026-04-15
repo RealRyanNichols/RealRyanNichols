@@ -1,0 +1,27 @@
+{
+  "id": "tyler-county-judge",
+  "name": "Jacques Blanchette",
+  "firstName": "Jacques",
+  "lastName": "Blanchette",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Tyler County",
+  "county": ["Tyler"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 Courthouse, Woodville, TX 75979",
+    "phone": "(409) 283-2141",
+    "email": "county.judge@tyler-county.com",
+    "website": "https://www.co.tyler.tx.us/county-judge"
+  },
+  "bio": "Jacques Blanchette serves as the Tyler County Judge, the chief executive and administrative officer of Tyler County. The county judge presides over the Commissioners Court and oversees county government operations including budgeting, emergency management, and infrastructure in the Woodville area.",
+  "campaignPromises": [
+    "Keep Tyler County taxes low while maintaining services",
+    "Improve county roads and infrastructure",
+    "Support law enforcement and public safety",
+    "Maintain transparent county government operations",
+    "Plan responsibly for county growth"
+  ]
+}

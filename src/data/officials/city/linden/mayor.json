@@ -1,0 +1,30 @@
+{
+  "id": "linden-mayor",
+  "name": "Clarence Burns",
+  "firstName": "Clarence",
+  "lastName": "Burns",
+  "party": "NP",
+  "level": "city",
+  "position": "Mayor",
+  "jurisdiction": "City of Linden",
+  "county": ["Cass"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "200 N. Main St., Linden, TX 75563",
+    "phone": "(903) 756-5521",
+    "email": "mayor@lindentx.org",
+    "website": "https://www.lindentx.org",
+    "socialMedia": {
+      "facebook": "https://facebook.com/CityOfLindenTX"
+    }
+  },
+  "bio": "Clarence Burns serves as the Mayor of Linden, one of the two county seats of Cass County. Linden is known for its Music City Texas Theater, a beloved local venue for country and gospel music. The mayor works with the city council to maintain city services and promote the community.",
+  "campaignPromises": [
+    "Support Linden's music heritage and cultural events",
+    "Improve city infrastructure and utility services",
+    "Promote economic development and small business growth",
+    "Maintain public safety and community policing",
+    "Enhance recreational opportunities for residents"
+  ]
+}

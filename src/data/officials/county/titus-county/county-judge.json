@@ -1,0 +1,27 @@
+{
+  "id": "titus-county-judge",
+  "name": "Brian Lee",
+  "firstName": "Brian",
+  "lastName": "Lee",
+  "party": "R",
+  "level": "county",
+  "position": "County Judge",
+  "jurisdiction": "Titus County",
+  "county": ["Titus"],
+  "termStart": "2023-01-01",
+  "termEnd": "2027-01-01",
+  "contactInfo": {
+    "office": "100 W. 1st St., Suite 301, Mount Pleasant, TX 75455",
+    "phone": "(903) 577-6796",
+    "email": "county.judge@titus-county.com",
+    "website": "https://www.co.titus.tx.us/county-judge"
+  },
+  "bio": "Brian Lee serves as the Titus County Judge, the chief executive and administrative officer of Titus County. The county judge presides over the Commissioners Court and oversees county government operations including budgeting, emergency management, and infrastructure in the Mount Pleasant area.",
+  "campaignPromises": [
+    "Keep Titus County taxes low while maintaining services",
+    "Improve county roads and infrastructure",
+    "Support law enforcement and public safety",
+    "Maintain transparent county government operations",
+    "Plan responsibly for county growth"
+  ]
+}

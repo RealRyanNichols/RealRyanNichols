@@ -1,0 +1,30 @@
+{
+  "id": "carthage-mayor",
+  "name": "Bobbie Brown",
+  "firstName": "Bobbie",
+  "lastName": "Brown",
+  "party": "NP",
+  "level": "city",
+  "position": "Mayor",
+  "jurisdiction": "City of Carthage",
+  "county": ["Panola"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "501 W. Panola St., Carthage, TX 75633",
+    "phone": "(903) 693-3868",
+    "email": "mayor@carthagetx.us",
+    "website": "https://www.carthagetx.us",
+    "socialMedia": {
+      "facebook": "https://facebook.com/CityOfCarthage"
+    }
+  },
+  "bio": "Bobbie Brown serves as the Mayor of Carthage, the county seat of Panola County. Carthage is known as the home of Tex Ritter, Jim Reeves, and other country music legends, earning it recognition as a country music heritage site. The mayor works to preserve the city's cultural legacy while promoting growth.",
+  "campaignPromises": [
+    "Promote Carthage's country music heritage and tourism",
+    "Support economic development and job growth",
+    "Improve city infrastructure and utilities",
+    "Maintain strong public safety services",
+    "Enhance community events and quality of life"
+  ]
+}
