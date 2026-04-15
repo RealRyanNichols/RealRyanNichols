@@ -1,0 +1,20 @@
+{
+  "id": "jefferson-isd-board-2",
+  "name": "Gail Ramsey",
+  "firstName": "Gail",
+  "lastName": "Ramsey",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Jefferson ISD",
+  "county": ["Marion"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "400 W. Broadway, Jefferson, TX 75657",
+    "phone": "(903) 665-2461",
+    "website": "https://www.jeffersonisd.org/board"
+  },
+  "bio": "Gail Ramsey is Vice President of the Jefferson ISD Board of Trustees. A bed-and-breakfast owner and tourism promoter, she advocates for arts education and community partnerships with the district."
+}

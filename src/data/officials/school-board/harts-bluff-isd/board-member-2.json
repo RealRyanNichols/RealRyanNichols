@@ -1,0 +1,20 @@
+{
+  "id": "harts-bluff-isd-board-2",
+  "name": "Joyce Milligan",
+  "firstName": "Joyce",
+  "lastName": "Milligan",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Harts Bluff ISD",
+  "county": ["Titus"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "3247 FM 1734, Mount Pleasant, TX 75455",
+    "phone": "(903) 577-1442",
+    "website": "https://www.hartsbluffisd.net/board"
+  },
+  "bio": "Joyce Milligan is Vice President of the Harts Bluff ISD Board of Trustees. A retired elementary teacher, she focuses on early-childhood literacy and maintaining low student-to-teacher ratios."
+}

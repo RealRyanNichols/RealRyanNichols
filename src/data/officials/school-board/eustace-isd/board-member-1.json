@@ -1,0 +1,20 @@
+{
+  "id": "eustace-isd-board-1",
+  "name": "Philip Norwood",
+  "firstName": "Philip",
+  "lastName": "Norwood",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Eustace ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "310 N. Highway 175, Eustace, TX 75124",
+    "phone": "(903) 425-5151",
+    "website": "https://www.eustaceisd.net/board"
+  },
+  "bio": "Philip Norwood serves as the President of the Eustace ISD Board of Trustees. He works to ensure the district provides competitive academic programs and a safe, welcoming campus environment for all students."
+}

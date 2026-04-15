@@ -1,0 +1,20 @@
+{
+  "id": "eustace-isd-board-3",
+  "name": "Gail Witherspoon",
+  "firstName": "Gail",
+  "lastName": "Witherspoon",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Eustace ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "310 N. Highway 175, Eustace, TX 75124",
+    "phone": "(903) 425-5151",
+    "website": "https://www.eustaceisd.net/board"
+  },
+  "bio": "Gail Witherspoon serves as the Secretary of the Eustace ISD Board of Trustees. She focuses on maintaining detailed records of board proceedings and facilitating communication between district leaders and the community."
+}

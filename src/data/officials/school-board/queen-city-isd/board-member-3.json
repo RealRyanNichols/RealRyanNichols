@@ -1,0 +1,20 @@
+{
+  "id": "queen-city-isd-board-3",
+  "name": "Anthony Fields",
+  "firstName": "Anthony",
+  "lastName": "Fields",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Queen City ISD",
+  "county": ["Cass"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "500 N. Houston St., Queen City, TX 75572",
+    "phone": "(903) 796-8326",
+    "website": "https://www.queencityisd.org/board"
+  },
+  "bio": "Anthony Fields serves as Secretary of the Queen City ISD Board of Trustees. A diesel mechanic and youth-sports coach, he supports vocational training and strong athletic programs for district students."
+}

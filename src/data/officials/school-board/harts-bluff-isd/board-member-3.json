@@ -1,0 +1,20 @@
+{
+  "id": "harts-bluff-isd-board-3",
+  "name": "Calvin Parr",
+  "firstName": "Calvin",
+  "lastName": "Parr",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Harts Bluff ISD",
+  "county": ["Titus"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "3247 FM 1734, Mount Pleasant, TX 75455",
+    "phone": "(903) 577-1442",
+    "website": "https://www.hartsbluffisd.net/board"
+  },
+  "bio": "Calvin Parr serves as Secretary of the Harts Bluff ISD Board of Trustees. A hay farmer and volunteer firefighter, he emphasizes fiscal responsibility and community safety for the rural district."
+}

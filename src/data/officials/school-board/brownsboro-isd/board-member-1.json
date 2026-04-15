@@ -1,0 +1,20 @@
+{
+  "id": "brownsboro-isd-board-1",
+  "name": "Danny Wooten",
+  "firstName": "Danny",
+  "lastName": "Wooten",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Brownsboro ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "505 E. Commerce St., Brownsboro, TX 75756",
+    "phone": "(903) 852-3701",
+    "website": "https://www.brownsboroisd.org/board"
+  },
+  "bio": "Danny Wooten serves as the President of the Brownsboro ISD Board of Trustees. He is focused on guiding the growing district through facility improvements and maintaining a high standard of instruction."
+}

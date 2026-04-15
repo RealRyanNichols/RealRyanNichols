@@ -1,0 +1,20 @@
+{
+  "id": "brownsboro-isd-board-3",
+  "name": "Sherry Holcomb",
+  "firstName": "Sherry",
+  "lastName": "Holcomb",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Secretary",
+  "district": "Place 3",
+  "jurisdiction": "Brownsboro ISD",
+  "county": ["Henderson"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "505 E. Commerce St., Brownsboro, TX 75756",
+    "phone": "(903) 852-3701",
+    "website": "https://www.brownsboroisd.org/board"
+  },
+  "bio": "Sherry Holcomb serves as the Secretary of the Brownsboro ISD Board of Trustees. She brings organizational excellence to her role and works to keep the Brownsboro community engaged in school affairs."
+}

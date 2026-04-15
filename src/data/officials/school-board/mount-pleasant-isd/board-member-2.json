@@ -1,0 +1,20 @@
+{
+  "id": "mount-pleasant-isd-board-2",
+  "name": "Maria Salazar",
+  "firstName": "Maria",
+  "lastName": "Salazar",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Mount Pleasant ISD",
+  "county": ["Titus"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "2116 N. Edwards Ave., Mount Pleasant, TX 75455",
+    "phone": "(903) 575-2000",
+    "website": "https://www.mpisd.net/board"
+  },
+  "bio": "Maria Salazar is Vice President of the Mount Pleasant ISD Board of Trustees. A bilingual educator and community organizer, she advocates for dual-language programs and inclusive family engagement across the district."
+}

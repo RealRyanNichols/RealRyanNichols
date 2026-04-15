@@ -1,0 +1,20 @@
+{
+  "id": "queen-city-isd-board-1",
+  "name": "Rick Dawson",
+  "firstName": "Rick",
+  "lastName": "Dawson",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Queen City ISD",
+  "county": ["Cass"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "500 N. Houston St., Queen City, TX 75572",
+    "phone": "(903) 796-8326",
+    "website": "https://www.queencityisd.org/board"
+  },
+  "bio": "Rick Dawson serves as President of the Queen City ISD Board of Trustees. A Cass County farmer and equipment dealer, he is committed to improving agricultural-science programs and campus infrastructure."
+}

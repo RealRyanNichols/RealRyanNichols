@@ -1,0 +1,20 @@
+{
+  "id": "harts-bluff-isd-board-1",
+  "name": "Virgil Nash",
+  "firstName": "Virgil",
+  "lastName": "Nash",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Harts Bluff ISD",
+  "county": ["Titus"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "3247 FM 1734, Mount Pleasant, TX 75455",
+    "phone": "(903) 577-1442",
+    "website": "https://www.hartsbluffisd.net/board"
+  },
+  "bio": "Virgil Nash serves as President of the Harts Bluff ISD Board of Trustees. A Titus County cattle rancher, he is dedicated to preserving the small-district atmosphere while expanding academic resources for students."
+}

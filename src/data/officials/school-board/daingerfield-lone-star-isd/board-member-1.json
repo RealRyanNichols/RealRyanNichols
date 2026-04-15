@@ -1,0 +1,20 @@
+{
+  "id": "daingerfield-lone-star-isd-board-1",
+  "name": "Clint Barber",
+  "firstName": "Clint",
+  "lastName": "Barber",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board President",
+  "district": "Place 1",
+  "jurisdiction": "Daingerfield-Lone Star ISD",
+  "county": ["Morris"],
+  "termStart": "2024-05-01",
+  "termEnd": "2028-05-01",
+  "contactInfo": {
+    "office": "200 Tiger Ln., Daingerfield, TX 75638",
+    "phone": "(903) 645-2238",
+    "website": "https://www.dlsisd.net/board"
+  },
+  "bio": "Clint Barber serves as President of the Daingerfield-Lone Star ISD Board of Trustees. A Morris County construction contractor, he champions campus-security upgrades and career-and-technology education."
+}

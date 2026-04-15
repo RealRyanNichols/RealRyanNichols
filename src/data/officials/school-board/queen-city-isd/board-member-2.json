@@ -1,0 +1,20 @@
+{
+  "id": "queen-city-isd-board-2",
+  "name": "Martha Gibbs",
+  "firstName": "Martha",
+  "lastName": "Gibbs",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Queen City ISD",
+  "county": ["Cass"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "500 N. Houston St., Queen City, TX 75572",
+    "phone": "(903) 796-8326",
+    "website": "https://www.queencityisd.org/board"
+  },
+  "bio": "Martha Gibbs is Vice President of the Queen City ISD Board of Trustees. A retired librarian, she promotes reading programs, digital literacy, and equitable access to learning resources."
+}

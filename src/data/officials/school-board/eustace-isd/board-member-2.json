@@ -1,0 +1,20 @@
+{
+  "id": "eustace-isd-board-2",
+  "name": "Laura Denton",
+  "firstName": "Laura",
+  "lastName": "Denton",
+  "party": "NP",
+  "level": "school-board",
+  "position": "School Board Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Eustace ISD",
+  "county": ["Henderson"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "310 N. Highway 175, Eustace, TX 75124",
+    "phone": "(903) 425-5151",
+    "website": "https://www.eustaceisd.net/board"
+  },
+  "bio": "Laura Denton serves as the Vice President of the Eustace ISD Board of Trustees. She is passionate about expanding college and career readiness programs and supporting the district's growing enrollment."
+}

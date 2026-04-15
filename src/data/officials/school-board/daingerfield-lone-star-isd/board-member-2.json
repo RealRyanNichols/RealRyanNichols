@@ -1,0 +1,20 @@
+{
+  "id": "daingerfield-lone-star-isd-board-2",
+  "name": "Patricia Mosley",
+  "firstName": "Patricia",
+  "lastName": "Mosley",
+  "party": "NP",
+  "level": "school-board",
+  "position": "Vice President",
+  "district": "Place 2",
+  "jurisdiction": "Daingerfield-Lone Star ISD",
+  "county": ["Morris"],
+  "termStart": "2023-05-01",
+  "termEnd": "2027-05-01",
+  "contactInfo": {
+    "office": "200 Tiger Ln., Daingerfield, TX 75638",
+    "phone": "(903) 645-2238",
+    "website": "https://www.dlsisd.net/board"
+  },
+  "bio": "Patricia Mosley is Vice President of the Daingerfield-Lone Star ISD Board of Trustees. A registered nurse and school-health advocate, she focuses on student mental health services and staff wellness programs."
+}
