@@ -70,8 +70,28 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Legal + Copyright */}
         <div className="mt-8 border-t border-gray-200 pt-6 dark:border-gray-700">
+          <div className="flex flex-wrap justify-center gap-4 mb-3">
+            <Link
+              href="/privacy"
+              className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              href="/feedback"
+              className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              Report an Issue
+            </Link>
+          </div>
           <p className="text-center text-sm text-gray-500 dark:text-gray-400">
             &copy; {new Date().getFullYear()} RepWatchr. All rights
             reserved. A product of RealRyanNichols.
