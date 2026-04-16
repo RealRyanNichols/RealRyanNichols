@@ -9,5 +9,49 @@
     "date": "2025-06-10",
     "sourceUrl": "https://www.senate.gov",
     "whyItMatters": "East Texas water infrastructure needs are urgent. Being absent for this vote meant the region lost a voice on a bill that directly affects local water quality and access."
+  },
+  {
+    "id": "tc-rf-2",
+    "officialId": "ted-cruz",
+    "title": "Flew to Cancun during deadly 2021 Texas winter storm",
+    "description": "In February 2021, while millions of Texans lost power and water during Winter Storm Uri — which killed over 200 people — Sen. Cruz flew to Cancun, Mexico for a family vacation. He returned early only after photos of him at the airport went viral, initially blaming the trip on his daughters before acknowledging it was a mistake.",
+    "severity": "critical",
+    "category": "ethics",
+    "date": "2021-02-18",
+    "sourceUrl": "https://www.nytimes.com/2021/02/18/us/politics/ted-cruz-storm-cancun.html",
+    "whyItMatters": "While Texans were freezing, losing loved ones, and dealing with burst pipes, their elected senator left the state for a beach resort. Leadership means being present during a crisis, especially when constituents need advocacy for emergency federal aid."
+  },
+  {
+    "id": "tc-rf-3",
+    "officialId": "ted-cruz",
+    "title": "Voted against disaster relief for other states while seeking it for Texas",
+    "description": "Sen. Cruz voted against the 2013 Hurricane Sandy relief package for the northeastern United States, calling the spending wasteful. However, after Hurricane Harvey devastated Texas in 2017, Cruz requested and supported billions in federal disaster relief for his own state. He argued the situations were different but critics noted the inconsistency.",
+    "severity": "critical",
+    "category": "voting-record",
+    "date": "2017-09-01",
+    "sourceUrl": "https://www.politifact.com/factchecks/2017/aug/29/ted-cruz/ted-cruz-says-two-thirds-sandy-bill-had-nothing-do/",
+    "whyItMatters": "Voting against disaster relief for other states and then requesting it for your own raises questions about consistency and good faith governance. Texans benefit from the same federal disaster framework Cruz voted to deny others."
+  },
+  {
+    "id": "tc-rf-4",
+    "officialId": "ted-cruz",
+    "title": "Majority of campaign funds come from out-of-state donors",
+    "description": "FEC filings have consistently shown that a significant majority of Sen. Cruz's campaign contributions come from outside Texas. His national profile as a media figure and podcast host generates donations from across the country, raising questions about whether his priorities align with Texas voters or national donors.",
+    "severity": "warning",
+    "category": "funding",
+    "date": "2024-01-15",
+    "sourceUrl": "https://www.opensecrets.org/members-of-congress/ted-cruz/summary?cid=N00033085",
+    "whyItMatters": "When the vast majority of an official's campaign money comes from outside the state, voters should ask whether the official is more responsive to those national donors or to the needs of Texans, particularly rural East Texans whose concerns differ from the national base."
+  },
+  {
+    "id": "tc-rf-5",
+    "officialId": "ted-cruz",
+    "title": "Led 2013 government shutdown effort over Affordable Care Act",
+    "description": "In October 2013, Sen. Cruz spearheaded the effort to defund the Affordable Care Act that led to a 16-day federal government shutdown. The shutdown furloughed approximately 800,000 federal workers and cost the economy an estimated $24 billion, according to Standard & Poor's. The ACA was not defunded.",
+    "severity": "warning",
+    "category": "voting-record",
+    "date": "2013-10-01",
+    "sourceUrl": "https://www.washingtonpost.com/politics/2013/10/01/government-shutdown/",
+    "whyItMatters": "Government shutdowns disrupt services that East Texans rely on, including VA healthcare, Social Security processing, and federal employee paychecks at facilities like Red River Army Depot. The shutdown achieved none of its stated goals while causing real economic harm."
   }
 ]

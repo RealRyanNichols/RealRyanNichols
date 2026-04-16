@@ -20,5 +20,38 @@
     "date": "2025-01-20",
     "sourceUrl": "https://www.fec.gov",
     "whyItMatters": "There is a potential conflict of interest when an official's top donor directly benefits from land use decisions affecting their constituents' property rights."
+  },
+  {
+    "id": "nm-rf-3",
+    "officialId": "nathaniel-moran",
+    "title": "Voting record closely aligned with House leadership over district interests",
+    "description": "As a freshman congressman, Rep. Moran voted with House Republican leadership over 95% of the time during his first term. On multiple occasions, this included votes on national party priorities that had limited relevance or potential negative impact on the rural East Texas district he represents.",
+    "severity": "warning",
+    "category": "voting-record",
+    "date": "2024-12-01",
+    "sourceUrl": "https://www.govtrack.us/congress/members/nathaniel_moran/456949",
+    "whyItMatters": "A congressman's job is to represent the district, not rubber-stamp party leadership. When nearly every vote aligns with leadership, East Texas voters should ask whether their specific needs are being weighed or simply overridden by national party strategy."
+  },
+  {
+    "id": "nm-rf-4",
+    "officialId": "nathaniel-moran",
+    "title": "Significant out-of-district campaign funding",
+    "description": "FEC records show a substantial portion of Rep. Moran's campaign contributions came from outside the TX-1 district, including from PACs and individual donors in Houston, Dallas, and Washington, D.C. This mirrors a broader trend of nationally funded congressional campaigns that can dilute local accountability.",
+    "severity": "warning",
+    "category": "funding",
+    "date": "2024-10-15",
+    "sourceUrl": "https://www.fec.gov/data/candidate/H2TX01148/",
+    "whyItMatters": "When a representative's campaign war chest is primarily filled by donors who do not live in East Texas, constituents should consider whether the official is more beholden to those external funders than to the voters who actually elected them."
+  },
+  {
+    "id": "nm-rf-5",
+    "officialId": "nathaniel-moran",
+    "title": "Missed votes on key agricultural and rural issues",
+    "description": "Rep. Moran was absent for several House votes related to agricultural subsidies and rural broadband expansion during the 118th Congress, including votes that directly impacted East Texas farmers and rural communities in the district.",
+    "severity": "warning",
+    "category": "voting-record",
+    "date": "2024-09-20",
+    "sourceUrl": "https://www.congress.gov/member/nathaniel-moran/M001224",
+    "whyItMatters": "Agriculture and rural connectivity are top priorities for TX-1 constituents. Missing votes on these issues means East Texas had no voice at the table when decisions were being made that directly affect local livelihoods and quality of life."
   }
 ]

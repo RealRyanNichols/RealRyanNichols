@@ -20,5 +20,38 @@
     "date": "2026-02-10",
     "sourceUrl": "https://www.govtrack.us/congress/members/john_cornyn/300027",
     "whyItMatters": "East Texas has a large veteran population and significant water policy concerns. Absent votes on these issues mean East Texas had no voice in critical decisions. Constituents deserve a senator who shows up for the issues that matter to them."
+  },
+  {
+    "id": "rf-cornyn-003",
+    "officialId": "john-cornyn",
+    "title": "Bipartisan Safety Communities Act drew backlash from own party",
+    "description": "Sen. Cornyn was the lead Republican negotiator on the Bipartisan Safer Communities Act of 2022, the first major federal gun legislation in nearly 30 years. While the bill passed with bipartisan support, Cornyn was loudly booed at the 2022 Texas Republican Convention, and faced censure resolutions from multiple county Republican parties across East Texas who viewed the bill as a betrayal of Second Amendment rights.",
+    "severity": "warning",
+    "category": "voting-record",
+    "date": "2022-06-25",
+    "sourceUrl": "https://www.texastribune.org/2022/06/25/john-cornyn-texas-gop-convention-gun-bill/",
+    "whyItMatters": "Whether you support the gun bill or not, the intense backlash from Cornyn's own party base reveals a significant disconnect between the senator and many of his core constituents in Texas, particularly in the strongly pro-Second-Amendment East Texas region."
+  },
+  {
+    "id": "rf-cornyn-004",
+    "officialId": "john-cornyn",
+    "title": "Extensive ties to lobbying industry after decades in office",
+    "description": "After more than two decades in the Senate, Sen. Cornyn has developed extensive relationships with lobbying firms and special interest groups. OpenSecrets data shows he has consistently been among the top Senate recipients of contributions from the securities and investment industry, real estate sector, and defense contractors throughout his career.",
+    "severity": "warning",
+    "category": "conflict-of-interest",
+    "date": "2024-06-01",
+    "sourceUrl": "https://www.opensecrets.org/members-of-congress/john-cornyn/summary?cid=N00024852",
+    "whyItMatters": "Long-term relationships between elected officials and special interest donors can lead to policy decisions that favor well-connected industries over the needs of everyday East Texans. Voters should be aware of who funds their senator's campaigns."
+  },
+  {
+    "id": "rf-cornyn-005",
+    "officialId": "john-cornyn",
+    "title": "Supported federal spending bills opposed by Texas conservative base",
+    "description": "Sen. Cornyn has voted for multiple omnibus spending bills and continuing resolutions that increased the federal deficit, despite campaigning on fiscal conservatism. Several of these votes were against the position of the majority of the Texas Republican delegation in the House.",
+    "severity": "warning",
+    "category": "broken-promise",
+    "date": "2023-03-15",
+    "sourceUrl": "https://www.govtrack.us/congress/members/john_cornyn/300027",
+    "whyItMatters": "Voters who sent Cornyn to Washington expecting fiscal restraint should know when their senator votes for large spending packages. Fiscal responsibility was a core campaign promise, and these votes represent a departure from that commitment."
   }
 ]
