@@ -161,6 +161,27 @@ export interface RedFlag {
 }
 
 // ============================================================
+// News / Articles
+// ============================================================
+
+export type NewsTag = "breaking" | "investigation" | "update" | "opinion" | "watchdog" | "election" | "corruption" | "transparency";
+
+export interface NewsArticle {
+  id: string;
+  title: string;
+  summary: string;
+  content: string;
+  officialIds: string[];
+  tags: NewsTag[];
+  sourceUrl?: string;
+  sourceName?: string;
+  imageUrl?: string;
+  author: string;
+  publishedAt: string;
+  featured: boolean;
+}
+
+// ============================================================
 // Citizen Voting System Types
 // ============================================================
 

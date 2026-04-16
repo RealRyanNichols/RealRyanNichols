@@ -15,6 +15,7 @@ import type {
   Bill,
   IssueCategory,
   OfficialWithScores,
+  NewsArticle,
 } from "@/types";
 
 // Base path to the data directory
@@ -26,6 +27,7 @@ const DATA_DIR = path.join(process.cwd(), "src", "data");
 let officialsCache: Official[] | null = null;
 let billsCache: Bill[] | null = null;
 let issueCategoriesCache: IssueCategory[] | null = null;
+let newsCache: NewsArticle[] | null = null;
 const scoreCardCache = new Map<string, ScoreCard>();
 const fundingCache = new Map<string, FundingSummary>();
 const redFlagCache = new Map<string, RedFlag[]>();
@@ -264,4 +266,56 @@ export function getOfficialWithScores(
     fundingSummary: getFundingSummary(id),
     redFlags: getRedFlags(id),
   };
+}
+
+// ---------------------------------------------------------------------------
+// News / Articles
+// ---------------------------------------------------------------------------
+
+/**
+ * Load all news articles from src/data/news/. Cached after first call.
+ * Sorted by publishedAt descending (newest first).
+ */
+export function getAllNews(): NewsArticle[] {
+  if (newsCache) return newsCache;
+
+  const newsDir = path.join(DATA_DIR, "news");
+  const files = collectJsonFiles(newsDir);
+  const articles: NewsArticle[] = [];
+
+  for (const file of files) {
+    const article = readJsonFile<NewsArticle>(file);
+    if (article) {
+      articles.push(article);
+    }
+  }
+
+  articles.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
+  newsCache = articles;
+  return articles;
+}
+
+/**
+ * Find a single news article by its id.
+ */
+export function getNewsById(id: string): NewsArticle | undefined {
+  return getAllNews().find((n) => n.id === id);
+}
+
+/**
+ * Get all news articles linked to a specific official.
+ */
+export function getNewsByOfficialId(officialId: string): NewsArticle[] {
+  return getAllNews().filter((n) => n.officialIds.includes(officialId));
+}
+
+/**
+ * Get featured/breaking news articles.
+ */
+export function getFeaturedNews(): NewsArticle[] {
+  return getAllNews().filter((n) => n.featured);
 }

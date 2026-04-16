@@ -21,6 +21,7 @@ import PartyBadge from "@/components/officials/PartyBadge";
 import OfficialVotingSection from "@/components/voting/OfficialVotingSection";
 import CommentSection from "@/components/comments/CommentSection";
 import ShareButtons from "@/components/shared/ShareButtons";
+import { getNewsByOfficialId } from "@/lib/data";
 
 export async function generateStaticParams() {
   const officials = getAllOfficials();
@@ -67,6 +68,7 @@ export default async function OfficialProfilePage({
   const funding = getFundingSummary(id);
   const redFlags = getRedFlags(id);
   const issueCategories = getIssueCategories();
+  const relatedNews = getNewsByOfficialId(id);
 
   const allScoredVotes = scoreCard
     ? Object.values(scoreCard.categories).flatMap((c) => c.votes)
@@ -274,6 +276,56 @@ export default async function OfficialProfilePage({
             )}
           </div>
         </div>
+
+        {/* Related News */}
+        {relatedNews.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
+              In the News
+            </h2>
+            <div className="space-y-3">
+              {relatedNews.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/news/${article.id}`}
+                  className="group flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap gap-1.5 mb-1.5">
+                      {article.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-600"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="mt-1 text-xs text-gray-500 line-clamp-1">
+                      {article.summary}
+                    </p>
+                    <span className="mt-2 inline-block text-xs text-gray-400">
+                      {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/news"
+              className="mt-3 inline-block text-sm font-semibold text-blue-600 hover:text-blue-800"
+            >
+              View All News &rarr;
+            </Link>
+          </section>
+        )}
 
         {/* Public Discussion */}
         <CommentSection

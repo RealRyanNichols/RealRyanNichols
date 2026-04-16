@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/funding", label: "Funding" },
   { href: "/school-boards", label: "School Boards" },
   { href: "/red-flags", label: "Red Flags" },
+  { href: "/news", label: "News" },
 ];
 
 export default function Header() {

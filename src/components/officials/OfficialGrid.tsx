@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { GovernmentLevel, Official, Party, ScoreCard } from "@/types";
 import OfficialCard from "@/components/officials/OfficialCard";
 
@@ -30,8 +31,13 @@ export default function OfficialGrid({
   officials,
   scoreCards,
 }: OfficialGridProps) {
+  const searchParams = useSearchParams();
+  const urlSearch = searchParams.get("search") ?? "";
+  const urlLevel = searchParams.get("level") ?? "";
+
+  const [searchQuery, setSearchQuery] = useState(urlSearch);
   const [levelFilter, setLevelFilter] = useState<GovernmentLevel | "all">(
-    "all",
+    (urlLevel as GovernmentLevel) || "all",
   );
   const [partyFilter, setPartyFilter] = useState<Party | "all">("all");
   const [countyFilter, setCountyFilter] = useState("all");
@@ -55,17 +61,33 @@ export default function OfficialGrid({
   }, [scoreCards]);
 
   const filtered = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
     return officials.filter((o) => {
       if (levelFilter !== "all" && o.level !== levelFilter) return false;
       if (partyFilter !== "all" && o.party !== partyFilter) return false;
       if (countyFilter !== "all" && !o.county.includes(countyFilter))
         return false;
+      if (q) {
+        const haystack = `${o.name} ${o.position} ${o.jurisdiction} ${o.district ?? ""} ${o.county.join(" ")}`.toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
       return true;
     });
-  }, [officials, levelFilter, partyFilter, countyFilter]);
+  }, [officials, levelFilter, partyFilter, countyFilter, searchQuery]);
 
   return (
     <div>
+      {/* Search */}
+      <div className="mb-4">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search by name, position, county, or district..."
+          className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        />
+      </div>
+
       {/* Filters */}
       <div className="mb-6 flex flex-wrap gap-3">
         {/* Level filter */}
