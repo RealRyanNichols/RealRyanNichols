@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getOfficialsByLevel } from "@/lib/data";
+import CommentSection from "@/components/comments/CommentSection";
 
 export const metadata: Metadata = {
   title: "School Boards",
@@ -104,6 +105,14 @@ export default function SchoolBoardsPage() {
           </p>
         </div>
       )}
+
+      {/* Public Discussion */}
+      <div className="mt-12">
+        <CommentSection
+          officialId="school-boards-general"
+          officialName="Texas School Boards"
+        />
+      </div>
     </div>
   );
 }
