@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/banner.png",
+        url: "/images/icon.png",
         width: 1200,
-        height: 630,
-        alt: "RepWatchr - Track. Analyze. Improve.",
+        height: 1200,
+        alt: "RepWatchr - Know Your Reps. Hold Them Accountable.",
       },
     ],
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "RepWatchr - Know Your Reps. Hold Them Accountable.",
     description:
       "Track your elected officials in Texas. Scorecards, voting records, campaign funding, and red flags.",
-    images: ["/images/banner.png"],
+    images: ["/images/icon.png"],
   },
   robots: {
     index: true,
