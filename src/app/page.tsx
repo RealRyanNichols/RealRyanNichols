@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllOfficials, getScoreCard, getIssueCategories } from "@/lib/data";
+import { getAllOfficials, getScoreCard, getIssueCategories, getAllNews } from "@/lib/data";
 import OfficialCard from "@/components/officials/OfficialCard";
 import SearchBar from "@/components/shared/SearchBar";
 
@@ -57,6 +57,8 @@ export default function HomePage() {
   const featuredOfficials = officials
     .filter((o) => o.level === "federal" || o.level === "state")
     .slice(0, 6);
+
+  const latestNews = getAllNews().slice(0, 3);
 
   return (
     <div>
@@ -213,6 +215,63 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Latest News */}
+      {latestNews.length > 0 && (
+        <section className="bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <h2 className="text-3xl font-extrabold text-gray-900">
+                  Latest News
+                </h2>
+                <p className="text-gray-500 mt-1">
+                  Breaking stories and accountability reports
+                </p>
+              </div>
+              <Link
+                href="/news"
+                className="text-blue-600 hover:text-blue-800 text-sm font-bold"
+              >
+                All News &rarr;
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {latestNews.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/news/${article.id}`}
+                  className="group block rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:shadow-lg hover:-translate-y-1"
+                >
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {article.tags.slice(0, 2).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
+                    {article.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500 line-clamp-2">
+                    {article.summary}
+                  </p>
+                  <span className="inline-block mt-4 text-xs text-gray-400">
+                    {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Cards */}
       <section className="bg-slate-900">
