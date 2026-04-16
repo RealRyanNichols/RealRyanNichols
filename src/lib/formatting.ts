@@ -60,6 +60,8 @@ export function formatPartyName(party: Party): string {
     D: "Democrat",
     I: "Independent",
     NP: "Non-Partisan",
+    VR: "Votes Republican",
+    VD: "Votes Democrat",
   };
   return names[party];
 }
@@ -87,6 +89,8 @@ export function getPartyColor(party: Party): string {
     D: "#0015BC",
     I: "#808080",
     NP: "#999999",
+    VR: "#E8444D",
+    VD: "#3355CC",
   };
   return colors[party];
 }

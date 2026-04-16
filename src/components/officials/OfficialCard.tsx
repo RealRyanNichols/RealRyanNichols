@@ -8,6 +8,8 @@ const partyAccent: Record<string, string> = {
   D: "from-blue-500",
   I: "from-purple-500",
   NP: "from-gray-400",
+  VR: "from-red-400",
+  VD: "from-blue-400",
 };
 
 interface OfficialCardProps {

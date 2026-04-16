@@ -2,7 +2,9 @@
 // East Texas Official Tracker - Type Definitions
 // ============================================================
 
-export type Party = "R" | "D" | "I" | "NP";
+export type Party = "R" | "D" | "I" | "NP" | "VR" | "VD";
+// VR = "Votes Republican" (nonpartisan office but pulls R primaries / leans R)
+// VD = "Votes Democrat" (nonpartisan office but pulls D primaries / leans D)
 export type GovernmentLevel = "federal" | "state" | "county" | "city" | "school-board";
 export type VoteChoice = "yea" | "nay" | "absent" | "abstain" | "not-applicable";
 export type RedFlagSeverity = "warning" | "critical";

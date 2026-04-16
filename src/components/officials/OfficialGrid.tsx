@@ -18,8 +18,10 @@ const partyOptions: { value: Party | "all"; label: string }[] = [
   { value: "all", label: "All Parties" },
   { value: "R", label: "Republican" },
   { value: "D", label: "Democrat" },
+  { value: "VR", label: "Votes Republican" },
+  { value: "VD", label: "Votes Democrat" },
   { value: "I", label: "Independent" },
-  { value: "NP", label: "Non-Partisan" },
+  { value: "NP", label: "Unknown" },
 ];
 
 interface OfficialGridProps {
