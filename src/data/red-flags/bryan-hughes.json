@@ -1,0 +1,46 @@
+[
+  {
+    "id": "bh-rf-1",
+    "officialId": "bryan-hughes",
+    "title": "SB 1 election law drew national controversy and legal challenges",
+    "description": "Sen. Hughes authored SB 1, Texas's sweeping 2021 election overhaul that restricted mail-in voting, banned drive-through and 24-hour voting, and expanded partisan poll watcher access. The bill drew national criticism, multiple federal lawsuits, and was cited as the catalyst for Texas House Democrats fleeing the state to break quorum. While Hughes framed it as election security, opponents argued it disproportionately targeted voting methods used by minority communities.",
+    "severity": "critical",
+    "category": "voting-record",
+    "date": "2021-09-07",
+    "sourceUrl": "https://www.texastribune.org/2021/09/01/texas-voting-bill-final/",
+    "whyItMatters": "Election law affects every voter in the district. Whether you view SB 1 as protecting election integrity or restricting access, the bill generated costly legal battles paid for by taxpayers and remains one of the most divisive pieces of Texas legislation in recent memory."
+  },
+  {
+    "id": "bh-rf-2",
+    "officialId": "bryan-hughes",
+    "title": "Campaign contributions from industries regulated by his committees",
+    "description": "As chair of the Senate State Affairs Committee, Sen. Hughes oversees legislation affecting elections, utilities, and telecommunications. Campaign finance reports show he has received significant contributions from utility companies, telecom firms, and political action committees representing industries that regularly have business before his committee.",
+    "severity": "warning",
+    "category": "conflict-of-interest",
+    "date": "2024-07-01",
+    "sourceUrl": "https://www.ethics.state.tx.us/search/cf/",
+    "whyItMatters": "When a committee chair receives campaign contributions from the very industries whose legislation he controls, it creates at minimum the appearance of a conflict of interest. East Texas voters deserve assurance that their senator's policy decisions are based on constituent needs, not donor relationships."
+  },
+  {
+    "id": "bh-rf-3",
+    "officialId": "bryan-hughes",
+    "title": "Authored social media censorship bill struck down by courts",
+    "description": "Sen. Hughes authored HB 20, the 2021 Texas law that prohibited large social media platforms from banning users based on political viewpoint. While popular with the conservative base, portions of the law were challenged in federal court, resulting in years of litigation that reached the U.S. Supreme Court. The Supreme Court vacated the lower court ruling in 2024 and sent it back for further review, leaving the law's enforceability uncertain.",
+    "severity": "warning",
+    "category": "other",
+    "date": "2021-09-09",
+    "sourceUrl": "https://www.texastribune.org/2021/09/09/texas-social-media-censorship-bill/",
+    "whyItMatters": "Legislation that faces extended legal challenges costs taxpayers money to defend in court. While the intent to protect free speech resonates with many Texans, passing laws that are constitutionally uncertain raises questions about legislative effectiveness."
+  },
+  {
+    "id": "bh-rf-4",
+    "officialId": "bryan-hughes",
+    "title": "Property tax elimination promise remains unfulfilled",
+    "description": "Sen. Hughes has repeatedly campaigned on eliminating property taxes for Texas homeowners, including making it a central promise of his 2022 campaign. Despite chairing a powerful committee and serving in the legislature for over two decades, property taxes remain in place. While some incremental reforms have passed, the core promise of elimination has not been delivered.",
+    "severity": "warning",
+    "category": "broken-promise",
+    "date": "2024-01-01",
+    "sourceUrl": "https://senate.texas.gov/member.php?d=1",
+    "whyItMatters": "Property taxes are the number one financial concern for East Texas homeowners. Voters have a right to evaluate whether repeated campaign promises on this issue are realistic commitments or rhetorical tools used to win elections without follow-through."
+  }
+]

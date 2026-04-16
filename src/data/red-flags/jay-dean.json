@@ -20,5 +20,38 @@
     "date": "2025-05-20",
     "sourceUrl": "https://capitol.texas.gov",
     "whyItMatters": "Voters elected this official in part based on a no-new-taxes pledge. Voting to expand taxing authority contradicts that promise and increases the tax burden on East Texas property owners."
+  },
+  {
+    "id": "jd-rf-3",
+    "officialId": "jay-dean",
+    "title": "Property tax reform stance inconsistent with actual voting record",
+    "description": "Despite campaigning on lowering property taxes for East Texas homeowners, Rep. Dean's voting record shows support for legislation that maintained or expanded local taxing district authority. He voted for bills that provided incremental compression but fell short of the meaningful reform he promised voters in HD-7.",
+    "severity": "warning",
+    "category": "broken-promise",
+    "date": "2023-06-15",
+    "sourceUrl": "https://capitol.texas.gov/BillLookup/History.aspx",
+    "whyItMatters": "Property taxes are the top financial concern for homeowners in Gregg and Upshur counties. When a representative campaigns on bold reform but votes for half-measures, constituents end up with neither the relief they were promised nor the accountability they deserve."
+  },
+  {
+    "id": "jd-rf-4",
+    "officialId": "jay-dean",
+    "title": "Campaign contributions from oil and gas industry with business before legislature",
+    "description": "Campaign finance reports show Rep. Dean received notable contributions from oil and gas companies and associated PACs that had active legislation before committees on which he served. This includes companies with pipeline and drilling operations in Gregg and Upshur counties.",
+    "severity": "warning",
+    "category": "funding",
+    "date": "2024-03-01",
+    "sourceUrl": "https://www.ethics.state.tx.us/search/cf/",
+    "whyItMatters": "East Texas voters whose property and water resources are affected by oil and gas operations should know when their representative receives campaign money from those same companies. This creates a potential conflict between donor interests and constituent wellbeing."
+  },
+  {
+    "id": "jd-rf-5",
+    "officialId": "jay-dean",
+    "title": "Limited legislative output relative to tenure",
+    "description": "Despite serving since 2019, Rep. Dean has authored relatively few bills that became law compared to peers in similar districts. His legislative output has focused primarily on noncontroversial local bills rather than the substantive property tax and property rights reforms he campaigned on.",
+    "severity": "warning",
+    "category": "other",
+    "date": "2024-12-01",
+    "sourceUrl": "https://capitol.texas.gov/MnuSearch.aspx",
+    "whyItMatters": "Voters send representatives to Austin to pass meaningful legislation. When an official's record consists primarily of symbolic or local measures while core campaign promises go unaddressed, constituents should ask what their representative is actually accomplishing."
   }
 ]
