@@ -110,7 +110,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
         <Link
           href="/profiles/claim"
           className="rounded-2xl border border-blue-200 bg-blue-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-red-300"
@@ -139,6 +139,21 @@ export default function DashboardPage() {
           <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
             Track claim status, subscription state, and reviewed bio or media
             submissions.
+          </p>
+        </Link>
+        <Link
+          href="/dashboard/settings"
+          className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300"
+        >
+          <p className="text-xs font-black uppercase tracking-wide text-blue-700">
+            Watch defaults
+          </p>
+          <h2 className="mt-2 text-xl font-black text-gray-950">
+            Settings
+          </h2>
+          <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
+            Set the School Board Watch state that opens first. Texas is the
+            default unless you change it.
           </p>
         </Link>
       </div>
