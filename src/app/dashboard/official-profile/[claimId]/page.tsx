@@ -9,9 +9,15 @@ export const metadata: Metadata = {
 
 export default async function OfficialProfileDashboardPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ claimId: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { claimId } = await params;
-  return <ClaimedProfileEditor claimId={claimId} />;
+  const query = await searchParams;
+  const checkout = query.checkout;
+  const checkoutStatus = Array.isArray(checkout) ? checkout[0] : checkout;
+
+  return <ClaimedProfileEditor claimId={claimId} checkoutStatus={checkoutStatus} />;
 }
