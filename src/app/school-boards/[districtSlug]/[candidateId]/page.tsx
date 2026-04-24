@@ -55,7 +55,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
               <p className="text-xs font-black uppercase tracking-wide text-red-700">Sixty-second read</p>
               <p className="mt-2 text-sm leading-6 text-gray-700">{getShareLine(candidate)}</p>
               <div className="mt-5 grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-gray-200 bg-white p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">Model score</p><p className="mt-1 text-3xl font-black text-gray-950">{score.evidenceCount === 0 ? "Pending" : score.score}</p><p className="text-sm font-bold text-gray-600">Grade {score.grade}</p></div>
+                <div className="rounded-xl border border-gray-200 bg-white p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">Model score</p><p className="mt-1 text-3xl font-black text-gray-950">{score.grade === "Pending" ? "Review" : score.score}</p><p className="text-sm font-bold text-gray-600">{score.grade === "Pending" ? "Evidence pending" : `Grade ${score.grade}`}</p></div>
                 <div className="rounded-xl border border-gray-200 bg-white p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">Political lean</p><p className="mt-1 text-sm font-black text-gray-950">{score.politicalLean.label}</p><p className="text-xs font-bold text-gray-500">{score.politicalLean.confidence} confidence</p></div>
               </div>
               {score.praiseWiped ? <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4"><p className="text-sm font-black text-red-900">Praise override active</p><p className="mt-1 text-sm leading-6 text-red-800">{score.overrideReason}</p></div> : null}
