@@ -127,7 +127,7 @@ const ACCESSED_DATE = "2026-04-24";
 
 const DISTRICT_SOURCES: Record<string, SourceLink[]> = {
   harleton_isd: [
-    { url: "https://www.harletonisd.net/page/board-of-trustees", title: "Harleton ISD Board of Trustees", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+    { url: "https://www.harletonisd.net/111667_2", title: "Harleton ISD Board of Trustees", accessed_date: ACCESSED_DATE, source_type: "district_official" },
   ],
   marshall_isd: [
     { url: "https://www.marshallisd.com/page/school-board", title: "Marshall ISD School Board", accessed_date: ACCESSED_DATE, source_type: "district_official" },

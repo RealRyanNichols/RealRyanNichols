@@ -78,6 +78,20 @@ export default function UserMenu() {
           >
             My Dashboard
           </Link>
+          <Link
+            href="/dashboard/claims"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+            onClick={() => setOpen(false)}
+          >
+            My Claims
+          </Link>
+          <Link
+            href="/profiles/claim"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+            onClick={() => setOpen(false)}
+          >
+            Claim Profile
+          </Link>
           {!profile?.verified && (
             <Link
               href="/auth/verify"

@@ -110,6 +110,39 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <Link
+          href="/profiles/claim"
+          className="rounded-2xl border border-blue-200 bg-blue-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-red-300"
+        >
+          <p className="text-xs font-black uppercase tracking-wide text-blue-700">
+            Profile ownership
+          </p>
+          <h2 className="mt-2 text-xl font-black text-blue-950">
+            Claim a public profile
+          </h2>
+          <p className="mt-2 text-sm font-semibold leading-6 text-blue-950/75">
+            Officials, candidates, and journalists can request manual
+            verification. Paid tools unlock only after approval.
+          </p>
+        </Link>
+        <Link
+          href="/dashboard/claims"
+          className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300"
+        >
+          <p className="text-xs font-black uppercase tracking-wide text-red-700">
+            Claimed profile office
+          </p>
+          <h2 className="mt-2 text-xl font-black text-gray-950">
+            My claims and submissions
+          </h2>
+          <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
+            Track claim status, subscription state, and reviewed bio or media
+            submissions.
+          </p>
+        </Link>
+      </div>
+
       {/* Votes Section */}
       <div className="mt-8">
         <h2 className="text-lg font-semibold text-gray-900">

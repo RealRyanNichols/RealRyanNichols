@@ -3,6 +3,9 @@ import Link from "next/link";
 import ShareButtons from "@/components/shared/ShareButtons";
 import ReportButton from "@/components/shared/ReportButton";
 import CommentSection from "@/components/comments/CommentSection";
+import ClaimProfileCta from "@/components/profile/ClaimProfileCta";
+import ClaimedProfilePanel from "@/components/profile/ClaimedProfilePanel";
+import ProfilePhoto from "@/components/profile/ProfilePhoto";
 import { getCandidateFlags, getCandidateGaps, getCandidateGoodRecords, getSchoolBoardCandidate, getSchoolBoardDossiers, getShareLine } from "@/lib/school-board-research";
 import { buildEvidenceFromDossier, calculateSchoolBoardScore, schoolBoardScoringModel } from "@/lib/school-board-scoring";
 
@@ -38,17 +41,34 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <Link href={`/school-boards/${candidate.district_slug}`} className="text-sm font-bold text-gray-500 hover:text-gray-950">&larr; Back to {candidate.district}</Link>
           <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <div>
-              <div className="flex flex-wrap gap-2">
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{candidate.district}</span>
-                <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-800">{candidate.status ?? "dossier"}</span>
-                {candidate.on_2026_ballot || candidate.election_date?.includes("2026") ? <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">2026 ballot</span> : null}
+            <div className="max-w-4xl">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                <ProfilePhoto
+                  profileId={candidate.candidate_id}
+                  name={candidate.preferred_name ?? candidate.full_name}
+                  size="lg"
+                />
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{candidate.district}</span>
+                    <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-800">{candidate.status ?? "dossier"}</span>
+                    {candidate.on_2026_ballot || candidate.election_date?.includes("2026") ? <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">2026 ballot</span> : null}
+                    <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black text-blue-800">RepWatchr verified record</span>
+                  </div>
+                  <h1 className="mt-4 text-4xl font-black leading-tight text-gray-950 sm:text-6xl">{candidate.preferred_name ?? candidate.full_name}</h1>
+                  <p className="mt-3 max-w-3xl text-lg leading-8 text-gray-700">{candidate.seat ?? "Seat pending"}{candidate.role ? `, ${candidate.role}` : ""}. {candidate.occupation && !candidate.occupation.includes("REQUIRES_FURTHER_EVIDENCE") ? candidate.occupation : "Occupation pending source confirmation"}.</p>
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <ShareButtons title={`${candidate.preferred_name ?? candidate.full_name} | RepWatchr`} description={getShareLine(candidate)} path={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} />
+                    <ReportButton officialId={candidate.candidate_id} pageUrl={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} />
+                  </div>
+                </div>
               </div>
-              <h1 className="mt-4 text-4xl font-black leading-tight text-gray-950 sm:text-6xl">{candidate.preferred_name ?? candidate.full_name}</h1>
-              <p className="mt-3 max-w-3xl text-lg leading-8 text-gray-700">{candidate.seat ?? "Seat pending"}{candidate.role ? `, ${candidate.role}` : ""}. {candidate.occupation && !candidate.occupation.includes("REQUIRES_FURTHER_EVIDENCE") ? candidate.occupation : "Occupation pending source confirmation"}.</p>
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <ShareButtons title={`${candidate.preferred_name ?? candidate.full_name} | RepWatchr`} description={getShareLine(candidate)} path={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} />
-                <ReportButton officialId={candidate.candidate_id} pageUrl={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} />
+              <div className="mt-5">
+                <ClaimProfileCta
+                  profileId={candidate.candidate_id}
+                  profileName={candidate.preferred_name ?? candidate.full_name}
+                  districtSlug={candidate.district_slug}
+                />
               </div>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 lg:w-96">
@@ -63,6 +83,8 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
           </div>
         </div>
       </section>
+
+      <ClaimedProfilePanel profileId={candidate.candidate_id} />
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
         <RecordColumn title="Good record" tone="good" items={score.praiseWiped ? ["Praise hidden because a documented child/parent-rights override is active."] : good.length ? good : ["No positive record item has been loaded yet."]} />

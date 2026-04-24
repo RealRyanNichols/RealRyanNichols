@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ProfilePhoto from "@/components/profile/ProfilePhoto";
 import {
   getCandidateFlags,
   getCandidateGaps,
@@ -106,13 +107,13 @@ export default async function DistrictPage({
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-700">{district.county} County</span>
               <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-800">East Texas school board</span>
-              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-800">God. Family. Country.</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-800">God. Family. Country. Texas.</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight text-gray-950 sm:text-6xl">
               {district.district}
             </h1>
             <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-blue-950/80">
-              A Texas-first public profile for {district.district}: board members, district facts, record sources, parent-watch lanes, positive records, concern lanes, and the next records that need to be pulled.
+              A public profile for {district.district}: board members, district facts, record sources, parent-watch lanes, positive records, concern lanes, and the next records that need to be pulled for East Texas families.
             </p>
             <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-3">
               {["Truth over rumor", "Parents at the table", "Records before claims"].map((value) => (
@@ -256,20 +257,29 @@ export default async function DistrictPage({
                 href={`/school-boards/${district.district_slug}/${candidate.candidate_id}`}
                 className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-red-200 hover:shadow-xl"
               >
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">
-                    {candidate.seat ?? "Seat pending"}
-                  </span>
-                  {candidate.on_2026_ballot || candidate.election_date?.includes("2026") ? (
-                    <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">
-                      2026 ballot
-                    </span>
-                  ) : null}
+                <div className="flex items-start gap-4">
+                  <ProfilePhoto
+                    profileId={candidate.candidate_id}
+                    name={candidate.preferred_name ?? candidate.full_name}
+                    size="md"
+                  />
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">
+                        {candidate.seat ?? "Seat pending"}
+                      </span>
+                      {candidate.on_2026_ballot || candidate.election_date?.includes("2026") ? (
+                        <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">
+                          2026 ballot
+                        </span>
+                      ) : null}
+                    </div>
+                    <h3 className="mt-4 text-xl font-black text-gray-950">{candidate.preferred_name ?? candidate.full_name}</h3>
+                    <p className="mt-1 text-sm font-semibold text-gray-500">
+                      {candidate.role ?? (candidate.incumbent ? "Trustee" : "Candidate")}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="mt-4 text-xl font-black text-gray-950">{candidate.preferred_name ?? candidate.full_name}</h3>
-                <p className="mt-1 text-sm font-semibold text-gray-500">
-                  {candidate.role ?? (candidate.incumbent ? "Trustee" : "Candidate")}
-                </p>
                 <p className="mt-3 max-h-[4.5rem] overflow-hidden text-sm font-semibold leading-6 text-gray-700">
                   {candidate.summary ?? "Profile shell loaded. Board votes, campaign filings, and public comments still need review."}
                 </p>

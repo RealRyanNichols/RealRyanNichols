@@ -33,7 +33,7 @@ export default function Header() {
           </span>
           <span className="hidden leading-tight sm:block">
             <span className="block text-xl font-black text-blue-950">RepWatchr</span>
-            <span className="block text-[11px] font-black uppercase tracking-wide text-red-700">Texas. Faith. Family. Country.</span>
+            <span className="block text-[11px] font-black uppercase tracking-wide text-red-700">God. Family. Country. Texas.</span>
           </span>
         </Link>
 
