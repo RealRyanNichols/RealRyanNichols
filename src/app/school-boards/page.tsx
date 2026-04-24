@@ -1,118 +1,183 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getOfficialsByLevel } from "@/lib/data";
 import CommentSection from "@/components/comments/CommentSection";
+import {
+  EAST_TEXAS_PRIORITY_DISTRICTS,
+  getCandidateFlags,
+  getCandidateGaps,
+  getCandidateGoodRecords,
+  getSchoolBoardDistricts,
+  getSchoolBoardDossiers,
+  getSchoolBoardStats,
+  getShareLine,
+} from "@/lib/school-board-research";
 
 export const metadata: Metadata = {
-  title: "School Boards",
+  title: "School Board Watch",
   description:
-    "Track school board members in Texas. Know their political positions, votes on curriculum, budgets, and bonds.",
+    "East Texas school board dossiers with sourced facts, good records, red flags, campaign finance gaps, and voter questions.",
 };
 
 export default function SchoolBoardsPage() {
-  const boardMembers = getOfficialsByLevel("school-board");
-
-  // Group by jurisdiction (ISD)
-  const isdMap = new Map<string, typeof boardMembers>();
-  for (const member of boardMembers) {
-    const existing = isdMap.get(member.jurisdiction) ?? [];
-    existing.push(member);
-    isdMap.set(member.jurisdiction, existing);
-  }
-
-  const isds = Array.from(isdMap.entries()).sort((a, b) =>
-    a[0].localeCompare(b[0])
-  );
+  const stats = getSchoolBoardStats();
+  const districts = getSchoolBoardDistricts();
+  const candidates = getSchoolBoardDossiers();
+  const priorityDistricts = districts.filter((district) => district.priorityRank).sort((a, b) => (a.priorityRank ?? 999) - (b.priorityRank ?? 999));
+  const shareableProfiles = candidates.filter((candidate) => getCandidateFlags(candidate).length > 0 || getCandidateGoodRecords(candidate).length > 1).slice(0, 6);
+  const positiveProfiles = candidates.filter((candidate) => getCandidateGoodRecords(candidate).length > 1).slice(0, 4);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">School Boards</h1>
-        <p className="mt-2 text-gray-600 max-w-2xl">
-          School board members make decisions that directly affect our children.
-          Their political positions should be transparent. Here we track board
-          members across Texas ISDs -- their positions on curriculum,
-          budgets, bonds, and key votes.
-        </p>
-      </div>
-
-      {/* Why This Matters */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8">
-        <h2 className="font-semibold text-amber-900 mb-2">
-          Why School Board Transparency Matters
-        </h2>
-        <p className="text-sm text-amber-800">
-          School board members are elected officials who control curriculum
-          decisions, school funding, bond elections, and policies that affect
-          every child in their district. Too often, their political positions
-          are hidden from voters. We believe parents and taxpayers deserve to
-          know where these officials stand.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {isds.map(([isdName, members]) => {
-          return (
-            <div
-              key={isdName}
-              className="bg-white rounded-lg border border-gray-200 p-6"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-gray-900">{isdName}</h3>
-                <span className="text-sm text-gray-500">
-                  {members.length} members
-                </span>
-              </div>
-              <div className="space-y-3">
-                {members.map((member) => (
-                  <Link
-                    key={member.id}
-                    href={`/officials/${member.id}`}
-                    className="flex items-center justify-between py-2 px-3 -mx-3 rounded-md hover:bg-gray-50 transition-colors"
-                  >
-                    <div>
-                      <p className="font-medium text-gray-900 text-sm">
-                        {member.name}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        {member.position}
-                      </p>
-                    </div>
-                    <span className="text-xs text-blue-600">View →</span>
-                  </Link>
-                ))}
-              </div>
-              {members[0]?.campaignPromises &&
-                members[0].campaignPromises.length > 0 && (
-                  <div className="mt-4 pt-3 border-t border-gray-100">
-                    <p className="text-xs text-gray-500 font-medium">
-                      Sample Positions:
-                    </p>
-                    <p className="text-xs text-gray-600 mt-1">
-                      {members[0].campaignPromises.slice(0, 2).join("; ")}
-                    </p>
-                  </div>
-                )}
+    <div>
+      <section className="relative overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 bg-[url('/images/repwatchr_cover.png')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900/95 to-red-950/80" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+          <div>
+            <p className="text-sm font-black uppercase tracking-wide text-red-300">East Texas school board watch</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-white sm:text-6xl">
+              The facts parents will click, read, verify, and share.
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200">
+              RepWatchr starts with Harleton, Marshall, Jefferson, Longview, Waskom, Hallsville, Ore City, New Diana, Pine Tree, Kilgore, and Carthage. Every board member gets sourced records, legal/public-record checks, political-lean research, praise when earned, and hard child/parent-rights scoring when the evidence supports it.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="#profiles" className="rounded-lg bg-white px-5 py-3 text-sm font-black text-slate-950 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl">
+                Read the profiles
+              </Link>
+              <Link href="/methodology" className="rounded-lg border border-white/40 px-5 py-3 text-sm font-black text-white transition hover:bg-white/10">
+                Check the method
+              </Link>
             </div>
-          );
-        })}
-      </div>
+          </div>
 
-      {isds.length === 0 && (
-        <div className="text-center py-16">
-          <p className="text-gray-500">
-            School board data is being collected. Check back soon.
+          <aside className="rounded-2xl border border-white/15 bg-white/95 p-5 shadow-2xl">
+            <p className="text-xs font-black uppercase tracking-wide text-red-700">Current dossier count</p>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <Stat label="Profiles" value={stats.candidates} />
+              <Stat label="Districts" value={stats.districts} />
+              <Stat label="2026 seats" value={stats.onBallot} />
+              <Stat label="First targets" value={EAST_TEXAS_PRIORITY_DISTRICTS.length} />
+            </div>
+            <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4">
+              <p className="text-sm font-bold text-amber-950">Reader promise</p>
+              <p className="mt-1 text-sm leading-6 text-amber-900">
+                If the record is good, say it. If the record raises a real question, show it. If the proof is not there yet, label the gap.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="border-b border-gray-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-6 sm:grid-cols-3 sm:px-6 lg:px-8">
+          <ImpactCard label="Expose" title={`${stats.flagCount} documented voter questions`} body="Conflicts, dual roles, campaign finance concerns, and open-source red flags stay tied to source records." />
+          <ImpactCard label="Reward" title="Good records get surfaced" body="Public service, clean leadership, useful votes, and positive community work are part of the profile too." />
+          <ImpactCard label="Pressure" title={`${stats.gapCount} research gaps visible`} body="Missing filings, unverified employment, vote records, and opponent status are shown instead of hidden." />
+        </div>
+      </section>
+
+      <section id="profiles" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-black uppercase tracking-wide text-red-700">Start here</p>
+            <h2 className="text-3xl font-black text-gray-950">Shareable candidate files</h2>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-gray-600">
+            Built for a reader who has sixty seconds and wants the point fast, with source links close by.
           </p>
         </div>
-      )}
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {shareableProfiles.map((candidate) => (
+            <CandidateFeatureCard candidateId={candidate.candidate_id} key={candidate.candidate_id} />
+          ))}
+        </div>
+      </section>
 
-      {/* Public Discussion */}
-      <div className="mt-12">
-        <CommentSection
-          officialId="school-boards-general"
-          officialName="Texas School Boards"
-        />
-      </div>
+      <section className="bg-emerald-950">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="mb-7">
+            <p className="text-sm font-black uppercase tracking-wide text-emerald-200">Good records</p>
+            <h2 className="text-3xl font-black text-white">Reward behavior worth copying.</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-emerald-100">
+              The site should not train people to only expect scandal. A clean record, clear service, useful vote, or transparent disclosure deserves oxygen unless a documented child/parent-rights override applies.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {positiveProfiles.map((candidate) => (
+              <Link key={candidate.candidate_id} href={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} className="rounded-2xl border border-emerald-700 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-xl">
+                <p className="text-xs font-black uppercase tracking-wide text-emerald-700">Positive record</p>
+                <h3 className="mt-2 text-xl font-black text-gray-950">{candidate.preferred_name ?? candidate.full_name}</h3>
+                <p className="mt-1 text-sm font-semibold text-gray-500">{candidate.district}</p>
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-gray-700">
+                  {getCandidateGoodRecords(candidate).slice(0, 3).map((item) => <li key={item}>+ {item}</li>)}
+                </ul>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-7">
+          <p className="text-sm font-black uppercase tracking-wide text-red-700">Districts</p>
+          <h2 className="text-3xl font-black text-gray-950">First East Texas board rooms</h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {priorityDistricts.map((district) => {
+            const ballotCount = district.candidates.filter((candidate) => candidate.on_2026_ballot || candidate.election_date?.includes("2026")).length;
+            return (
+              <Link key={district.district_slug} href={`/school-boards/${district.district_slug}`} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-red-200 hover:shadow-xl">
+                <p className="text-xs font-black uppercase tracking-wide text-gray-500">{district.county} County</p>
+                <h3 className="mt-2 text-2xl font-black text-gray-950">{district.priorityRank}. {district.district}</h3>
+                <p className="mt-2 text-sm leading-6 text-gray-600">
+                  {district.candidates.length > 0 ? `${district.candidates.length} sourced dossier profiles, ${ballotCount} tied to 2026 elections.` : "Needs full board roster, election filing, legal record, political-lean, and source-document pull."}
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-red-700">{district.candidates.length > 0 ? "Open district file" : "Queued for research"} &rarr;</span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="border-y border-gray-200 bg-slate-950">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <p className="text-sm font-black uppercase tracking-wide text-red-300">Scoring model</p>
+          <h2 className="mt-2 text-3xl font-black text-white">Praise is earned. Child and parent-rights violations override it.</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <ImpactCard label="Hard cap" title="Child safety and parent-rights triggers" body="Documented harm, concealment, retaliation, privacy violations, or withholding material information from parents can cap the score and wipe praise." />
+            <ImpactCard label="Evidence only" title="No source, no penalty" body="Rumor does not move the model. Every score-moving item needs a public URL and FACT or DOCUMENTED_INFERENCE label." />
+            <ImpactCard label="Political lean" title="Voting habits, not party labels" body="Nonpartisan board members get lean labels only from public primary history, donations, endorsements, public roles, or self-description." />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <CommentSection officialId="school-boards-general" officialName="Texas School Boards" />
+      </section>
     </div>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: number }) {
+  return <div className="rounded-xl border border-gray-200 bg-white p-4"><p className="text-3xl font-black text-gray-950">{value}</p><p className="mt-1 text-xs font-bold uppercase tracking-wide text-gray-500">{label}</p></div>;
+}
+
+function ImpactCard({ label, title, body }: { label: string; title: string; body: string }) {
+  return <div className="rounded-xl border border-gray-200 bg-gray-50 p-5"><p className="text-xs font-black uppercase tracking-wide text-red-700">{label}</p><h3 className="mt-2 text-lg font-black text-gray-950">{title}</h3><p className="mt-2 text-sm leading-6 text-gray-600">{body}</p></div>;
+}
+
+function CandidateFeatureCard({ candidateId }: { candidateId: string }) {
+  const candidate = getSchoolBoardDossiers().find((item) => item.candidate_id === candidateId);
+  if (!candidate) return null;
+  const flags = getCandidateFlags(candidate);
+  const gaps = getCandidateGaps(candidate);
+  return (
+    <Link href={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} className="group rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-red-200 hover:shadow-xl">
+      <div className="flex flex-wrap gap-2"><span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{candidate.seat ?? "Seat pending"}</span><span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-800">{candidate.status ?? "dossier"}</span></div>
+      <h3 className="mt-4 text-xl font-black text-gray-950 group-hover:text-red-700">{candidate.preferred_name ?? candidate.full_name}</h3>
+      <p className="mt-1 text-sm font-semibold text-gray-500">{candidate.district}</p>
+      <p className="mt-4 text-sm leading-6 text-gray-700">{getShareLine(candidate)}</p>
+      <div className="mt-5 grid grid-cols-2 gap-2 text-xs font-bold"><span className="rounded-lg bg-red-50 px-3 py-2 text-red-700">{flags.length} voter questions</span><span className="rounded-lg bg-amber-50 px-3 py-2 text-amber-800">{gaps.length} open gaps</span></div>
+    </Link>
   );
 }
