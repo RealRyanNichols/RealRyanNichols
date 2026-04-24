@@ -11,6 +11,20 @@ import {
   type SchoolBoardFeedItem,
 } from "@/lib/school-board-research";
 
+type DashboardMetric = {
+  label: string;
+  value: string;
+  caption: string;
+  percent: number;
+  tone: "blue" | "good" | "watch" | "bad";
+};
+
+type DashboardFact = {
+  label: string;
+  value: string;
+  href?: string;
+};
+
 export function generateStaticParams() {
   return getSchoolBoardDistricts().map((district) => ({
     districtSlug: district.district_slug,
@@ -60,6 +74,7 @@ export default async function DistrictPage({
   const watchItems = feed.filter((item) => item.type === "social_watch" || item.type === "public_comment" || item.type === "records_request");
   const sourceLinks = district.sourceLinks?.length ? district.sourceLinks : getDistrictSourceLinks(district.district_slug);
   const investigationQueue = district.investigationQueue?.length ? district.investigationQueue : getDistrictInvestigationQueue(district.district_slug);
+  const quickFacts = buildQuickFacts(district, sourceLinks);
   const issueCounts = district.candidates.reduce(
     (totals, candidate) => {
       totals.good += getCandidateGoodRecords(candidate).length;
@@ -69,29 +84,73 @@ export default async function DistrictPage({
     },
     { good: 0, flags: 0, gaps: 0 }
   );
+  const dashboardMetrics = buildDashboardMetrics({
+    boardFiles: district.candidates.length,
+    ballotFiles: ballotCandidates.length,
+    praiseItems: issueCounts.good + praiseItems.length,
+    watchItems: watchItems.length + issueCounts.gaps,
+    redFlags: issueCounts.flags,
+    sourceCount: sourceLinks.length,
+    feedCount: feed.length,
+  });
+  const intelligenceNotes = buildIntelligenceNotes(district.district, sourceLinks.length, feed.length);
 
   return (
-    <div>
-      <section className="bg-slate-950">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <Link href="/school-boards" className="text-sm font-bold text-slate-300 hover:text-white">
-            &larr; Back to school board watch
-          </Link>
-          <p className="mt-8 text-sm font-black uppercase tracking-wide text-red-300">
-            {district.county} County
-          </p>
-          <h1 className="mt-3 text-4xl font-black leading-tight text-white sm:text-6xl">
-            {district.district}
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-200">
-            {district.candidates.length} trustee and candidate files, {ballotCandidates.length} tied to 2026 elections.
-            This is the district profile: board members, breaking items, praise reports, red flags, public-comment watch, social-media watch, and open records still needed.
-          </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-4">
-            <ProfileStat label="Board files" value={district.candidates.length} tone="neutral" />
-            <ProfileStat label="Praise items" value={issueCounts.good + praiseItems.length} tone="good" />
-            <ProfileStat label="Watch items" value={watchItems.length + issueCounts.gaps} tone="watch" />
-            <ProfileStat label="Red flags" value={issueCounts.flags} tone="bad" />
+    <div className="bg-[#f7f4ee] text-gray-950">
+      <section className="border-b border-gray-200 bg-[#fffaf1]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <div>
+            <Link href="/school-boards" className="inline-flex rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-black text-gray-700 shadow-sm transition hover:border-red-300 hover:text-red-700">
+              &larr; School board watch
+            </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-700">{district.county} County</span>
+              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-800">District profile</span>
+              <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-amber-800">OSINT build</span>
+            </div>
+            <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight text-gray-950 sm:text-6xl">
+              {district.district}
+            </h1>
+            <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-gray-700">
+              This is the working profile for {district.district}: board members, district facts, record sources, public-watch lanes, positive items, concern lanes, and the next records that need to be pulled.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              {sourceLinks.slice(0, 2).map((source) => (
+                <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="rounded-full bg-gray-950 px-4 py-2 text-sm font-black text-white shadow-sm transition hover:bg-red-700">
+                  Open source: {source.title?.replace(/Harleton ISD |Marshall ISD |Longview ISD /g, "") ?? "Record"}
+                </a>
+              ))}
+              <a href="#district-feed" className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-black text-gray-800 shadow-sm transition hover:border-amber-400 hover:text-amber-800">
+                View feed
+              </a>
+              <a href="#profiles" className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-black text-gray-800 shadow-sm transition hover:border-blue-400 hover:text-blue-800">
+                Board profiles
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-xl shadow-gray-200/60">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-black uppercase tracking-wide text-gray-500">Live profile dashboard</p>
+                <h2 className="mt-1 text-2xl font-black text-gray-950">What is loaded</h2>
+              </div>
+              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-red-700 text-2xl font-black text-white">
+                {district.district.split(" ").map((word) => word[0]).join("").slice(0, 3)}
+              </div>
+            </div>
+            <div className="mt-5 grid grid-cols-2 gap-3">
+              <ProfileStat label="Board files" value={district.candidates.length} tone="neutral" />
+              <ProfileStat label="Praise items" value={issueCounts.good + praiseItems.length} tone="good" />
+              <ProfileStat label="Watch items" value={watchItems.length + issueCounts.gaps} tone="watch" />
+              <ProfileStat label="Red flags" value={issueCounts.flags} tone="bad" />
+            </div>
+            <div className="mt-5 rounded-xl border border-gray-200 bg-gray-50 p-4">
+              <p className="text-sm font-black text-gray-950">Profile status</p>
+              <p className="mt-1 text-sm font-semibold leading-6 text-gray-600">
+                {district.candidates.length} trustee/candidate files, {ballotCandidates.length} tied to 2026 elections, {sourceLinks.length} source links loaded, and {feed.length} district feed items.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -116,23 +175,50 @@ export default async function DistrictPage({
         </div>
       </section>
 
-      {district.overview ? (
-        <section className="border-b border-gray-200 bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-black text-gray-950">District quick facts</h2>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {district.overview.quickFacts.slice(0, 8).map((fact) => (
-                <div key={`${fact.label}-${fact.value}`} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-xs font-black uppercase tracking-wide text-gray-500">{fact.label}</p>
-                  <p className="mt-1 text-sm font-bold text-gray-950">{fact.value}</p>
+      <section className="border-b border-gray-200 bg-[#f8fbff]">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div>
+            <p className="text-sm font-black uppercase tracking-wide text-blue-700">District quick facts</p>
+            <h2 className="mt-2 text-3xl font-black text-gray-950">The public profile at a glance</h2>
+            <p className="mt-3 text-sm font-semibold leading-6 text-gray-600">
+              These facts are sourced first, then connected to board votes, parent concerns, and positive district records as the file grows.
+            </p>
+            <div className="mt-5 space-y-3">
+              {intelligenceNotes.map((note) => (
+                <div key={note} className="rounded-xl border border-blue-200 bg-white p-4 text-sm font-bold leading-6 text-blue-950 shadow-sm">
+                  {note}
                 </div>
               ))}
             </div>
           </div>
-        </section>
-      ) : null}
+          <div className="grid gap-3 sm:grid-cols-2">
+            {quickFacts.slice(0, 12).map((fact) => (
+              <QuickFactCard key={`${fact.label}-${fact.value}`} label={fact.label} value={fact.value} href={fact.href} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="border-b border-gray-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-wide text-red-700">Stats board</p>
+              <h2 className="text-3xl font-black text-gray-950">Numbers with context</h2>
+            </div>
+            <p className="max-w-xl text-sm font-semibold leading-6 text-gray-600">
+              The bars are visual context, not grades. Verified red flags stay at zero until records prove a concern.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {dashboardMetrics.map((metric) => (
+              <MetricCard key={`${metric.label}-${metric.value}`} metric={metric} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="profiles" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-black uppercase tracking-wide text-red-700">Profiles</p>
@@ -170,6 +256,9 @@ export default async function DistrictPage({
                 <p className="mt-1 text-sm font-semibold text-gray-500">
                   {candidate.role ?? (candidate.incumbent ? "Trustee" : "Candidate")}
                 </p>
+                <p className="mt-3 max-h-[4.5rem] overflow-hidden text-sm font-semibold leading-6 text-gray-700">
+                  {candidate.summary ?? "Profile shell loaded. Board votes, campaign filings, and public comments still need review."}
+                </p>
                 <div className="mt-5 grid grid-cols-3 gap-2 text-center text-xs font-black">
                   <span className="rounded-lg bg-emerald-50 px-2 py-2 text-emerald-700">{good.length} good</span>
                   <span className="rounded-lg bg-red-50 px-2 py-2 text-red-700">{flags.length} flags</span>
@@ -181,14 +270,14 @@ export default async function DistrictPage({
         </div>
       </section>
 
-      <section className="bg-slate-50">
+      <section id="district-feed" className="bg-[#fffaf1]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
+          <div className="mb-7 grid gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="border-b border-gray-200 pb-4 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6">
               <p className="text-sm font-black uppercase tracking-wide text-red-700">District feed</p>
               <h2 className="text-3xl font-black text-gray-950">Breaking, praise, concerns, and social watch</h2>
             </div>
-            <p className="max-w-xl text-sm leading-6 text-gray-600">
+            <p className="text-sm font-semibold leading-7 text-gray-700">
               This feed is built like a social profile for school governance. Public claims stay labeled until records support them.
             </p>
           </div>
@@ -242,10 +331,10 @@ export default async function DistrictPage({
 
 function ProfileStat({ label, value, tone }: { label: string; value: number; tone: "neutral" | "good" | "watch" | "bad" }) {
   const toneClass = {
-    neutral: "border-white/15 bg-white/10 text-white",
-    good: "border-emerald-300/30 bg-emerald-300/15 text-emerald-100",
-    watch: "border-amber-300/30 bg-amber-300/15 text-amber-100",
-    bad: "border-red-300/30 bg-red-300/15 text-red-100",
+    neutral: "border-blue-200 bg-blue-50 text-blue-950",
+    good: "border-emerald-200 bg-emerald-50 text-emerald-950",
+    watch: "border-amber-200 bg-amber-50 text-amber-950",
+    bad: "border-red-200 bg-red-50 text-red-950",
   }[tone];
 
   return (
@@ -254,6 +343,104 @@ function ProfileStat({ label, value, tone }: { label: string; value: number; ton
       <p className="mt-1 text-xs font-black uppercase tracking-wide opacity-80">{label}</p>
     </div>
   );
+}
+
+function QuickFactCard({ label, value, href }: { label: string; value: string; href?: string }) {
+  const content = (
+    <div className="h-full rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md">
+      <p className="text-xs font-black uppercase tracking-wide text-gray-500">{label}</p>
+      <p className="mt-1 text-sm font-black leading-6 text-gray-950">{value}</p>
+      {href ? <p className="mt-2 text-xs font-black text-blue-700">Open source &rarr;</p> : null}
+    </div>
+  );
+
+  if (!href) return content;
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {content}
+    </a>
+  );
+}
+
+function MetricCard({ metric }: { metric: DashboardMetric }) {
+  const toneClass = {
+    blue: "bg-blue-600",
+    good: "bg-emerald-600",
+    watch: "bg-amber-500",
+    bad: "bg-red-600",
+  }[metric.tone];
+  const width = `${Math.max(4, Math.min(100, metric.percent ?? 0))}%`;
+
+  return (
+    <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 shadow-sm">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-black text-gray-600">{metric.label}</p>
+          <p className="mt-1 text-3xl font-black text-gray-950">{metric.value}</p>
+        </div>
+        <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-gray-600 shadow-sm">{metric.caption}</span>
+      </div>
+      <div className="mt-5 h-3 overflow-hidden rounded-full bg-white">
+        <div className={`h-full rounded-full ${toneClass}`} style={{ width }} />
+      </div>
+    </div>
+  );
+}
+
+function buildQuickFacts(
+  district: NonNullable<ReturnType<typeof getSchoolBoardDistrict>>,
+  sourceLinks: ReturnType<typeof getDistrictSourceLinks>
+): DashboardFact[] {
+  const overviewFacts = district.overview?.quickFacts.map((fact) => ({ label: fact.label, value: fact.value })) ?? [];
+  const hasLabel = (label: string) => overviewFacts.some((fact) => fact.label.toLowerCase() === label.toLowerCase());
+  const fallbackFacts: DashboardFact[] = [
+    { label: "Name", value: district.district },
+    { label: "County", value: district.county },
+    { label: "Board files loaded", value: String(district.candidates.length) },
+    { label: "Board size", value: district.candidates.length ? `${district.candidates.length} trustees/candidates loaded` : "Needs roster confirmation" },
+    { label: "Primary source", value: sourceLinks[0]?.title ?? "Official source pending", href: sourceLinks[0]?.url },
+    { label: "Record status", value: district.queueStatus === "needs_full_records_pull" ? "Needs full records pull" : "Dossier build in progress" },
+  ];
+
+  return [
+    ...overviewFacts,
+    ...fallbackFacts.filter((fact) => !hasLabel(fact.label)),
+  ];
+}
+
+function buildDashboardMetrics({
+  boardFiles,
+  ballotFiles,
+  praiseItems,
+  watchItems,
+  redFlags,
+  sourceCount,
+  feedCount,
+}: {
+  boardFiles: number;
+  ballotFiles: number;
+  praiseItems: number;
+  watchItems: number;
+  redFlags: number;
+  sourceCount: number;
+  feedCount: number;
+}): DashboardMetric[] {
+  return [
+    { label: "Board files", value: String(boardFiles), caption: "Profiles generated", percent: Math.min(100, boardFiles * 14), tone: "blue" },
+    { label: "2026 ballot", value: String(ballotFiles), caption: "Election watch", percent: Math.min(100, ballotFiles * 34), tone: "watch" },
+    { label: "Praise", value: String(praiseItems), caption: "Positive records", percent: Math.min(100, praiseItems * 12), tone: "good" },
+    { label: "Watch work", value: String(watchItems), caption: "Open questions", percent: Math.min(100, watchItems * 2), tone: "watch" },
+    { label: "Red flags", value: String(redFlags), caption: "Verified concerns", percent: Math.min(100, redFlags * 25), tone: "bad" },
+    { label: "Sources", value: String(sourceCount + feedCount), caption: "Links + feed items", percent: Math.min(100, (sourceCount + feedCount) * 18), tone: "blue" },
+  ];
+}
+
+function buildIntelligenceNotes(districtName: string, sourceCount: number, feedCount: number): string[] {
+  return [
+    `${districtName} has ${sourceCount} source link${sourceCount === 1 ? "" : "s"} and ${feedCount} district feed item${feedCount === 1 ? "" : "s"} loaded into this profile.`,
+    "The page separates praise, watch items, and verified concerns so the record can reward good conduct and expose bad conduct without mixing facts with claims.",
+    "Next records pass: agendas, minutes, videos, public comments, campaign filings, conflicts disclosures, and any positive student or staff achievements.",
+  ];
 }
 
 function DistrictPanel({ title, body, tone }: { title: string; body: string; tone: "good" | "watch" | "bad" }) {
