@@ -73,6 +73,17 @@ function isUsableEvidence(item: SchoolBoardEvidenceItem) {
   return item.label !== "REQUIRES_FURTHER_EVIDENCE" && Boolean(item.source_url);
 }
 
+function hasEnoughEvidenceForGrade(evidence: SchoolBoardEvidenceItem[], hardTriggerCount: number) {
+  if (hardTriggerCount > 0) return true;
+
+  const scoreMovingEvidence = evidence.filter((item) => item.category !== "political_lean" && item.direction !== "neutral");
+  const strongNegativeEvidence = scoreMovingEvidence.some(
+    (item) => item.direction === "negative" && (item.severity === "high" || item.severity === "critical")
+  );
+
+  return strongNegativeEvidence || scoreMovingEvidence.length >= 5;
+}
+
 export function calculateSchoolBoardScore(candidate: CandidateDossier, evidence: SchoolBoardEvidenceItem[] = []): SchoolBoardScoreResult {
   const usableEvidence = evidence.filter(isUsableEvidence);
   const positiveEvidence = usableEvidence.filter((item) => item.direction === "positive");
@@ -103,16 +114,20 @@ export function calculateSchoolBoardScore(candidate: CandidateDossier, evidence:
   }
 
   const finalScore = clampScore(weightedScore);
+  const grade = hasEnoughEvidenceForGrade(usableEvidence, hardTriggers.length)
+    ? scoreToGrade(finalScore)
+    : "Pending";
+
   return {
     score: finalScore,
-    grade: usableEvidence.length === 0 ? "Pending" : scoreToGrade(finalScore),
+    grade,
     praiseWiped,
     overrideReason,
     categoryScores,
     positiveCount: positiveEvidence.length,
     negativeCount: negativeEvidence.length,
     evidenceCount: usableEvidence.length,
-    requiredEvidenceNote: "A hard override can only be applied from public-source evidence labeled FACT or DOCUMENTED_INFERENCE. Rumor, private claims, and unsourced allegations do not count.",
+    requiredEvidenceNote: "A hard override can only be applied from public-source evidence labeled FACT or DOCUMENTED_INFERENCE. Rumor, private claims, and unsourced allegations do not count. A public grade stays pending until a hard override, high-severity negative record, or enough score-moving source records exist.",
     politicalLean: assessPoliticalLean(candidate, evidence),
   };
 }
@@ -160,5 +175,5 @@ export const schoolBoardScoringModel = {
   version: "2026.04.24-east-texas-v1",
   weights: CATEGORY_WEIGHTS,
   hardOverrideRules: HARD_OVERRIDE_RULES,
-  evidenceRequirement: "Every score-moving item must include a public source URL and a fact label. Child-safety and parent-rights overrides require FACT or DOCUMENTED_INFERENCE evidence.",
+  evidenceRequirement: "Every score-moving item must include a public source URL and a fact label. Child-safety and parent-rights overrides require FACT or DOCUMENTED_INFERENCE evidence. A public grade stays pending until the evidence threshold is met.",
 };
