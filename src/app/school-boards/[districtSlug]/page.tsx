@@ -106,14 +106,14 @@ export default async function DistrictPage({
             </Link>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-700">{district.county} County</span>
-              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-800">East Texas school board</span>
+              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-800">School Board Watch</span>
               <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-800">God. Family. Country. Texas.</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight text-gray-950 sm:text-6xl">
               {district.district}
             </h1>
             <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-blue-950/80">
-              A public profile for {district.district}: board members, district facts, record sources, parent-watch lanes, positive records, concern lanes, and the next records that need to be pulled for East Texas families.
+              A public profile for {district.district}: board members, district facts, record sources, parent-watch lanes, positive records, concern lanes, and the next records that need to be pulled for families.
             </p>
             <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-3">
               {["Truth over rumor", "Parents at the table", "Records before claims"].map((value) => (
