@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CommentSection from "@/components/comments/CommentSection";
+import SchoolBoardStatePicker from "@/components/school-boards/SchoolBoardStatePicker";
 import {
-  EAST_TEXAS_PRIORITY_DISTRICTS,
+  SCHOOL_BOARD_EXPANSION_SOURCES,
+  getSchoolBoardStates,
+} from "@/data/school-board-states";
+import {
   getCandidateFlags,
   getCandidateGaps,
   getCandidateGoodRecords,
@@ -15,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "School Board Watch",
   description:
-    "East Texas school board dossiers with sourced facts, good records, red flags, campaign finance gaps, and voter questions.",
+    "United States school board dossiers with sourced facts, good records, red flags, campaign finance gaps, and voter questions.",
 };
 
 export default function SchoolBoardsPage() {
@@ -25,6 +29,10 @@ export default function SchoolBoardsPage() {
   const priorityDistricts = districts.filter((district) => district.priorityRank).sort((a, b) => (a.priorityRank ?? 999) - (b.priorityRank ?? 999));
   const shareableProfiles = candidates.filter((candidate) => getCandidateFlags(candidate).length > 0 || getCandidateGoodRecords(candidate).length > 1).slice(0, 6);
   const positiveProfiles = candidates.filter((candidate) => getCandidateGoodRecords(candidate).length > 1).slice(0, 4);
+  const states = getSchoolBoardStates({
+    loadedDistricts: stats.districts,
+    loadedProfiles: stats.candidates,
+  });
 
   return (
     <div>
@@ -33,12 +41,12 @@ export default function SchoolBoardsPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900/95 to-red-950/80" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
-            <p className="text-sm font-black uppercase tracking-wide text-red-300">East Texas school board watch</p>
+            <p className="text-sm font-black uppercase tracking-wide text-red-300">School Board Watch</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-white sm:text-6xl">
-              The facts parents will click, read, verify, and share.
+              Every board. Every state. Facts first.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200">
-              RepWatchr starts with Harleton, Marshall, Jefferson, Longview, Waskom, Hallsville, Ore City, New Diana, Pine Tree, Kilgore, and Carthage. Every board member gets sourced records, legal/public-record checks, political-lean research, praise when earned, and hard child/parent-rights scoring when the evidence supports it.
+              RepWatchr is building a national school-board accountability index. Texas opens first by default, then every state gets district rosters, board-member profiles, legal/public-record checks, political-lean research, praise when earned, and hard child/parent-rights scoring when evidence supports it.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="#profiles" className="rounded-lg bg-white px-5 py-3 text-sm font-black text-slate-950 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl">
@@ -56,7 +64,7 @@ export default function SchoolBoardsPage() {
               <Stat label="Profiles" value={stats.candidates} />
               <Stat label="Districts" value={stats.districts} />
               <Stat label="2026 seats" value={stats.onBallot} />
-              <Stat label="First targets" value={EAST_TEXAS_PRIORITY_DISTRICTS.length} />
+              <Stat label="State indexes" value={states.length} />
             </div>
             <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4">
               <p className="text-sm font-bold text-amber-950">Reader promise</p>
@@ -73,6 +81,40 @@ export default function SchoolBoardsPage() {
           <ImpactCard label="Expose" title={`${stats.flagCount} documented voter questions`} body="Conflicts, dual roles, campaign finance concerns, and open-source red flags stay tied to source records." />
           <ImpactCard label="Reward" title="Good records get surfaced" body="Public service, clean leadership, useful votes, and positive community work are part of the profile too." />
           <ImpactCard label="Pressure" title={`${stats.gapCount} research gaps visible`} body="Missing filings, unverified employment, vote records, and opponent status are shown instead of hidden." />
+        </div>
+      </section>
+
+      <section className="border-b border-blue-100 bg-[#f7fbff]">
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 py-10 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <SchoolBoardStatePicker states={states} />
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-xs font-black uppercase tracking-wide text-red-700">
+              Source discipline
+            </p>
+            <h2 className="mt-1 text-2xl font-black text-gray-950">
+              We import districts before we publish people.
+            </h2>
+            <p className="mt-2 text-sm font-semibold leading-6 text-gray-600">
+              District directories are the first layer. Board-member names,
+              photos, claims, political-lean notes, praise, and concerns stay
+              unpublished until they are tied to official or lawful public
+              records.
+            </p>
+            <div className="mt-5 grid gap-3">
+              {SCHOOL_BOARD_EXPANSION_SOURCES.map((source) => (
+                <a
+                  key={source.url}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm font-bold leading-6 text-gray-700 transition hover:border-blue-300 hover:bg-blue-50"
+                >
+                  <span className="block font-black text-blue-900">{source.title}</span>
+                  <span className="mt-1 block">{source.note}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -120,7 +162,7 @@ export default function SchoolBoardsPage() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-7">
           <p className="text-sm font-black uppercase tracking-wide text-red-700">Districts</p>
-          <h2 className="text-3xl font-black text-gray-950">First East Texas board rooms</h2>
+          <h2 className="text-3xl font-black text-gray-950">Texas board rooms loaded first</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {priorityDistricts.map((district) => {
@@ -152,7 +194,7 @@ export default function SchoolBoardsPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <CommentSection officialId="school-boards-general" officialName="Texas School Boards" />
+        <CommentSection officialId="school-boards-general" officialName="School Boards" />
       </section>
     </div>
   );
