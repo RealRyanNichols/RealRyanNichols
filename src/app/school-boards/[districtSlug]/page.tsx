@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ProfilePhoto from "@/components/profile/ProfilePhoto";
+import { getDistrictBranding } from "@/data/school-board-branding";
 import {
   getCandidateFlags,
   getCandidateGaps,
@@ -95,10 +96,11 @@ export default async function DistrictPage({
     feedCount: feed.length,
   });
   const intelligenceNotes = buildIntelligenceNotes(district.district, sourceLinks.length, feed.length);
+  const branding = getDistrictBranding(district.district_slug);
 
   return (
     <div className="bg-[#fbfcff] text-gray-950">
-      <section className="border-b border-blue-100 bg-[linear-gradient(135deg,#ffffff_0%,#f8fbff_42%,#fff7ed_100%)]">
+      <section className="border-b border-blue-100" style={{ background: `linear-gradient(135deg, #ffffff 0%, ${branding.accent} 48%, #fff7ed 100%)` }}>
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
             <Link href="/school-boards" className="inline-flex rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-black text-blue-950 shadow-sm transition hover:border-red-300 hover:text-red-700">
@@ -106,8 +108,8 @@ export default async function DistrictPage({
             </Link>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-red-700">{district.county} County</span>
-              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-blue-800">School Board Watch</span>
-              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-800">God. Family. Country. Texas.</span>
+              <span className="rounded-full px-3 py-1 text-xs font-black uppercase tracking-wide text-white" style={{ backgroundColor: branding.primary }}>{branding.label}</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-emerald-800">God. Family. Country.</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-4xl font-black leading-tight text-gray-950 sm:text-6xl">
               {district.district}
@@ -117,14 +119,14 @@ export default async function DistrictPage({
             </p>
             <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-3">
               {["Truth over rumor", "Parents at the table", "Records before claims"].map((value) => (
-                <div key={value} className="border-l-4 border-red-600 bg-white/80 px-3 py-2 text-sm font-black text-blue-950 shadow-sm">
+                <div key={value} className="border-l-4 bg-white/80 px-3 py-2 text-sm font-black text-blue-950 shadow-sm" style={{ borderColor: branding.primary }}>
                   {value}
                 </div>
               ))}
             </div>
             <div className="mt-7 flex flex-wrap gap-3">
               {sourceLinks.slice(0, 2).map((source) => (
-                <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="rounded-full bg-blue-900 px-4 py-2 text-sm font-black text-white shadow-sm transition hover:bg-red-700">
+                <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="rounded-full px-4 py-2 text-sm font-black text-white shadow-sm transition hover:opacity-90" style={{ backgroundColor: branding.primary }}>
                   Open source: {source.title?.replace(/Harleton ISD |Marshall ISD |Longview ISD /g, "") ?? "Record"}
                 </a>
               ))}
@@ -139,9 +141,9 @@ export default async function DistrictPage({
 
           <div className="overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-xl shadow-blue-100/70">
             <div className="grid h-2 grid-cols-3">
-              <div className="bg-red-700" />
+              <div style={{ backgroundColor: branding.secondary }} />
               <div className="bg-white" />
-              <div className="bg-blue-900" />
+              <div style={{ backgroundColor: branding.primary }} />
             </div>
             <div className="p-5">
               <div className="flex items-center justify-between gap-3">
@@ -149,7 +151,7 @@ export default async function DistrictPage({
                   <p className="text-xs font-black uppercase tracking-wide text-red-700">Live profile dashboard</p>
                   <h2 className="mt-1 text-2xl font-black text-blue-950">What is loaded</h2>
                 </div>
-                <div className="grid h-16 w-16 place-items-center rounded-2xl bg-blue-900 text-2xl font-black text-white shadow-md shadow-blue-900/20">
+                <div className="grid h-16 w-16 place-items-center rounded-2xl text-2xl font-black text-white shadow-md shadow-blue-900/20" style={{ backgroundColor: branding.primary }}>
                   {district.district.split(" ").map((word) => word[0]).join("").slice(0, 3)}
                 </div>
               </div>
