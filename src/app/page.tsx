@@ -1,55 +1,97 @@
 import Link from "next/link";
 import { getAllOfficials, getScoreCard, getIssueCategories, getAllNews } from "@/lib/data";
+import { activeCountyRollout, getActiveCountyOfficials, getActiveCountyStats } from "@/lib/east-texas-rollout";
 import { getSchoolBoardStats } from "@/lib/school-board-research";
+import type { GovernmentLevel } from "@/types";
 import OfficialCard from "@/components/officials/OfficialCard";
 import SearchBar from "@/components/shared/SearchBar";
 
-const levelCards = [
+const levelCards: {
+  level: GovernmentLevel;
+  title: string;
+  description: string;
+  href: string;
+  examples: string;
+}[] = [
   {
     level: "federal",
     title: "Federal",
-    description: "US House & Senate",
+    description: "U.S. House and Senate overlap",
     href: "/officials?level=federal",
+    examples: "Congressional districts, senators, federal delegation",
   },
   {
     level: "state",
     title: "State",
-    description: "TX House & Senate",
+    description: "Texas House and Senate",
     href: "/officials?level=state",
+    examples: "State representatives, state senators",
   },
   {
     level: "county",
     title: "County",
-    description: "30+ Texas Counties",
+    description: "County courts and law enforcement",
     href: "/officials?level=county",
+    examples: "Judges, sheriffs, district attorneys, commissioners",
   },
   {
     level: "city",
     title: "City",
-    description: "43+ Texas Cities",
+    description: "Mayors and city offices",
     href: "/officials?level=city",
+    examples: "Mayors, council seats, local city leadership",
   },
   {
     level: "school-board",
     title: "School Boards",
-    description: "Sourced profiles live",
-    href: "/school-boards",
+    description: "ISD trustees and candidates",
+    href: "/officials?level=school-board",
+    examples: "Trustees, board presidents, candidate files",
   },
 ];
 
 export default function HomePage() {
-  const officials = getAllOfficials();
+  const allOfficials = getAllOfficials();
+  const officials = getActiveCountyOfficials(allOfficials);
+  const rolloutStats = getActiveCountyStats(allOfficials);
   const issueCategories = getIssueCategories();
   const schoolBoardStats = getSchoolBoardStats();
 
-  // Compute real stats from data
-  const counties = new Set(officials.flatMap((o) => o.county));
-
-  const stats = [
-    { label: "Officials Tracked", value: String(officials.length) },
-    { label: "Issue Categories", value: String(issueCategories.length) },
-    { label: "Counties Covered", value: String(counties.size) },
-    { label: "School Board Profiles", value: String(schoolBoardStats.candidates) },
+  const stats: {
+    label: string;
+    value: string;
+    body: string;
+    href: string;
+    tone: "blue" | "red" | "amber" | "emerald";
+  }[] = [
+    {
+      label: "Officials Tracked",
+      value: String(rolloutStats.totalLoaded),
+      body: "Open the full filtered list for the active county rollout.",
+      href: "/officials",
+      tone: "blue",
+    },
+    {
+      label: "Issue Categories",
+      value: String(issueCategories.length),
+      body: "See the scoring lanes and what each one measures.",
+      href: "#issue-categories",
+      tone: "red",
+    },
+    {
+      label: "Counties Covered",
+      value: String(rolloutStats.countiesLoaded),
+      body: "Jump into Harrison, Marion, Upshur, Gregg, Panola, Morris, Cass, or Smith County.",
+      href: "#counties-covered",
+      tone: "amber",
+    },
+    {
+      label: "School Board Profiles",
+      value: String(rolloutStats.levelCounts["school-board"] ?? schoolBoardStats.candidates),
+      body: "Open trustee and school-board records in the active rollout.",
+      href: "/officials?level=school-board",
+      tone: "emerald",
+    },
   ];
 
   const featuredOfficials = officials
@@ -57,6 +99,13 @@ export default function HomePage() {
     .slice(0, 6);
 
   const latestNews = getAllNews().slice(0, 3);
+  const officialsByLevel = levelCards.reduce(
+    (counts, card) => {
+      counts[card.level] = officials.filter((official) => official.level === card.level).length;
+      return counts;
+    },
+    {} as Record<GovernmentLevel, number>,
+  );
 
   return (
     <div>
@@ -85,8 +134,8 @@ export default function HomePage() {
             </h1>
             <p className="mb-8 max-w-2xl text-base font-semibold leading-relaxed text-blue-950/75 sm:mb-10 sm:text-lg">
               Scorecards, voting records, campaign funding, and red flags for
-              every elected official in Texas. Verified Texans can
-              vote and comment publicly.
+              elected officials across the East Texas county rollout. Verified Texans
+              can vote, ask questions, and comment publicly.
             </p>
             <div className="mb-8 max-w-xl">
               <SearchBar />
@@ -96,7 +145,7 @@ export default function HomePage() {
                 href="/officials"
                 className="rounded-xl bg-blue-900 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-xl"
               >
-                Browse All Officials
+                Browse Active Officials
               </Link>
               <Link
                 href="/auth/signup"
@@ -106,35 +155,17 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-xl shadow-blue-100/70">
-            <p className="text-sm font-black uppercase tracking-wide text-red-700">Texas accountability map</p>
-            <h2 className="mt-2 text-3xl font-black text-blue-950">Local politics should be clear enough for families to follow.</h2>
-            <div className="mt-6 grid gap-3">
+          <div className="rounded-2xl border border-blue-100 bg-white p-5 shadow-xl shadow-blue-100/70">
+            <p className="text-sm font-black uppercase tracking-wide text-red-700">East Texas accountability map</p>
+            <h2 className="mt-2 text-2xl font-black text-blue-950 sm:text-3xl">Every number should open a path.</h2>
+            <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
+              These are drilldowns, not decoration. Click a stat to see the list, the counties, the issue lanes, or school-board records behind it.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {stats.map((stat) => (
-                <div key={stat.label} className="flex items-center justify-between rounded-xl border border-blue-100 bg-blue-50 px-4 py-3">
-                  <span className="text-sm font-black text-blue-950">{stat.label}</span>
-                  <span className="text-2xl font-black text-red-700">{stat.value}</span>
-                </div>
+                <StatDrilldownCard key={stat.label} stat={stat} />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100">
-            {stats.map((stat) => (
-              <div key={stat.label} className="py-6 px-4 text-center">
-                <p className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                  {stat.value}
-                </p>
-                <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -146,21 +177,27 @@ export default function HomePage() {
             Browse by Government Level
           </h2>
           <p className="text-gray-500 mt-2">
-            From Congress to school boards -- every elected official tracked
+            Start by office lane, then narrow by county, party, or name.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {levelCards.map((card) => (
             <Link
               key={card.level}
               href={card.href}
-              className="group block rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:shadow-lg hover:border-blue-200 hover:-translate-y-1"
+              className="group flex min-h-[210px] flex-col rounded-2xl border border-gray-200 bg-white p-5 transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
             >
-              <h3 className="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
-                {card.title}
-              </h3>
-              <p className="text-sm text-gray-500 mt-2">{card.description}</p>
-              <span className="inline-block mt-4 text-xs font-semibold text-blue-600 group-hover:translate-x-1 transition-transform">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-lg font-black text-gray-900 transition-colors group-hover:text-blue-700">
+                  {card.title}
+                </h3>
+                <span className="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-black text-blue-900">
+                  {(officialsByLevel[card.level] ?? 0).toLocaleString()}
+                </span>
+              </div>
+              <p className="mt-2 text-sm font-semibold text-gray-600">{card.description}</p>
+              <p className="mt-4 flex-1 text-xs font-bold leading-5 text-gray-500">{card.examples}</p>
+              <span className="mt-4 inline-block text-xs font-black text-blue-700 transition-transform group-hover:translate-x-1">
                 View Officials &rarr;
               </span>
             </Link>
@@ -168,8 +205,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Counties Covered */}
+      <section id="counties-covered" className="border-y border-blue-100 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-wide text-red-700">Counties covered</p>
+              <h2 className="text-3xl font-extrabold text-gray-900">The active county block</h2>
+            </div>
+            <p className="max-w-2xl text-sm font-semibold leading-6 text-gray-600">
+              County cards open the officials page already filtered to that county. The next-record line shows what still needs to be loaded before the county is complete.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {rolloutStats.countyCounts.map((county) => (
+              <Link
+                key={county.county}
+                href={`/officials?county=${encodeURIComponent(county.county)}`}
+                className="group rounded-2xl border border-gray-200 bg-[#fbfcff] p-5 transition-all hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-lg"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-black text-blue-950 group-hover:text-red-700">{county.county} County</h3>
+                    <p className="mt-1 text-xs font-black uppercase tracking-wide text-slate-500">Seat: {county.seat}</p>
+                  </div>
+                  <span className="rounded-full bg-blue-900 px-2.5 py-1 text-xs font-black text-white">
+                    {county.loaded} live
+                  </span>
+                </div>
+                <p className="mt-4 text-sm font-semibold leading-6 text-gray-600">
+                  {formatCountyLevels(county.byLevel)}
+                </p>
+                <p className="mt-3 text-xs font-bold leading-5 text-gray-500">
+                  Next: {county.nextRecords.slice(0, 3).join(", ")}.
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Issue Categories */}
-      <section className="bg-slate-50">
+      <section id="issue-categories" className="bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-gray-900">
@@ -184,20 +261,20 @@ export default function HomePage() {
               <Link
                 key={issue.id}
                 href={`/scorecards/${issue.id}`}
-                className="group block rounded-2xl border border-gray-200 bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-1"
+                className="group flex min-h-[210px] flex-col rounded-2xl border border-gray-200 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div
                   className="w-10 h-1 rounded-full mb-4"
                   style={{ backgroundColor: issue.color }}
                 />
-                <h3 className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">
+                <h3 className="text-sm font-black text-gray-900 transition-colors group-hover:text-blue-700">
                   {issue.name}
                 </h3>
-                <p className="text-xs text-gray-500 mt-2 leading-relaxed line-clamp-2">
+                <p className="mt-2 flex-1 text-xs font-semibold leading-5 text-gray-500">
                   {issue.description}
                 </p>
                 <p
-                  className="text-xs font-bold mt-3"
+                  className="mt-3 text-xs font-black"
                   style={{ color: issue.color }}
                 >
                   {issue.weight}% of overall score
@@ -376,4 +453,46 @@ export default function HomePage() {
       </section>
     </div>
   );
+}
+
+function StatDrilldownCard({
+  stat,
+}: {
+  stat: {
+    label: string;
+    value: string;
+    body: string;
+    href: string;
+    tone: "blue" | "red" | "amber" | "emerald";
+  };
+}) {
+  const toneClasses = {
+    blue: "border-blue-100 bg-blue-50 text-blue-950 group-hover:border-blue-300",
+    red: "border-red-100 bg-red-50 text-red-950 group-hover:border-red-300",
+    amber: "border-amber-100 bg-amber-50 text-amber-950 group-hover:border-amber-300",
+    emerald: "border-emerald-100 bg-emerald-50 text-emerald-950 group-hover:border-emerald-300",
+  };
+
+  return (
+    <Link
+      href={stat.href}
+      className={`group rounded-xl border p-4 transition-all hover:-translate-y-0.5 hover:bg-white hover:shadow-md ${toneClasses[stat.tone]}`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <span className="text-sm font-black">{stat.label}</span>
+        <span className="text-2xl font-black text-red-700">{stat.value}</span>
+      </div>
+      <p className="mt-2 text-xs font-semibold leading-5 text-slate-600">{stat.body}</p>
+      <span className="mt-3 inline-block text-xs font-black text-blue-700">Open &rarr;</span>
+    </Link>
+  );
+}
+
+function formatCountyLevels(byLevel: Partial<Record<GovernmentLevel, number>>) {
+  const parts: string[] = [];
+  if (byLevel.county) parts.push(`${byLevel.county} county`);
+  if (byLevel.city) parts.push(`${byLevel.city} city`);
+  if (byLevel["school-board"]) parts.push(`${byLevel["school-board"]} school board`);
+  if (byLevel.state || byLevel.federal) parts.push(`${(byLevel.state ?? 0) + (byLevel.federal ?? 0)} state/federal`);
+  return parts.join(" / ");
 }
