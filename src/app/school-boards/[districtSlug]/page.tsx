@@ -12,6 +12,13 @@ import {
   getSchoolBoardDistricts,
   type SchoolBoardFeedItem,
 } from "@/lib/school-board-research";
+import {
+  getCandidateUrlSlug,
+  getDistrictDataSlug,
+  getDistrictUrlSlug,
+  getSchoolBoardCandidateUrl,
+  getSchoolBoardDistrictUrl,
+} from "@/lib/school-board-urls";
 
 type DashboardMetric = {
   label: string;
@@ -29,7 +36,7 @@ type DashboardFact = {
 
 export function generateStaticParams() {
   return getSchoolBoardDistricts().map((district) => ({
-    districtSlug: district.district_slug,
+    districtSlug: getDistrictUrlSlug(district.district_slug),
   }));
 }
 
@@ -39,12 +46,27 @@ export async function generateMetadata({
   params: Promise<{ districtSlug: string }>;
 }): Promise<Metadata> {
   const { districtSlug } = await params;
-  const district = getSchoolBoardDistrict(districtSlug);
+  const district = getSchoolBoardDistrict(getDistrictDataSlug(districtSlug));
   if (!district) return { title: "District Not Found" };
+  const canonical = getSchoolBoardDistrictUrl(district);
+  const socialImage = `/api/og/school-board?type=district&district=${getDistrictUrlSlug(district.district_slug)}`;
 
   return {
     title: `${district.district} School Board`,
     description: `${district.district} candidate dossiers, trustee records, source links, red flags, good records, and research gaps.`,
+    alternates: { canonical },
+    openGraph: {
+      title: `${district.district} School Board`,
+      description: `${district.district} board-member profiles, district facts, source records, praise reports, and public questions.`,
+      url: canonical,
+      images: [{ url: socialImage, width: 1200, height: 630, alt: `${district.district} school board profile` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${district.district} School Board`,
+      description: `${district.district} board-member profiles and source records.`,
+      images: [socialImage],
+    },
   };
 }
 
@@ -54,7 +76,7 @@ export default async function DistrictPage({
   params: Promise<{ districtSlug: string }>;
 }) {
   const { districtSlug } = await params;
-  const district = getSchoolBoardDistrict(districtSlug);
+  const district = getSchoolBoardDistrict(getDistrictDataSlug(districtSlug));
 
   if (!district) {
     return (
@@ -125,6 +147,9 @@ export default async function DistrictPage({
               ))}
             </div>
             <div className="mt-7 flex flex-wrap gap-3">
+              <div className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-black text-gray-800 shadow-sm">
+                URL: /school-boards/{getDistrictUrlSlug(district.district_slug)}
+              </div>
               {sourceLinks.slice(0, 2).map((source) => (
                 <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="rounded-full px-4 py-2 text-sm font-black text-white shadow-sm transition hover:opacity-90" style={{ backgroundColor: branding.primary }}>
                   Open source: {source.title?.replace(/Harleton ISD |Marshall ISD |Longview ISD /g, "") ?? "Record"}
@@ -256,7 +281,7 @@ export default async function DistrictPage({
             return (
               <Link
                 key={candidate.candidate_id}
-                href={`/school-boards/${district.district_slug}/${candidate.candidate_id}`}
+                href={getSchoolBoardCandidateUrl(candidate)}
                 className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-red-200 hover:shadow-xl"
               >
                 <div className="flex items-start gap-4">
@@ -279,6 +304,9 @@ export default async function DistrictPage({
                     <h3 className="mt-4 text-xl font-black text-gray-950">{candidate.preferred_name ?? candidate.full_name}</h3>
                     <p className="mt-1 text-sm font-semibold text-gray-500">
                       {candidate.role ?? (candidate.incumbent ? "Trustee" : "Candidate")}
+                    </p>
+                    <p className="mt-2 break-all text-xs font-bold text-blue-700">
+                      /{getCandidateUrlSlug(candidate)}
                     </p>
                   </div>
                 </div>
