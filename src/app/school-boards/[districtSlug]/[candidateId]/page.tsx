@@ -6,6 +6,7 @@ import CommentSection from "@/components/comments/CommentSection";
 import ClaimProfileCta from "@/components/profile/ClaimProfileCta";
 import ClaimedProfilePanel from "@/components/profile/ClaimedProfilePanel";
 import ProfilePhoto from "@/components/profile/ProfilePhoto";
+import { getDistrictBranding } from "@/data/school-board-branding";
 import { getCandidateFlags, getCandidateGaps, getCandidateGoodRecords, getSchoolBoardCandidate, getSchoolBoardDossiers, getShareLine } from "@/lib/school-board-research";
 import { buildEvidenceFromDossier, calculateSchoolBoardScore, schoolBoardScoringModel } from "@/lib/school-board-scoring";
 
@@ -34,10 +35,11 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
   const narrative = candidate.about_public_record?.about_summary_narrative ?? candidate.summary;
   const positions = Object.entries(candidate.education_policy_positions ?? {});
   const score = calculateSchoolBoardScore(candidate, buildEvidenceFromDossier(candidate));
+  const branding = getDistrictBranding(candidate.district_slug);
 
   return (
     <div>
-      <section className="border-b-4 border-red-700 bg-white">
+      <section className="border-b-4 bg-white" style={{ borderColor: branding.primary }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <Link href={`/school-boards/${candidate.district_slug}`} className="text-sm font-bold text-gray-500 hover:text-gray-950">&larr; Back to {candidate.district}</Link>
           <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
@@ -51,6 +53,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
                 <div>
                   <div className="flex flex-wrap gap-2">
                     <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{candidate.district}</span>
+                    <span className="rounded-full px-3 py-1 text-xs font-black text-white" style={{ backgroundColor: branding.primary }}>{branding.label}</span>
                     <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-800">{candidate.status ?? "dossier"}</span>
                     {candidate.on_2026_ballot || candidate.election_date?.includes("2026") ? <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">2026 ballot</span> : null}
                     <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-black text-blue-800">RepWatchr verified record</span>
@@ -78,6 +81,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
                 <div className="rounded-xl border border-gray-200 bg-white p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">Model score</p><p className="mt-1 text-3xl font-black text-gray-950">{score.grade === "Pending" ? "Review" : score.score}</p><p className="text-sm font-bold text-gray-600">{score.grade === "Pending" ? "Evidence pending" : `Grade ${score.grade}`}</p></div>
                 <div className="rounded-xl border border-gray-200 bg-white p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">Political lean</p><p className="mt-1 text-sm font-black text-gray-950">{score.politicalLean.label}</p><p className="text-xs font-bold text-gray-500">{score.politicalLean.confidence} confidence</p></div>
               </div>
+              <PoliticalLeanArrow label={score.politicalLean.label} confidence={score.politicalLean.confidence} />
               {score.praiseWiped ? <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4"><p className="text-sm font-black text-red-900">Praise override active</p><p className="mt-1 text-sm leading-6 text-red-800">{score.overrideReason}</p></div> : null}
             </div>
           </div>
@@ -96,7 +100,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
 
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"><h2 className="text-2xl font-black text-gray-950">Board votes and public statements</h2><div className="mt-5 space-y-4">{votes.length === 0 && (candidate.notable_statements?.length ?? 0) === 0 ? <p className="text-sm leading-6 text-gray-600">No vote or public-statement entries have been loaded yet.</p> : null}{votes.map((vote) => <SourceItem key={`${vote.meeting_date}-${vote.item}`} title={vote.meeting_date ?? "Board record"} body={`${vote.item ?? "Vote item"} ${vote.board_outcome ? `(${vote.board_outcome})` : ""}`} url={vote.source_url} />)}{candidate.notable_statements?.map((statement) => <SourceItem key={`${statement.platform}-${statement.date}-${statement.quote_or_paraphrase}`} title={`${statement.platform ?? "Public statement"} ${statement.date ? `, ${statement.date}` : ""}`} body={statement.quote_or_paraphrase ?? "Statement summary pending."} url={statement.source_url} />)}</div></div>
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"><h2 className="text-2xl font-black text-gray-950">Issue positions</h2><div className="mt-5 space-y-3">{positions.length === 0 ? <p className="text-sm leading-6 text-gray-600">Issue-position research has not been loaded yet.</p> : positions.map(([key, value]) => <div key={key} className="rounded-xl bg-gray-50 p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">{key.replaceAll("_", " ")}</p><p className="mt-1 text-sm leading-6 text-gray-700">{value}</p></div>)}</div></div>
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"><h2 className="text-2xl font-black text-gray-950">Issue positions and social handles</h2><div className="mt-5 space-y-3">{positions.length === 0 ? <p className="text-sm leading-6 text-gray-600">Issue-position research has not been loaded yet.</p> : positions.map(([key, value]) => <div key={key} className="rounded-xl bg-gray-50 p-4"><p className="text-xs font-black uppercase tracking-wide text-gray-500">{key.replaceAll("_", " ")}</p><p className="mt-1 text-sm leading-6 text-gray-700">{value}</p></div>)}</div><SocialLinks links={candidate.social_media ?? {}} /></div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8"><div className="rounded-2xl border border-gray-200 bg-slate-950 p-6 text-white shadow-sm"><p className="text-sm font-black uppercase tracking-wide text-red-300">RepWatchr child and parent-rights model</p><h2 className="mt-2 text-2xl font-black">How this score is weighted</h2><div className="mt-5 grid gap-3 md:grid-cols-4">{Object.entries(score.categoryScores).map(([category, value]) => <div key={category} className="rounded-xl border border-white/10 bg-white/10 p-4"><p className="text-xs font-black uppercase tracking-wide text-slate-300">{category.replaceAll("_", " ")}</p><p className="mt-1 text-2xl font-black">{value}</p></div>)}</div><p className="mt-5 text-sm leading-6 text-slate-300">{score.requiredEvidenceNote} Model version: {schoolBoardScoringModel.version}.</p></div></section>
@@ -114,4 +118,43 @@ function RecordColumn({ title, items, tone }: { title: string; items: string[]; 
 
 function SourceItem({ title, body, url }: { title: string; body: string; url?: string }) {
   return <div className="rounded-xl border border-gray-200 bg-gray-50 p-4"><p className="text-sm font-black text-gray-950">{title}</p><p className="mt-1 text-sm leading-6 text-gray-700">{body}</p>{url ? <a href={url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex text-sm font-bold text-blue-700">Source &rarr;</a> : null}</div>;
+}
+
+function PoliticalLeanArrow({ label, confidence }: { label: string; confidence: string }) {
+  const position = label === "Votes Republican" ? "left-[78%]" : label === "Votes Democrat" ? "left-[18%]" : label === "Mixed / Unclear" ? "left-1/2" : "left-1/2";
+  return (
+    <div className="mt-4 rounded-xl border border-gray-200 bg-white p-4">
+      <div className="flex items-center justify-between text-xs font-black uppercase tracking-wide text-gray-500">
+        <span>Left</span>
+        <span>Evidence-based lean</span>
+        <span>Right</span>
+      </div>
+      <div className="relative mt-3 h-3 rounded-full bg-[linear-gradient(90deg,#2563eb_0%,#e5e7eb_50%,#dc2626_100%)]">
+        <span className={`absolute top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 border-2 border-white bg-gray-950 shadow ${position}`} />
+      </div>
+      <p className="mt-3 text-sm font-bold text-gray-700">
+        {label}. Confidence: {confidence}. This arrow only moves when public voting history, donations, endorsements, self-description, or source-backed issue records are loaded.
+      </p>
+    </div>
+  );
+}
+
+function SocialLinks({ links }: { links: Record<string, string> }) {
+  const entries = Object.entries(links).filter(([, url]) => Boolean(url));
+  return (
+    <div className="mt-5 rounded-xl border border-gray-200 bg-gray-50 p-4">
+      <p className="text-xs font-black uppercase tracking-wide text-gray-500">Public social handles</p>
+      {entries.length === 0 ? (
+        <p className="mt-2 text-sm leading-6 text-gray-600">No official or campaign social handles have been verified yet.</p>
+      ) : (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {entries.map(([platform, url]) => (
+            <a key={platform} href={url} target="_blank" rel="noopener noreferrer" className="rounded-full bg-blue-900 px-3 py-2 text-xs font-black text-white hover:bg-red-700">
+              {platform}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
