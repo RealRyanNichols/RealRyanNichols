@@ -22,6 +22,8 @@ const promptButtons = [
   "Show me what to search next",
 ];
 
+const GIDEON_TAGLINE = "God. Family. Country. Justice.";
+
 function buildAnswer(input: string): string {
   const text = input.toLowerCase();
 
@@ -52,7 +54,7 @@ export default function GideonConsole({ initialQuery = "" }: GideonConsoleProps)
     {
       role: "gideon",
       content:
-        "I am Gideon inside RepWatchr. Ask for a rep, school board, city, county, district, race, vote, donor, red flag, praise report, or research path.",
+        "I am Gideon inside RepWatchr. God. Family. Country. Justice. Ask for a rep, school board, city, county, district, race, vote, donor, red flag, praise report, or research path.",
     },
   ]);
   const nextAnswer = useMemo(() => buildAnswer(input), [input]);
@@ -100,19 +102,36 @@ export default function GideonConsole({ initialQuery = "" }: GideonConsoleProps)
   }
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[#2b3247] bg-[#0A0E1A] text-[#F4EFE4] shadow-2xl">
-      <div className="border-b border-white/10 bg-[linear-gradient(135deg,#0A0E1A_0%,#131826_48%,#1E2538_100%)] p-5">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#D4A855]">GideonAI</p>
-            <h2 className="mt-2 text-3xl font-black tracking-tight text-[#F4EFE4]">Truth, tested.</h2>
-            <p className="mt-2 max-w-2xl text-sm font-semibold leading-6 text-[#9CA3B8]">
-              This first RepWatchr integration searches the public data, collects research direction, and prompts the member for the facts needed to find the right official or school-board record.
-            </p>
+    <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-blue-950/10">
+      <div className="relative bg-white">
+        <img
+          src="/images/gideon-ai-cover.jpg"
+          alt="GideonAI - God. Family. Country. Justice."
+          className="h-44 w-full object-cover object-left sm:h-64 lg:h-80"
+        />
+      </div>
+
+      <div className="border-y border-slate-200 bg-[linear-gradient(135deg,#ffffff_0%,#f8fafc_52%,#fff7ed_100%)] p-5">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-center">
+            <img
+              src="/images/gideon-ai-profile.jpg"
+              alt="GideonAI shield logo"
+              className="h-24 w-24 shrink-0 rounded-2xl border border-slate-200 bg-white object-cover shadow-lg sm:h-28 sm:w-28"
+            />
+            <div className="min-w-0">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#B78A2E]">GideonAI</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight text-[#071C3A] sm:text-4xl">
+                {GIDEON_TAGLINE}
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-slate-700">
+                Search RepWatchr, collect research direction, and turn scattered public facts into the next clear question, source pull, or profile path.
+              </p>
+            </div>
           </div>
           <Link
             href="/search"
-            className="rounded-xl bg-[#D4A855] px-4 py-3 text-sm font-black text-[#0A0E1A] transition hover:bg-[#FF6B2C]"
+            className="rounded-xl bg-[#071C3A] px-4 py-3 text-center text-sm font-black text-white transition hover:bg-red-700"
           >
             Open full search
           </Link>
@@ -122,7 +141,7 @@ export default function GideonConsole({ initialQuery = "" }: GideonConsoleProps)
         </div>
       </div>
 
-      <div className="grid gap-0 lg:grid-cols-[1fr_0.85fr]">
+      <div className="grid gap-0 bg-[#0A0E1A] text-[#F4EFE4] lg:grid-cols-[1fr_0.85fr]">
         <div className="border-b border-white/10 p-5 lg:border-b-0 lg:border-r">
           <div className="space-y-3">
             {messages.map((message, index) => (
