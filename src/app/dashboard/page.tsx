@@ -6,6 +6,11 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { createClient } from "@/lib/supabase";
 import MemberCommandCenter from "@/components/dashboard/MemberCommandCenter";
 import MemberProfilePanel from "@/components/dashboard/MemberProfilePanel";
+import {
+  displayNameFromId,
+  urlForOfficialOrCandidate,
+  detectSchoolBoardCandidate,
+} from "@/data/school-board-district-slugs";
 
 interface VoteRecord {
   official_id: string;
@@ -13,33 +18,47 @@ interface VoteRecord {
   updated_at: string;
 }
 
+interface GradeRecord {
+  official_id: string;
+  grade: string;
+  rationale: string | null;
+  updated_at: string;
+}
+
 export default function DashboardPage() {
   const { user, profile, loading: authLoading } = useAuth();
   const [votes, setVotes] = useState<VoteRecord[]>([]);
-  const [loadingVotes, setLoadingVotes] = useState(true);
+  const [grades, setGrades] = useState<GradeRecord[]>([]);
+  const [loadingActivity, setLoadingActivity] = useState(true);
   const supabase = useMemo(() => createClient(), []);
 
   useEffect(() => {
     if (!user) return;
 
-    async function loadVotes() {
-      const { data } = await supabase
-        .from("citizen_votes")
-        .select("official_id, vote, updated_at")
-        .eq("user_id", user!.id)
-        .order("updated_at", { ascending: false });
+    async function loadActivity() {
+      const [votesResult, gradesResult] = await Promise.all([
+        supabase
+          .from("citizen_votes")
+          .select("official_id, vote, updated_at")
+          .eq("user_id", user!.id)
+          .order("updated_at", { ascending: false }),
+        supabase
+          .from("citizen_grades")
+          .select("official_id, grade, rationale, updated_at")
+          .eq("user_id", user!.id)
+          .order("updated_at", { ascending: false }),
+      ]);
 
-      if (data) {
-        setVotes(data);
-      }
-      setLoadingVotes(false);
+      if (votesResult.data) setVotes(votesResult.data);
+      if (gradesResult.data) setGrades(gradesResult.data as GradeRecord[]);
+      setLoadingActivity(false);
     }
 
-    loadVotes();
+    loadActivity();
   }, [user, supabase]);
 
   // Derive loading state from auth + data
-  const isLoading = authLoading || (!!user && loadingVotes);
+  const isLoading = authLoading || (!!user && loadingActivity);
 
   if (isLoading) {
     return (
@@ -173,67 +192,141 @@ export default function DashboardPage() {
       <MemberCommandCenter />
 
       {/* Votes Section */}
-      <div className="mt-8">
-        <h2 className="text-lg font-semibold text-gray-900">
-          Your Votes ({votes.length})
-        </h2>
+      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        <div>
+          <h2 className="text-lg font-semibold text-gray-900">
+            Your Votes ({votes.length})
+          </h2>
 
-        {!profile?.verified && (
-          <div className="mt-3 rounded-md bg-orange-50 p-4 text-sm text-orange-700">
-            You need to{" "}
-            <Link href="/auth/verify" className="font-medium underline">
-              verify your Texas identity
-            </Link>{" "}
-            before you can vote on officials.
-          </div>
-        )}
+          {!profile?.verified && (
+            <div className="mt-3 rounded-md bg-orange-50 p-4 text-sm text-orange-700">
+              You need to{" "}
+              <Link href="/auth/verify" className="font-medium underline">
+                verify your Texas identity
+              </Link>{" "}
+              before you can vote on officials.
+            </div>
+          )}
 
-        {votes.length === 0 ? (
-          <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
-            <p className="text-gray-500">
-              You haven&apos;t voted on any officials yet.
-            </p>
-            <Link
-              href="/officials"
-              className="mt-3 inline-block rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
-            >
-              Browse Officials
-            </Link>
-          </div>
-        ) : (
-          <div className="mt-4 space-y-2">
-            {votes.map((v) => (
-              <Link
-                key={v.official_id}
-                href={`/officials/${v.official_id}`}
-                className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50"
-              >
-                <div>
-                  <p className="font-medium text-gray-900 capitalize">
-                    {v.official_id.replace(/-/g, " ")}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    Voted{" "}
-                    {new Date(v.updated_at).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </p>
-                </div>
-                <span
-                  className={`rounded-full px-3 py-1 text-sm font-semibold ${
-                    v.vote === "approve"
-                      ? "bg-green-100 text-green-700"
-                      : "bg-red-100 text-red-700"
-                  }`}
+          {votes.length === 0 ? (
+            <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
+              <p className="text-gray-500">
+                You haven&apos;t voted on any officials yet.
+              </p>
+              <div className="mt-3 flex flex-wrap justify-center gap-2">
+                <Link
+                  href="/officials"
+                  className="inline-block rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
                 >
-                  {v.vote === "approve" ? "Approved" : "Disapproved"}
-                </span>
-              </Link>
-            ))}
-          </div>
-        )}
+                  Browse Officials
+                </Link>
+                <Link
+                  href="/school-boards"
+                  className="inline-block rounded-md border border-blue-300 bg-white px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50"
+                >
+                  Browse School Boards
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="mt-4 space-y-2">
+              {votes.map((v) => {
+                const isSchoolBoard = Boolean(detectSchoolBoardCandidate(v.official_id));
+                return (
+                  <Link
+                    key={v.official_id}
+                    href={urlForOfficialOrCandidate(v.official_id)}
+                    className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50"
+                  >
+                    <div>
+                      <p className="font-medium text-gray-900">
+                        {displayNameFromId(v.official_id)}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {isSchoolBoard ? "School Board · " : "Official · "}
+                        Voted{" "}
+                        {new Date(v.updated_at).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </p>
+                    </div>
+                    <span
+                      className={`rounded-full px-3 py-1 text-sm font-semibold ${
+                        v.vote === "approve"
+                          ? "bg-green-100 text-green-700"
+                          : "bg-red-100 text-red-700"
+                      }`}
+                    >
+                      {v.vote === "approve" ? "Approved" : "Disapproved"}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold text-gray-900">
+            Your Grades ({grades.length})
+          </h2>
+          {grades.length === 0 ? (
+            <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
+              <p className="text-gray-500">
+                You haven&apos;t graded anyone yet. Verified Texans can assign A–F grades on
+                any official or school-board profile.
+              </p>
+            </div>
+          ) : (
+            <div className="mt-4 space-y-2">
+              {grades.map((g) => {
+                const isSchoolBoard = Boolean(detectSchoolBoardCandidate(g.official_id));
+                const gradeColor =
+                  g.grade === "A"
+                    ? "bg-emerald-100 text-emerald-800"
+                    : g.grade === "B"
+                      ? "bg-lime-100 text-lime-800"
+                      : g.grade === "C"
+                        ? "bg-amber-100 text-amber-800"
+                        : g.grade === "D"
+                          ? "bg-orange-100 text-orange-800"
+                          : "bg-red-100 text-red-800";
+                return (
+                  <Link
+                    key={g.official_id}
+                    href={urlForOfficialOrCandidate(g.official_id)}
+                    className="flex items-start justify-between gap-3 rounded-lg border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50"
+                  >
+                    <div className="min-w-0">
+                      <p className="font-medium text-gray-900">
+                        {displayNameFromId(g.official_id)}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {isSchoolBoard ? "School Board · " : "Official · "}
+                        Graded{" "}
+                        {new Date(g.updated_at).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </p>
+                      {g.rationale ? (
+                        <p className="mt-1 line-clamp-2 text-xs text-gray-600">
+                          &ldquo;{g.rationale}&rdquo;
+                        </p>
+                      ) : null}
+                    </div>
+                    <span className={`rounded-full px-3 py-1 text-sm font-black ${gradeColor}`}>
+                      {g.grade}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

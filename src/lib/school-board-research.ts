@@ -121,6 +121,11 @@ export const EAST_TEXAS_PRIORITY_DISTRICTS = [
   { district: "Pine Tree ISD", district_slug: "pine_tree_isd", county: "Gregg" },
   { district: "Kilgore ISD", district_slug: "kilgore_isd", county: "Gregg/Rusk" },
   { district: "Carthage ISD", district_slug: "carthage_isd", county: "Panola" },
+  { district: "Lufkin ISD", district_slug: "lufkin_isd", county: "Angelina" },
+  { district: "Mount Pleasant ISD", district_slug: "mount_pleasant_isd", county: "Titus" },
+  { district: "Whitehouse ISD", district_slug: "whitehouse_isd", county: "Smith" },
+  { district: "Lindale ISD", district_slug: "lindale_isd", county: "Smith" },
+  { district: "Tyler ISD", district_slug: "tyler_isd", county: "Smith" },
 ] as const;
 
 const ACCESSED_DATE = "2026-04-24";
@@ -163,6 +168,26 @@ const DISTRICT_SOURCES: Record<string, SourceLink[]> = {
   carthage_isd: [
     { url: "https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/1372/Cisd/cf181747-7178-45b5-958f-6cca2dc375d1/2025-26-Carthage-ISD-Employee-Handbook.pdf?disposition=inline", title: "Carthage ISD 2025-26 Employee Handbook", accessed_date: ACCESSED_DATE, source_type: "district_official" },
     { url: "https://www.carthageisd.org/article/2188589", title: "Carthage ISD Donald Re-Elected", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+  ],
+  lufkin_isd: [
+    { url: "https://www.lufkinisd.org/school-board-members/", title: "Lufkin ISD School Board Members", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+    { url: "https://bpb-us-w2.wpmucdn.com/sites.lufkinisd.org/dist/c/2/files/2025/08/Salary-Compensation-Plan-2526-BRD.pdf", title: "Lufkin ISD 2025-2026 Compensation Plan", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+  ],
+  mount_pleasant_isd: [
+    { url: "https://www.mpisd.net/school-board/", title: "Mount Pleasant ISD School Board", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+    { url: "https://ballotpedia.org/Mount_Pleasant_Independent_School_District,_Texas", title: "Mount Pleasant ISD - Ballotpedia", accessed_date: ACCESSED_DATE, source_type: "ballotpedia" },
+  ],
+  whitehouse_isd: [
+    { url: "https://www.whitehouseisd.org/schoolboard", title: "Whitehouse ISD School Board", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+    { url: "https://ballotpedia.org/Whitehouse_Independent_School_District,_Texas", title: "Whitehouse ISD - Ballotpedia", accessed_date: ACCESSED_DATE, source_type: "ballotpedia" },
+  ],
+  lindale_isd: [
+    { url: "https://www.lindaleeagles.org/school-board", title: "Lindale ISD School Board", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+    { url: "https://tylerpaper.com/2026/04/21/lindale-isd-school-board-candidates-focus-on-growth-transparency-and-student-success/", title: "Tyler Morning Telegraph - Lindale ISD candidates 2026", accessed_date: ACCESSED_DATE, source_type: "news" },
+  ],
+  tyler_isd: [
+    { url: "https://www.tylerisd.org/page/school-board", title: "Tyler ISD School Board", accessed_date: ACCESSED_DATE, source_type: "district_official" },
+    { url: "https://www.tylerisd.org/page/school-board-elections", title: "Tyler ISD Board Elections", accessed_date: ACCESSED_DATE, source_type: "district_official" },
   ],
 };
 
@@ -245,6 +270,35 @@ const OFFICIAL_ROSTERS: Record<string, OfficialRosterMember[]> = {
     { full_name: "Brenda Giles", role: "Trustee" },
     { full_name: "Elzie Hicks", role: "Trustee" },
     { full_name: "Truman Shirey", role: "Trustee" },
+  ],
+  lufkin_isd: [
+    { full_name: "Kristi Gay", role: "Board President", summary: "Listed as Board President in Lufkin ISD's 2025-2026 Compensation Plan." },
+    { full_name: "Matt Knight", role: "Vice President", summary: "Listed as Vice President in Lufkin ISD's 2025-2026 Compensation Plan." },
+    { full_name: "Allyson Langston", role: "Secretary", summary: "Listed as Secretary in Lufkin ISD's 2025-2026 Compensation Plan." },
+    { full_name: "Joe Ceasar", role: "Trustee", summary: "Listed as a trustee in Lufkin ISD's 2025-2026 Compensation Plan." },
+    { full_name: "Delphina Hadnot-Maxie", role: "Trustee", summary: "Listed as a trustee in Lufkin ISD's 2025-2026 Compensation Plan." },
+    { full_name: "Melinda Moore", role: "Trustee", summary: "Listed as a trustee in Lufkin ISD's 2025-2026 Compensation Plan." },
+    { full_name: "Erika Neill", role: "Trustee", summary: "Listed as a trustee in Lufkin ISD's 2025-2026 Compensation Plan." },
+  ],
+  mount_pleasant_isd: [
+    { full_name: "Yvonne Hampton", role: "President", seat: "Member 7", occupation: "Retired educator", summary: "Listed as Board President for Mount Pleasant ISD as of February 2026." },
+    { full_name: "Buddy Blue", role: "Vice President", seat: "Member 1", occupation: "Self-employed", summary: "Listed as Vice President for Mount Pleasant ISD as of February 2026." },
+  ],
+  whitehouse_isd: [
+    { full_name: "Holly Conaway", role: "Trustee", seat: "Place 7", term: "May 2025 - May 2028", occupation: "Managing Partner, East Texas Rent Homes", summary: "1992 Whitehouse High School graduate; long-time Whitehouse resident." },
+    { full_name: "Maegan Schneider", role: "Trustee", seat: "Place 6", term: "May 2025 - May 2028", occupation: "Civil engineer at Aqueous Engineering", summary: "Texas Tech and UT Tyler graduate; Whitehouse resident since 2005." },
+    { full_name: "Nick Moss", role: "Trustee", occupation: "Account Executive at Genesis eBONDS", summary: "1997 Whitehouse High School graduate and 43-year community resident." },
+    { full_name: "Keidric Trimble", role: "Trustee", occupation: "Chief Financial Officer, City of Tyler", summary: "Whitehouse ISD graduate; UT Arlington and UT Tyler alumnus." },
+    { full_name: "Dr. Conflitti", role: "Trustee", occupation: "U.S. Air Force reservist (Barksdale AFB)", summary: "Whitehouse ISD parent; family attends Marvin United Methodist Church." },
+  ],
+  lindale_isd: [
+    { full_name: "Mike Combs", role: "Board President", summary: "Elected to the Lindale ISD board in 2006." },
+    { full_name: "Robert McGee", role: "Vice President", summary: "Has served on the Lindale ISD Board of Trustees since 2015." },
+    { full_name: "Daniel Deslatte", role: "Trustee", summary: "Elected to the Lindale ISD Board of Trustees in 2024." },
+    { full_name: "Ragan Burgess", role: "Trustee", seat: "Place 3", summary: "Place 3 trustee not seeking reelection in May 2026 per Tyler Morning Telegraph reporting." },
+  ],
+  tyler_isd: [
+    { full_name: "Lindsey Harrison", role: "Trustee", seat: "District 6", summary: "Appointed by trustees to fill the District 6 vacancy per Tyler ISD announcement." },
   ],
 };
 
@@ -528,6 +582,11 @@ export function getDistrictInvestigationQueue(slug: string): string[] {
     ore_city_isd: ["Review 2026 election documents and trustee training-hour filings attached on the district board page."],
     waskom_isd: ["Review May 2026 at-large election documents and posted minutes for all three expiring seats."],
     jefferson_isd: ["Confirm whether the official board page lists all seven trustees or only the visible five before marking roster complete."],
+    lufkin_isd: ["Pull seat numbers and term-expiration dates for each Lufkin ISD trustee from the official school board page or board policy manual."],
+    mount_pleasant_isd: ["Roster currently shows only the President (Yvonne Hampton) and Vice President (Buddy Blue). Pull the remaining five trustees, seat numbers, and term info from the Mount Pleasant ISD school board page."],
+    whitehouse_isd: ["Confirm Dr. Conflitti's full first name and any remaining trustee not yet listed. Pull seat numbers and term dates for all seven Whitehouse ISD trustees."],
+    lindale_isd: ["Pull all seven Lindale ISD trustees including seat assignments, terms, and 2026 May ballot opponents (Place 3: James Edwards Sr. vs Andy Ford)."],
+    tyler_isd: ["Tyler ISD roster currently has only one confirmed trustee (Lindsey Harrison, District 6 appointment). Pull the remaining six single-member-district trustees with terms from the official school board page."],
   };
 
   return [...(districtSpecific[slug] ?? []), ...base];

@@ -19,6 +19,7 @@ import VoteTimeline from "@/components/votes/VoteTimeline";
 import RedFlagCard from "@/components/shared/RedFlagCard";
 import PartyBadge from "@/components/officials/PartyBadge";
 import OfficialVotingSection from "@/components/voting/OfficialVotingSection";
+import GradeOfficialSection from "@/components/voting/GradeOfficialSection";
 import CommentSection from "@/components/comments/CommentSection";
 import ShareButtons from "@/components/shared/ShareButtons";
 import ReportButton from "@/components/shared/ReportButton";
@@ -233,6 +234,13 @@ export default async function OfficialProfilePage({
             <OfficialVotingSection
               officialId={official.id}
               officialCounties={official.county}
+            />
+            <GradeOfficialSection
+              officialId={official.id}
+              officialCounties={official.county.map((c) =>
+                c.toLowerCase().endsWith("county") ? c : `${c} County`
+              )}
+              officialName={official.name}
             />
 
             {funding && (

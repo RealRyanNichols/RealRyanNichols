@@ -6,6 +6,8 @@ import CommentSection from "@/components/comments/CommentSection";
 import ClaimProfileCta from "@/components/profile/ClaimProfileCta";
 import ClaimedProfilePanel from "@/components/profile/ClaimedProfilePanel";
 import ProfilePhoto from "@/components/profile/ProfilePhoto";
+import OfficialVotingSection from "@/components/voting/OfficialVotingSection";
+import GradeOfficialSection from "@/components/voting/GradeOfficialSection";
 import { getDistrictBranding } from "@/data/school-board-branding";
 import { getCandidateFlags, getCandidateGaps, getCandidateGoodRecords, getSchoolBoardCandidate, getSchoolBoardDossiers, getShareLine } from "@/lib/school-board-research";
 import { getCandidateDataId, getCandidateUrlSlug, getDistrictUrlSlug, getSchoolBoardCandidateUrl, getSchoolBoardDistrictUrl } from "@/lib/school-board-urls";
@@ -57,6 +59,11 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
   const positions = Object.entries(candidate.education_policy_positions ?? {});
   const score = calculateSchoolBoardScore(candidate, buildEvidenceFromDossier(candidate));
   const branding = getDistrictBranding(candidate.district_slug);
+  const candidateCountyNames = (candidate.county ?? "")
+    .split(/[\/,]/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => (part.toLowerCase().endsWith("county") ? part : `${part} County`));
 
   return (
     <div>
@@ -130,6 +137,31 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8"><div className="rounded-2xl border border-gray-200 bg-slate-950 p-6 text-white shadow-sm"><p className="text-sm font-black uppercase tracking-wide text-red-300">RepWatchr child and parent-rights model</p><h2 className="mt-2 text-2xl font-black">How this score is weighted</h2><div className="mt-5 grid gap-3 md:grid-cols-4">{Object.entries(score.categoryScores).map(([category, value]) => <div key={category} className="rounded-xl border border-white/10 bg-white/10 p-4"><p className="text-xs font-black uppercase tracking-wide text-slate-300">{category.replaceAll("_", " ")}</p><p className="mt-1 text-2xl font-black">{value}</p></div>)}</div><p className="mt-5 text-sm leading-6 text-slate-300">{score.requiredEvidenceNote} Model version: {schoolBoardScoringModel.version}.</p></div></section>
 
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8"><div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"><h2 className="text-2xl font-black text-gray-950">Sources</h2><div className="mt-5 grid gap-3 md:grid-cols-2">{(candidate.sources ?? []).map((source) => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm font-bold text-blue-700 hover:bg-blue-50">{source.title ?? source.url}</a>)}{(candidate.sources ?? []).length === 0 ? <p className="text-sm text-gray-600">No source list has been loaded for this dossier yet.</p> : null}</div></div></section>
+      <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-blue-100 bg-[linear-gradient(135deg,#ffffff_0%,#eff6ff_55%,#fff7ed_100%)] p-6 shadow-sm">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-wide text-red-700">Verified Texas sentiment</p>
+              <h2 className="mt-1 text-2xl font-black text-blue-950 sm:text-3xl">How Texans rate {candidate.preferred_name ?? candidate.full_name}</h2>
+              <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-blue-950/75">
+                Verified Texas voters can approve, disapprove, and assign a letter grade. Statewide totals are shown alongside the in-district {candidate.county || "constituent"} count so campaigns and reporters can see how local residents feel.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <OfficialVotingSection
+              officialId={candidate.candidate_id}
+              officialCounties={candidateCountyNames}
+            />
+            <GradeOfficialSection
+              officialId={candidate.candidate_id}
+              officialCounties={candidateCountyNames}
+              officialName={candidate.preferred_name ?? candidate.full_name}
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8"><CommentSection officialId={candidate.candidate_id} officialName={candidate.preferred_name ?? candidate.full_name} /></section>
     </div>
   );
