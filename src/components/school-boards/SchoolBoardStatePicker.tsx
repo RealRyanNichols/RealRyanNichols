@@ -44,8 +44,8 @@ export default function SchoolBoardStatePicker({
           </h2>
           <p className="mt-2 max-w-xl text-sm font-semibold leading-6 text-gray-600">
             Texas opens first by default. Every other state is queued for district
-            import, board roster verification, and evidence review before names
-            go public.
+            import, board roster verification, and evidence review before a board
+            member is counted as live.
           </p>
         </div>
         <label className="block min-w-full sm:min-w-[16rem]">
@@ -71,8 +71,13 @@ export default function SchoolBoardStatePicker({
           <StateStat label="State" value={selectedState.name} />
           <StateStat label="Verified districts live" value={String(selectedState.districtsLoaded)} />
           <StateStat label="Verified profiles live" value={String(selectedState.profilesLoaded)} />
+          {selectedState.directoryTargetLabel ? (
+            <StateStat label="Directory target" value={selectedState.directoryTargetLabel} />
+          ) : selectedState.status === "queued" ? (
+            <StateStat label="Directory target" value="NCES + state source queued" />
+          ) : null}
           {selectedState.targetLabel ? (
-            <StateStat label="Texas target" value={selectedState.targetLabel} />
+            <StateStat label="Trustee target" value={selectedState.targetLabel} />
           ) : null}
         </div>
       ) : null}
