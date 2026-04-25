@@ -8,23 +8,44 @@ import ClaimedProfilePanel from "@/components/profile/ClaimedProfilePanel";
 import ProfilePhoto from "@/components/profile/ProfilePhoto";
 import { getDistrictBranding } from "@/data/school-board-branding";
 import { getCandidateFlags, getCandidateGaps, getCandidateGoodRecords, getSchoolBoardCandidate, getSchoolBoardDossiers, getShareLine } from "@/lib/school-board-research";
+import { getCandidateDataId, getCandidateUrlSlug, getDistrictUrlSlug, getSchoolBoardCandidateUrl, getSchoolBoardDistrictUrl } from "@/lib/school-board-urls";
 import { buildEvidenceFromDossier, calculateSchoolBoardScore, schoolBoardScoringModel } from "@/lib/school-board-scoring";
 
 export function generateStaticParams() {
-  return getSchoolBoardDossiers().map((candidate) => ({ districtSlug: candidate.district_slug, candidateId: candidate.candidate_id }));
+  return getSchoolBoardDossiers().map((candidate) => ({ districtSlug: getDistrictUrlSlug(candidate.district_slug), candidateId: getCandidateUrlSlug(candidate) }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ candidateId: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ districtSlug: string; candidateId: string }> }): Promise<Metadata> {
   const { candidateId } = await params;
-  const candidate = getSchoolBoardCandidate(candidateId);
+  const candidate = getSchoolBoardCandidate(getCandidateDataId(candidateId));
   if (!candidate) return { title: "Candidate Not Found" };
-  return { title: `${candidate.preferred_name ?? candidate.full_name} School Board File`, description: getShareLine(candidate).slice(0, 155) };
+  const canonical = getSchoolBoardCandidateUrl(candidate);
+  const socialImage = `/api/og/school-board?type=member&district=${getDistrictUrlSlug(candidate.district_slug)}&candidate=${getCandidateUrlSlug(candidate)}`;
+  const title = `${candidate.preferred_name ?? candidate.full_name} School Board File`;
+  const description = getShareLine(candidate).slice(0, 155);
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      images: [{ url: socialImage, width: 1200, height: 630, alt: `${candidate.preferred_name ?? candidate.full_name} school board profile` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [socialImage],
+    },
+  };
 }
 
 export default async function CandidatePage({ params }: { params: Promise<{ districtSlug: string; candidateId: string }> }) {
   const { districtSlug, candidateId } = await params;
-  const candidate = getSchoolBoardCandidate(candidateId);
-  if (!candidate || candidate.district_slug !== districtSlug) {
+  const candidate = getSchoolBoardCandidate(getCandidateDataId(candidateId));
+  if (!candidate || ![candidate.district_slug, getDistrictUrlSlug(candidate.district_slug)].includes(districtSlug)) {
     return <div className="mx-auto max-w-4xl px-4 py-16 text-center"><h1 className="text-2xl font-black text-gray-950">Candidate not found</h1><Link href="/school-boards" className="mt-4 inline-flex text-sm font-bold text-blue-600">Back to school boards</Link></div>;
   }
 
@@ -41,7 +62,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
     <div>
       <section className="border-b-4 bg-white" style={{ borderColor: branding.primary }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <Link href={`/school-boards/${candidate.district_slug}`} className="text-sm font-bold text-gray-500 hover:text-gray-950">&larr; Back to {candidate.district}</Link>
+          <Link href={getSchoolBoardDistrictUrl(candidate)} className="text-sm font-bold text-gray-500 hover:text-gray-950">&larr; Back to {candidate.district}</Link>
           <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-4xl">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
@@ -61,9 +82,12 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
                   <h1 className="mt-4 text-4xl font-black leading-tight text-gray-950 sm:text-6xl">{candidate.preferred_name ?? candidate.full_name}</h1>
                   <p className="mt-3 max-w-3xl text-lg leading-8 text-gray-700">{candidate.seat ?? "Seat pending"}{candidate.role ? `, ${candidate.role}` : ""}. {candidate.occupation && !candidate.occupation.includes("REQUIRES_FURTHER_EVIDENCE") ? candidate.occupation : "Occupation pending source confirmation"}.</p>
                   <div className="mt-5 flex flex-wrap items-center gap-3">
-                    <ShareButtons title={`${candidate.preferred_name ?? candidate.full_name} | RepWatchr`} description={getShareLine(candidate)} path={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} />
-                    <ReportButton officialId={candidate.candidate_id} pageUrl={`/school-boards/${candidate.district_slug}/${candidate.candidate_id}`} />
+                    <ShareButtons title={`${candidate.preferred_name ?? candidate.full_name} | RepWatchr`} description={getShareLine(candidate)} path={getSchoolBoardCandidateUrl(candidate)} />
+                    <ReportButton officialId={candidate.candidate_id} pageUrl={getSchoolBoardCandidateUrl(candidate)} />
                   </div>
+                  <p className="mt-3 break-all text-xs font-black uppercase tracking-wide text-blue-700">
+                    Public URL: {getSchoolBoardCandidateUrl(candidate)}
+                  </p>
                 </div>
               </div>
               <div className="mt-5">
