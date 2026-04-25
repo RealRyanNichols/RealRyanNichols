@@ -67,10 +67,13 @@ export default function SchoolBoardStatePicker({
       </div>
 
       {showStats ? (
-        <div className="mt-5 grid gap-3 sm:grid-cols-3">
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <StateStat label="State" value={selectedState.name} />
-          <StateStat label="Districts loaded" value={String(selectedState.districtsLoaded)} />
-          <StateStat label="Profiles loaded" value={String(selectedState.profilesLoaded)} />
+          <StateStat label="Verified districts live" value={String(selectedState.districtsLoaded)} />
+          <StateStat label="Verified profiles live" value={String(selectedState.profilesLoaded)} />
+          {selectedState.targetLabel ? (
+            <StateStat label="Texas target" value={selectedState.targetLabel} />
+          ) : null}
         </div>
       ) : null}
 
