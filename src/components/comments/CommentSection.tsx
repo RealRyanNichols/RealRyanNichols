@@ -23,7 +23,7 @@ export default function CommentSection({
   officialId,
   officialName,
 }: CommentSectionProps) {
-  const { user, profile } = useAuth();
+  const { user, profile, roles } = useAuth();
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -31,6 +31,17 @@ export default function CommentSection({
   const [posting, setPosting] = useState(false);
   const [error, setError] = useState("");
   const supabase = createClient();
+  const isVerifiedProfile = Boolean(profile?.verified);
+  const isClaimedOfficial = roles.includes("claimed_official");
+  const isJournalist = roles.includes("journalist");
+  const authorTier = isClaimedOfficial
+    ? "Verified official / claimed profile"
+    : isVerifiedProfile
+      ? "Verified resident / parent"
+      : isJournalist
+        ? "Journalist profile"
+        : "Signed-in anonymous profile";
+  const authorRank = isClaimedOfficial ? 100 : isVerifiedProfile ? 80 : isJournalist ? 70 : 30;
 
   useEffect(() => {
     async function loadComments() {
@@ -52,7 +63,7 @@ export default function CommentSection({
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!user || !profile?.verified) return;
+    if (!user) return;
 
     const trimmed = newComment.trim();
     if (!trimmed) return;
@@ -61,7 +72,7 @@ export default function CommentSection({
       return;
     }
 
-    const name = displayName.trim() || profile.county + " Resident";
+    const name = displayName.trim() || (profile?.county ? `${profile.county} Resident` : "Anonymous profile");
 
     setPosting(true);
     setError("");
@@ -73,7 +84,7 @@ export default function CommentSection({
         official_id: officialId,
         content: trimmed,
         display_name: name,
-        county: profile.county,
+        county: profile?.county ?? "Anonymous",
       })
       .select("id, content, display_name, county, created_at, user_id")
       .single();
@@ -122,6 +133,21 @@ export default function CommentSection({
         </span>
       </div>
 
+      <div className="mb-6 grid gap-3 md:grid-cols-3">
+        <PolicyCard
+          title="Constitutional speech stays visible"
+          body="RepWatchr does not hide lawful viewpoint disagreement. Ranking can change, but lawful comments are not shadow banned because they are unpopular."
+        />
+        <PolicyCard
+          title="Evidence gets preference"
+          body="Verified officials, verified parents/residents, named journalists, public-source links, and direct answers rank above anonymous or unsourced comments."
+        />
+        <PolicyCard
+          title="Illegal content is different"
+          body="Threats, doxxing, spam, private student data, and unlawful harassment are moderation issues, not political disagreement."
+        />
+      </div>
+
       {/* Comment Form */}
       {!user ? (
         <div className="rounded-xl border border-gray-200 bg-gradient-to-r from-gray-50 to-blue-50 p-6 text-center mb-6">
@@ -143,27 +169,19 @@ export default function CommentSection({
             </Link>
           </div>
         </div>
-      ) : !profile?.verified ? (
-        <div className="rounded-xl border border-orange-200 bg-orange-50 p-6 text-center mb-6">
-          <p className="text-orange-700 mb-2">
-            Verify your Texas identity to join the discussion
-          </p>
-          <Link
-            href="/auth/verify"
-            className="inline-block rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-700 transition-colors"
-          >
-            Verify Identity
-          </Link>
-        </div>
       ) : (
         <form onSubmit={handleSubmit} className="mb-6">
           <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+            <div className="mb-3 grid gap-2 rounded-lg border border-blue-100 bg-blue-50 p-3 text-xs font-bold text-blue-950 sm:grid-cols-[1fr_auto] sm:items-center">
+              <span>{authorTier}</span>
+              <span>Ranking weight: {authorRank}/100</span>
+            </div>
             <div className="mb-3">
               <input
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                placeholder={`Display name (default: ${profile.county} Resident)`}
+                placeholder={`Display name (default: ${profile?.county ? `${profile.county} Resident` : "Anonymous profile"})`}
                 maxLength={50}
                 className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
@@ -171,7 +189,7 @@ export default function CommentSection({
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              placeholder={`What do you think about ${officialName}?`}
+              placeholder={`Ask a public question or leave a sourced concern for ${officialName}.`}
               rows={3}
               maxLength={2000}
               className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
@@ -188,7 +206,7 @@ export default function CommentSection({
                 disabled={posting || !newComment.trim()}
                 className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700 disabled:bg-gray-300 disabled:text-gray-500"
               >
-                {posting ? "Posting..." : "Post Comment"}
+                {posting ? "Posting..." : "Post Question"}
               </button>
             </div>
           </div>
@@ -228,6 +246,8 @@ export default function CommentSection({
                       <span>{comment.county}</span>
                       <span>&#183;</span>
                       <span>{formatDate(comment.created_at)}</span>
+                      <span>&#183;</span>
+                      <span>{comment.county === "Anonymous" ? "Anonymous profile" : "Signed-in profile"}</span>
                     </div>
                   </div>
                 </div>
@@ -249,5 +269,14 @@ export default function CommentSection({
         </div>
       )}
     </section>
+  );
+}
+
+function PolicyCard({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+      <p className="text-sm font-black text-gray-950">{title}</p>
+      <p className="mt-1 text-xs font-semibold leading-5 text-gray-600">{body}</p>
+    </div>
   );
 }
