@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GideonSearchBox from "@/components/shared/GideonSearchBox";
+import { REPWATCHR_EMAIL, REPWATCHR_PHONE_DISPLAY, REPWATCHR_PHONE_E164 } from "@/lib/repwatchr-contact";
 
 export const metadata: Metadata = {
   title: "RepWatchr Data Desk",
@@ -58,9 +59,14 @@ export default function DataReportsPage() {
             <p className="mt-3 text-sm font-semibold leading-6 text-gray-600">
               A campaign, parent group, reporter, watchdog, or local citizen can request a researched data pack for a place, race, district, or school board.
             </p>
-            <Link href="mailto:Ryan@RealRyanNichols.com?subject=RepWatchr%20Data%20Pack%20Request" className="mt-5 inline-flex rounded-xl bg-blue-900 px-5 py-3 text-sm font-black text-white hover:bg-red-700">
-              Request a data pack
-            </Link>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href={`mailto:${REPWATCHR_EMAIL}?subject=RepWatchr%20Data%20Pack%20Request`} className="inline-flex rounded-xl bg-blue-900 px-5 py-3 text-sm font-black text-white hover:bg-red-700">
+                Request a data pack
+              </Link>
+              <a href={`sms:${REPWATCHR_PHONE_E164}`} className="inline-flex rounded-xl border border-blue-200 bg-white px-5 py-3 text-sm font-black text-blue-950 hover:border-red-300 hover:text-red-700">
+                Text {REPWATCHR_PHONE_DISPLAY}
+              </a>
+            </div>
           </aside>
         </div>
       </section>
