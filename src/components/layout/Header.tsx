@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/school-boards", label: "School Boards" },
   { href: "/red-flags", label: "Red Flags" },
   { href: "/news", label: "News" },
+  { href: "/buildout", label: "Buildout" },
 ];
 
 export default function Header() {

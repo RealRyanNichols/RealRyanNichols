@@ -919,6 +919,150 @@ export function getShareLine(candidate: CandidateDossier): string {
   return gaps[0] ?? `${candidate.full_name} has a RepWatchr public-record profile in progress.`;
 }
 
+export interface CandidateCompletion {
+  candidate_id: string;
+  full_name: string;
+  district: string;
+  district_slug: string;
+  status: ResearchStatus | undefined;
+  percent: number;
+  missing: string[];
+  brokenSources: number;
+  hasSilentSignals: boolean;
+  hasGoodRecord: boolean;
+  hasFlag: boolean;
+  hasSocial: boolean;
+}
+
+export interface DistrictCompletion {
+  district: string;
+  district_slug: string;
+  county: string;
+  totalMembers: number;
+  completedMembers: number;
+  stubMembers: number;
+  averageMemberPercent: number;
+  hasSources: boolean;
+  sourceCount: number;
+  brokenSourceCount: number;
+  hasInvestigationQueue: boolean;
+  hasFeedItems: boolean;
+  on2026BallotCount: number;
+  percent: number;
+  missing: string[];
+}
+
+const CANDIDATE_FIELD_WEIGHTS: Array<{ key: string; label: string; check: (c: CandidateDossier) => boolean; weight: number }> = [
+  { key: "full_name", label: "Full name", check: (c) => Boolean(c.full_name && c.full_name.trim()), weight: 5 },
+  { key: "role_or_seat", label: "Role or seat", check: (c) => Boolean((c.role && c.role !== "Trustee") || c.seat), weight: 8 },
+  { key: "occupation", label: "Occupation", check: (c) => Boolean(c.occupation && !c.occupation.includes("REQUIRES_FURTHER_EVIDENCE")), weight: 8 },
+  { key: "term", label: "Term info", check: (c) => Boolean(c.election_date || c.years_on_board), weight: 8 },
+  { key: "summary", label: "Summary or narrative", check: (c) => Boolean(c.summary || c.about_public_record?.about_summary_narrative), weight: 8 },
+  { key: "good_record", label: "Good-record item", check: (c) => getCandidateGoodRecords(c).length > 0, weight: 12 },
+  { key: "sources", label: "At least 1 source URL", check: (c) => (c.sources ?? []).some((s) => Boolean(s.url)), weight: 12 },
+  { key: "political_lean", label: "Political-lean signal", check: (c) => Boolean(c.silent_signals?.voter_primary_history?.length || c.silent_signals?.donations?.length || c.silent_signals?.endorsements_received?.length || c.silent_signals?.affiliations?.length || (c.party_registration && c.party_registration !== "Unknown")), weight: 10 },
+  { key: "social", label: "Public social handle", check: (c) => Object.values(c.social_media ?? {}).some(Boolean), weight: 6 },
+  { key: "issue_positions", label: "Issue position with evidence", check: (c) => Object.values(c.education_policy_positions ?? {}).some((v) => v && !v.includes("REQUIRES_FURTHER_EVIDENCE")), weight: 8 },
+  { key: "complete_status", label: "Reviewer marked complete", check: (c) => Boolean(c.status && c.status !== "stub" && c.status !== "needs_review"), weight: 15 },
+];
+
+export function getCandidateCompletion(candidate: CandidateDossier): CandidateCompletion {
+  const totalWeight = CANDIDATE_FIELD_WEIGHTS.reduce((sum, field) => sum + field.weight, 0);
+  let earned = 0;
+  const missing: string[] = [];
+  for (const field of CANDIDATE_FIELD_WEIGHTS) {
+    if (field.check(candidate)) earned += field.weight;
+    else missing.push(field.label);
+  }
+  const brokenSources = (candidate.sources ?? []).filter((source) => !source.url || source.url.includes("REQUIRES_FURTHER_EVIDENCE")).length;
+  return {
+    candidate_id: candidate.candidate_id,
+    full_name: candidate.preferred_name ?? candidate.full_name,
+    district: candidate.district,
+    district_slug: candidate.district_slug,
+    status: candidate.status,
+    percent: Math.round((earned / totalWeight) * 100),
+    missing,
+    brokenSources,
+    hasSilentSignals: Boolean(candidate.silent_signals && Object.values(candidate.silent_signals).some((v) => Array.isArray(v) ? v.length > 0 : Boolean(v))),
+    hasGoodRecord: getCandidateGoodRecords(candidate).length > 0,
+    hasFlag: getCandidateFlags(candidate).length > 0,
+    hasSocial: Object.values(candidate.social_media ?? {}).some(Boolean),
+  };
+}
+
+export function getDistrictCompletion(district: DistrictResearch): DistrictCompletion {
+  const totalMembers = district.candidates.length;
+  const memberCompletions = district.candidates.map(getCandidateCompletion);
+  const completedMembers = memberCompletions.filter((c) => c.percent >= 75).length;
+  const stubMembers = memberCompletions.filter((c) => c.status === "stub" || c.status === "needs_review").length;
+  const averageMemberPercent = totalMembers > 0
+    ? Math.round(memberCompletions.reduce((sum, c) => sum + c.percent, 0) / totalMembers)
+    : 0;
+  const sourceCount = (district.sourceLinks ?? []).filter((s) => Boolean(s.url)).length;
+  const brokenSourceCount = (district.sourceLinks ?? []).filter((s) => !s.url).length;
+  const hasInvestigationQueue = (district.investigationQueue ?? []).length > 0;
+  const hasFeedItems = (district.feed ?? []).length > 0;
+  const on2026BallotCount = district.candidates.filter((c) => c.on_2026_ballot || c.election_date?.includes("2026")).length;
+
+  const districtChecks = [
+    { check: totalMembers >= 5, label: "Five or more roster members loaded", weight: 25 },
+    { check: completedMembers >= Math.ceil(totalMembers * 0.5) && totalMembers > 0, label: "At least half of roster has dossier ≥75% complete", weight: 25 },
+    { check: sourceCount >= 2, label: "Two or more district source URLs", weight: 15 },
+    { check: hasInvestigationQueue, label: "Investigation queue populated", weight: 10 },
+    { check: hasFeedItems, label: "District feed has at least one verified item", weight: 10 },
+    { check: averageMemberPercent >= 60, label: "Average member completion ≥ 60%", weight: 15 },
+  ];
+  const totalWeight = districtChecks.reduce((sum, c) => sum + c.weight, 0);
+  const earned = districtChecks.filter((c) => c.check).reduce((sum, c) => sum + c.weight, 0);
+  const missing = districtChecks.filter((c) => !c.check).map((c) => c.label);
+
+  return {
+    district: district.district,
+    district_slug: district.district_slug,
+    county: district.county,
+    totalMembers,
+    completedMembers,
+    stubMembers,
+    averageMemberPercent,
+    hasSources: sourceCount > 0,
+    sourceCount,
+    brokenSourceCount,
+    hasInvestigationQueue,
+    hasFeedItems,
+    on2026BallotCount,
+    percent: Math.round((earned / totalWeight) * 100),
+    missing,
+  };
+}
+
+export function getSchoolBoardCompletionReport() {
+  const districts = getSchoolBoardDistricts();
+  const districtCompletions = districts.map(getDistrictCompletion);
+  const candidates = getSchoolBoardDossiers();
+  const candidateCompletions = candidates.map(getCandidateCompletion);
+  const overallDistrictPercent = districtCompletions.length
+    ? Math.round(districtCompletions.reduce((sum, d) => sum + d.percent, 0) / districtCompletions.length)
+    : 0;
+  const overallMemberPercent = candidateCompletions.length
+    ? Math.round(candidateCompletions.reduce((sum, c) => sum + c.percent, 0) / candidateCompletions.length)
+    : 0;
+  const totalBrokenSources = districtCompletions.reduce((sum, d) => sum + d.brokenSourceCount, 0)
+    + candidateCompletions.reduce((sum, c) => sum + c.brokenSources, 0);
+  return {
+    districtCompletions,
+    candidateCompletions,
+    overallDistrictPercent,
+    overallMemberPercent,
+    overallPercent: Math.round((overallDistrictPercent + overallMemberPercent) / 2),
+    totalBrokenSources,
+    totalDistricts: districtCompletions.length,
+    totalMembers: candidateCompletions.length,
+    completedDistricts: districtCompletions.filter((d) => d.percent >= 75).length,
+    completedMembers: candidateCompletions.filter((c) => c.percent >= 75).length,
+  };
+}
+
 export function getSchoolBoardStats() {
   const candidates = getSchoolBoardDossiers();
   const districts = getSchoolBoardDistricts();

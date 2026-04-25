@@ -50,6 +50,11 @@ export const SCHOOL_BOARD_DISTRICT_SLUGS = [
   "aldine_isd",
   "leander_isd",
   "hays_cisd",
+  "carrollton_farmers_branch_isd",
+  "lewisville_isd",
+  "birdville_isd",
+  "hurst_euless_bedford_isd",
+  "keller_isd",
 ] as const;
 
 export type SchoolBoardDistrictSlug = (typeof SCHOOL_BOARD_DISTRICT_SLUGS)[number];
