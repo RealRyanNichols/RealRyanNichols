@@ -10,6 +10,7 @@ import OfficialVotingSection from "@/components/voting/OfficialVotingSection";
 import GradeOfficialSection from "@/components/voting/GradeOfficialSection";
 import QuickFacts from "@/components/school-board/QuickFacts";
 import CappedList from "@/components/school-board/CappedList";
+import WhyThisScore from "@/components/school-board/WhyThisScore";
 import { getDistrictBranding } from "@/data/school-board-branding";
 import { getCandidateFlags, getCandidateGaps, getCandidateGoodRecords, getSchoolBoardCandidate, getSchoolBoardDossiers, getShareLine } from "@/lib/school-board-research";
 import { getCandidateDataId, getCandidateUrlSlug, getDistrictUrlSlug, getSchoolBoardCandidateUrl, getSchoolBoardDistrictUrl } from "@/lib/school-board-urls";
@@ -113,10 +114,22 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
                 />
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">{candidate.district}</span>
-                    <span className="rounded-full px-3 py-1 text-xs font-black text-white" style={{ backgroundColor: branding.primary }}>{branding.label}</span>
+                    <Link
+                      href={getSchoolBoardDistrictUrl(candidate)}
+                      className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700 transition hover:bg-slate-200"
+                    >
+                      {candidate.district}
+                    </Link>
                     {candidate.on_2026_ballot || candidate.election_date?.includes("2026") ? (
-                      <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">2026 ballot</span>
+                      <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-black text-red-700">On 2026 ballot</span>
+                    ) : null}
+                    {candidate.status === "stub" || candidate.status === "needs_review" ? (
+                      <span
+                        className="rounded-full bg-amber-100 px-3 py-1 text-xs font-black text-amber-800"
+                        title="Profile is still being researched. Some fields may be missing or pending source confirmation."
+                      >
+                        Profile in progress
+                      </span>
                     ) : null}
                   </div>
                   <h1 className="mt-3 text-3xl font-black leading-tight text-gray-950 sm:text-5xl">
@@ -170,6 +183,11 @@ export default async function CandidatePage({ params }: { params: Promise<{ dist
       </section>
 
       <ClaimedProfilePanel profileId={candidate.candidate_id} />
+
+      {/* Algorithm transparency — collapsible */}
+      <section className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+        <WhyThisScore score={score} />
+      </section>
 
       {/* Record at-a-glance */}
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
