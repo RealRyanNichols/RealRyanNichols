@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { REPWATCHR_EMAIL, REPWATCHR_PHONE_DISPLAY, REPWATCHR_PHONE_E164 } from "@/lib/repwatchr-contact";
 
 const quickLinks = [
   { href: "/officials", label: "Officials" },
@@ -23,9 +24,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="/images/logo.png"
-              alt="RepWatchr"
-              className="h-10 w-auto mb-2"
+              src="/images/repwatchr-brand-wordmark.jpg"
+              alt="RepWatchr - Know. Track. Score. Hold Accountable."
+              className="mb-2 h-14 w-auto max-w-[260px] object-contain"
             />
             <h3 className="text-lg font-bold text-gray-900 dark:text-white">
               RepWatchr
@@ -41,6 +42,17 @@ export default function Footer() {
             >
               www.RepWatchr.com
             </a>
+            <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold">
+              <a href={`tel:${REPWATCHR_PHONE_E164}`} className="text-blue-700 hover:text-red-700 dark:text-blue-300">
+                Call {REPWATCHR_PHONE_DISPLAY}
+              </a>
+              <a href={`sms:${REPWATCHR_PHONE_E164}`} className="text-blue-700 hover:text-red-700 dark:text-blue-300">
+                Text RepWatchr
+              </a>
+              <a href={`mailto:${REPWATCHR_EMAIL}`} className="text-blue-700 hover:text-red-700 dark:text-blue-300">
+                Email
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
