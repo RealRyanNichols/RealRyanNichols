@@ -39,18 +39,6 @@
       "letterGrade": "A",
       "votes": [
         {
-          "billId": "hb-1750",
-          "billTitle": "Texas Property Tax Relief and Reform Act",
-          "session": "89th Texas Legislature",
-          "date": "2025-05-18",
-          "officialVote": "yea",
-          "proEastTexasPosition": "yea",
-          "aligned": true,
-          "explanation": "Voted for comprehensive property tax relief protecting East Texas homeowners and agricultural land.",
-          "category": "land-and-property-rights",
-          "weight": 10
-        },
-        {
           "billId": "sb-455",
           "billTitle": "Mineral Rights Protection and Landowner Notification Act",
           "session": "89th Texas Legislature",
@@ -69,18 +57,6 @@
       "score": 85,
       "letterGrade": "A-",
       "votes": [
-        {
-          "billId": "hb-1750",
-          "billTitle": "Texas Property Tax Relief and Reform Act",
-          "session": "89th Texas Legislature",
-          "date": "2025-05-18",
-          "officialVote": "yea",
-          "proEastTexasPosition": "yea",
-          "aligned": true,
-          "explanation": "Supported property tax cuts delivering real relief to East Texas taxpayers.",
-          "category": "taxes",
-          "weight": 10
-        },
         {
           "billId": "sb-2100",
           "billTitle": "Unfunded Mandate Prevention Act",

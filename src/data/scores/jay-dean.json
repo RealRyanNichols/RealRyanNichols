@@ -39,18 +39,6 @@
       "letterGrade": "A-",
       "votes": [
         {
-          "billId": "hb-1750",
-          "billTitle": "Texas Property Tax Relief and Reform Act",
-          "session": "89th Texas Legislature",
-          "date": "2025-05-18",
-          "officialVote": "yea",
-          "proEastTexasPosition": "yea",
-          "aligned": true,
-          "explanation": "Voted for comprehensive property tax relief including increased homestead exemptions benefiting East Texas homeowners.",
-          "category": "land-and-property-rights",
-          "weight": 10
-        },
-        {
           "billId": "hb-3200",
           "billTitle": "Eminent Domain Reform and Landowner Protection Act",
           "session": "89th Texas Legislature",
@@ -69,18 +57,6 @@
       "score": 82,
       "letterGrade": "A-",
       "votes": [
-        {
-          "billId": "hb-1750",
-          "billTitle": "Texas Property Tax Relief and Reform Act",
-          "session": "89th Texas Legislature",
-          "date": "2025-05-18",
-          "officialVote": "yea",
-          "proEastTexasPosition": "yea",
-          "aligned": true,
-          "explanation": "Voted for significant property tax reductions including compressed school district rates.",
-          "category": "taxes",
-          "weight": 10
-        },
         {
           "billId": "hb-4510",
           "billTitle": "Small Business Tax Exemption Expansion Act",
@@ -131,18 +107,6 @@
       "score": 82,
       "letterGrade": "A-",
       "votes": [
-        {
-          "billId": "hb-1750",
-          "billTitle": "Texas Property Tax Relief and Reform Act",
-          "session": "89th Texas Legislature",
-          "date": "2025-05-18",
-          "officialVote": "yea",
-          "proEastTexasPosition": "yea",
-          "aligned": true,
-          "explanation": "Delivered on campaign promise to lower property taxes for East Texas homeowners.",
-          "category": "voting-record",
-          "weight": 10
-        },
         {
           "billId": "hb-550",
           "billTitle": "Rural Broadband Expansion Act",
