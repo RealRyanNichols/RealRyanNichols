@@ -39,11 +39,11 @@ export default function BuildoutDashboardPage() {
   const report = getSchoolBoardCompletionReport();
   const stats = getSchoolBoardStats();
 
-  // Sort districts by completion ascending — show what needs work first.
+  // Sort districts by completion ascending - show what needs work first.
   const sortedDistricts = [...report.districtCompletions].sort((a, b) => a.percent - b.percent);
   const sortedMembers = [...report.candidateCompletions].sort((a, b) => a.percent - b.percent);
 
-  // Areas of the site beyond school boards. These are static for now —
+  // Areas of the site beyond school boards. These are static for now -
   // hard-coded to reflect the real state of each major surface so the
   // operator can see what's "done" vs "needs more work" at a glance.
   const siteAreas = [
@@ -56,7 +56,7 @@ export default function BuildoutDashboardPage() {
     { label: "Citizen letter grades (A-F)", percent: 100, status: "Live on every profile. Statewide + in-district GPA.", href: "/school-boards" },
     { label: "Public comments / Q&A", percent: 100, status: "Live on every profile. Ranked but not censored.", href: "/feedback" },
     { label: "Profile claim flow (officials)", percent: 90, status: "Stripe wired. Admin review queue active.", href: "/profiles/claim" },
-    { label: "GideonAI research console", percent: 60, status: "Edge function bridge configured.", href: "/gideon" },
+    { label: "Faretta AI research console", percent: 60, status: "Edge function bridge configured.", href: "/faretta-ai" },
     { label: "Public funding / donor data", percent: 40, status: "Federal + state cycles loaded; locals queued.", href: "/funding" },
     { label: "Issue scorecards", percent: 80, status: "5 weighted issue categories live.", href: "/scorecards" },
     { label: "Red flags index", percent: 65, status: "Curated; verifier review ongoing.", href: "/red-flags" },
@@ -249,7 +249,7 @@ export default function BuildoutDashboardPage() {
           <div className="mb-6">
             <p className="text-xs font-black uppercase tracking-wide text-red-700">Investigation queue · {stats.gapCount} open items</p>
             <h2 className="text-2xl font-black text-gray-950">Research gaps to close</h2>
-            <p className="mt-1 text-xs font-semibold text-gray-500">Top items per district — what to pull next.</p>
+            <p className="mt-1 text-xs font-semibold text-gray-500">Top items per district - what to pull next.</p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {sortedDistricts
