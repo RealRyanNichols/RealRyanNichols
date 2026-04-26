@@ -24,6 +24,7 @@ import CommentSection from "@/components/comments/CommentSection";
 import ShareButtons from "@/components/shared/ShareButtons";
 import ReportButton from "@/components/shared/ReportButton";
 import ProfileOpenTracker from "@/components/shared/ProfileOpenTracker";
+import ProfileQuestionPanel from "@/components/profile/ProfileQuestionPanel";
 import { getNewsByOfficialId } from "@/lib/data";
 
 export async function generateStaticParams() {
@@ -248,6 +249,11 @@ export default async function OfficialProfilePage({
                 c.toLowerCase().endsWith("county") ? c : `${c} County`
               )}
               officialName={official.name}
+            />
+
+            <ProfileQuestionPanel
+              targetId={official.id}
+              targetName={official.name}
             />
 
             {funding && (

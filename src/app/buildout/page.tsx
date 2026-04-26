@@ -129,6 +129,20 @@ export default function BuildoutDashboardPage() {
           <p className="mt-3 max-w-3xl text-sm font-semibold leading-6 text-blue-950/75">
             These are the counts the app is actually loading or querying today. No sales totals. No inflated claims. The open work rows show what still needs records, sources, or profile depth.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href="/admin/superadmin"
+              className="rounded-xl bg-blue-950 px-4 py-3 text-sm font-black text-white hover:bg-red-700"
+            >
+              Open SuperAdmin office
+            </Link>
+            <Link
+              href="/school-boards"
+              className="rounded-xl border border-blue-200 bg-white px-4 py-3 text-sm font-black text-blue-950 hover:border-red-200 hover:text-red-700"
+            >
+              School board surface
+            </Link>
+          </div>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-blue-200 bg-white p-5 shadow-sm">
