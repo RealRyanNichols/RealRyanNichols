@@ -29,7 +29,7 @@ export default function Header() {
         <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2 py-1 transition hover:opacity-90 sm:gap-3">
           <span className="grid h-14 w-24 shrink-0 place-items-center overflow-hidden sm:h-16 sm:w-32 lg:h-20 lg:w-40">
             <img
-              src="/images/logo.png"
+              src="/images/logo.png?v=20260425"
               alt="RepWatchr"
               className="h-full w-full object-contain"
             />
