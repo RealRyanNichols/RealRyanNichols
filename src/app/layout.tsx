@@ -30,10 +30,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.repwatchr.com"),
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/images/profile.png", type: "image/png", sizes: "1254x1254" },
+      { url: "/favicon.ico?v=20260425" },
+      { url: "/icon.png?v=20260425", type: "image/png", sizes: "1254x1254" },
     ],
-    apple: [{ url: "/images/profile.png", type: "image/png", sizes: "1254x1254" }],
+    apple: [{ url: "/apple-icon.png?v=20260425", type: "image/png", sizes: "1254x1254" }],
   },
   openGraph: {
     title: "RepWatchr - Know Your Reps. Hold Them Accountable.",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/profile.png",
+        url: "/images/icon.png?v=20260425",
         width: 1254,
         height: 1254,
         alt: "RepWatchr - Know Your Reps. Hold Them Accountable.",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "RepWatchr - Know Your Reps. Hold Them Accountable.",
     description:
       "Track your elected officials in Texas. Scorecards, voting records, campaign funding, and red flags.",
-    images: ["/images/profile.png"],
+    images: ["/images/icon.png?v=20260425"],
   },
   robots: {
     index: true,
