@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { isLocalMemberUserId } from "@/lib/local-member-session";
 import { createClient } from "@/lib/supabase";
 
 type MemberProfile = {
@@ -27,13 +28,26 @@ export default function MemberProfilePanel() {
     if (!user) return;
 
     async function loadProfile() {
-      const { data } = await supabase
-        .from("member_profiles")
-        .select("display_name, home_location, preferred_state, research_focus, public_profile_enabled")
-        .eq("user_id", user!.id)
-        .maybeSingle();
+      if (isLocalMemberUserId(user!.id)) {
+        setStatus("Profile settings are local until the member database is connected.");
+        return;
+      }
 
-      const profile = data as MemberProfile | null;
+      let data: MemberProfile | null = null;
+
+      try {
+        const result = await supabase
+          .from("member_profiles")
+          .select("display_name, home_location, preferred_state, research_focus, public_profile_enabled")
+          .eq("user_id", user!.id)
+          .maybeSingle();
+        data = result.data as MemberProfile | null;
+      } catch {
+        setStatus("Profile settings are local until the member database is connected.");
+        return;
+      }
+
+      const profile = data;
       if (!profile) return;
       setDisplayName(profile.display_name ?? "");
       setHomeLocation(profile.home_location ?? "");
@@ -52,20 +66,31 @@ export default function MemberProfilePanel() {
     setSaving(true);
     setStatus("");
 
-    const { error } = await supabase.from("member_profiles").upsert(
-      {
-        user_id: user.id,
-        display_name: displayName.trim() || null,
-        home_location: homeLocation.trim() || null,
-        preferred_state: preferredState.trim() || "TX",
-        research_focus: researchFocus.trim() || null,
-        public_profile_enabled: publicProfileEnabled,
-      },
-      { onConflict: "user_id" }
-    );
+    if (isLocalMemberUserId(user.id)) {
+      setStatus("Profile settings will save once the member database is connected.");
+      setSaving(false);
+      return;
+    }
 
-    setSaving(false);
-    setStatus(error ? `Profile could not be saved: ${error.message}` : "Profile saved.");
+    try {
+      const { error } = await supabase.from("member_profiles").upsert(
+        {
+          user_id: user.id,
+          display_name: displayName.trim() || null,
+          home_location: homeLocation.trim() || null,
+          preferred_state: preferredState.trim() || "TX",
+          research_focus: researchFocus.trim() || null,
+          public_profile_enabled: publicProfileEnabled,
+        },
+        { onConflict: "user_id" }
+      );
+
+      setStatus(error ? `Profile could not be saved: ${error.message}` : "Profile saved.");
+    } catch {
+      setStatus("Profile settings will save once the member database is connected.");
+    } finally {
+      setSaving(false);
+    }
   }
 
   return (
