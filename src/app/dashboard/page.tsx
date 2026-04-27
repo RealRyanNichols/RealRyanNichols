@@ -6,6 +6,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { createClient } from "@/lib/supabase";
 import MemberCommandCenter from "@/components/dashboard/MemberCommandCenter";
 import MemberProfilePanel from "@/components/dashboard/MemberProfilePanel";
+import { isLocalMemberUserId } from "@/lib/local-member-session";
 import {
   displayNameFromId,
   urlForOfficialOrCandidate,
@@ -33,24 +34,39 @@ export default function DashboardPage() {
   const supabase = useMemo(() => createClient(), []);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user) {
+      setLoadingActivity(false);
+      return;
+    }
+
+    if (isLocalMemberUserId(user.id)) {
+      setVotes([]);
+      setGrades([]);
+      setLoadingActivity(false);
+      return;
+    }
 
     async function loadActivity() {
-      const [votesResult, gradesResult] = await Promise.all([
-        supabase
-          .from("citizen_votes")
-          .select("official_id, vote, updated_at")
-          .eq("user_id", user!.id)
-          .order("updated_at", { ascending: false }),
-        supabase
-          .from("citizen_grades")
-          .select("official_id, grade, rationale, updated_at")
-          .eq("user_id", user!.id)
-          .order("updated_at", { ascending: false }),
-      ]);
+      try {
+        const [votesResult, gradesResult] = await Promise.all([
+          supabase
+            .from("citizen_votes")
+            .select("official_id, vote, updated_at")
+            .eq("user_id", user!.id)
+            .order("updated_at", { ascending: false }),
+          supabase
+            .from("citizen_grades")
+            .select("official_id, grade, rationale, updated_at")
+            .eq("user_id", user!.id)
+            .order("updated_at", { ascending: false }),
+        ]);
 
-      if (votesResult.data) setVotes(votesResult.data);
-      if (gradesResult.data) setGrades(gradesResult.data as GradeRecord[]);
+        if (votesResult.data) setVotes(votesResult.data);
+        if (gradesResult.data) setGrades(gradesResult.data as GradeRecord[]);
+      } catch {
+        setVotes([]);
+        setGrades([]);
+      }
       setLoadingActivity(false);
     }
 
