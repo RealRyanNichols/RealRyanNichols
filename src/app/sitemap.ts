@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getAllOfficials } from "@/lib/data";
 import { getAttorneyWatchProfiles, getMediaWatchProfiles } from "@/lib/power-watch";
+import { getPredatorWatchProfiles } from "@/lib/predator-watch";
 import { getSchoolBoardDistricts, getSchoolBoardDossiers } from "@/lib/school-board-research";
 import { getSchoolBoardCandidateUrl, getSchoolBoardDistrictUrl } from "@/lib/school-board-urls";
 
 const siteUrl = "https://www.repwatchr.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/school-boards",
     "/attorneys",
     "/media",
+    "/east-texas-predator-watch",
     "/uap",
     "/faretta-ai",
     "/feedback",
@@ -57,6 +59,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const predatorWatchRoutes = (await getPredatorWatchProfiles()).map((profile) => ({
+    url: `${siteUrl}/east-texas-predator-watch/${profile.slug}`,
+    lastModified: now,
+    changeFrequency: "daily" as const,
+    priority: 0.7,
+  }));
+
   const officialRoutes = getAllOfficials().map((official) => ({
     url: `${siteUrl}/officials/${official.id}`,
     lastModified: now,
@@ -71,5 +80,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...memberRoutes,
     ...attorneyRoutes,
     ...mediaRoutes,
+    ...predatorWatchRoutes,
   ];
 }

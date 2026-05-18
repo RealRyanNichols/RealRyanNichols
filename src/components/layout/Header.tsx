@@ -13,6 +13,7 @@ const primaryLinks = [
   { href: "/attorneys", label: "Attorneys" },
   { href: "/media", label: "Media" },
   { href: "/public-safety", label: "Safety" },
+  { href: "/east-texas-predator-watch", label: "Predator Watch" },
   { href: "/news", label: "News" },
 ];
 
